@@ -1,0 +1,14 @@
+@import "../../utils/mixins";
+.about-page-container {
+  padding: 100px 0;
+  @include flex-center(space-evenly, center);
+  .image-wrapp img {
+    @include standart-image-size(400px, 100%, auto);
+  }
+  .description {
+    max-width: 500px;
+  }
+  .about-btn {
+    @include button-style(initial, 10px, grey, white);
+  }
+}

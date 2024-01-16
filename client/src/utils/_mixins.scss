@@ -1,0 +1,27 @@
+@mixin flex-center($justify: center, $align: center, $direction: initial) {
+  display: flex;
+  justify-content: $justify;
+  align-items: $align;
+  flex-direction: $direction;
+}
+@mixin standart-image-size($maxWidth, $width, $height) {
+  max-width: $maxWidth;
+  width: $width;
+  height: $height;
+}
+
+@mixin button-style(
+  $width,
+  $padding,
+  $background,
+  $color,
+  $border: none,
+  $cursor: pointer,
+) {
+  width: $width;
+  padding: $padding;
+  background-color: $background;
+  color: $color;
+  border: $border;
+  cursor: $cursor;
+}

@@ -1,0 +1,18 @@
+@import "../../../../utils/mixins";
+
+.contact-section {
+  .contact-wrapp {
+    padding: 100px 0;
+    @include flex-center(space-between, center);
+  }
+
+  .title {
+    font-size: 60px;
+    margin-bottom: 20px;
+  }
+  .description {
+    max-width: 400px;
+  }
+  .left-side {
+  }
+}

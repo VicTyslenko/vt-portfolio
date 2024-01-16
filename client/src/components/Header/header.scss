@@ -1,0 +1,32 @@
+@import "../../utils/mixins";
+
+.header-wrapper {
+  padding: 20px 0;
+  @include flex-center(space-between, center);
+  .nav-bar {
+    @include flex-center(center, center);
+    gap: 30px;
+  }
+  .nav-bar .nav-bar-link,
+  .home-link {
+    color: white;
+    text-decoration: none;
+  }
+
+  .theme-btn {
+    @include flex-center(center, center);
+    border: none;
+    cursor: pointer;
+  }
+  .theme-btn.night {
+    background-color: #000e1b;
+    color: white;
+  }
+  .theme-btn.day {
+    background-color: white;
+  }
+  .theme-icons {
+    width: 22px;
+    height: 22px;
+  }
+}

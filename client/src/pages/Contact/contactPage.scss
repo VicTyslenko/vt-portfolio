@@ -1,0 +1,21 @@
+@import "../../utils/mixins";
+.contact-page-container {
+  max-width: 700px;
+  text-align: center;
+  margin: 0 auto;
+  .title {
+    text-align: center;
+  margin: 100px 0;
+  }
+  .text-field {
+    width: 100%;
+  }
+  .text-field .MuiInputBase-input {
+    color: white;
+  }
+  .contact-button {
+    @include button-style(200px, 20px, #4646f4, #fff);
+    margin-top: 20px;
+    border-radius: 10px;
+  }
+}

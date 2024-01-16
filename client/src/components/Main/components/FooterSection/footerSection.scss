@@ -1,0 +1,8 @@
+@import "../../../../utils/mixins";
+.footer-container {
+  background-color: #292828;
+}
+.footer-wrapp {
+  @include flex-center(space-between, center);
+  padding: 50px 0;
+}

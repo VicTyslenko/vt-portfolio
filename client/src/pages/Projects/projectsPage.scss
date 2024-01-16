@@ -1,0 +1,46 @@
+.projects-page-container {
+  .projects-page-wrapp {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 30px;
+
+    .project-item {
+      position: relative;
+      .project-btn {
+        opacity: 0;
+        background-color: rgba(0, 0, 0, 0.8);
+        color: #fff;
+        position: absolute;
+        bottom: 3px;
+        left: 0;
+        right: 0;
+        width: 100%;
+        border: none;
+        padding: 13px;
+        border-radius: 0 0 11px 11px;
+        transition: opacity 0.5s ease;
+        outline: none;
+        cursor: pointer;
+        font-size: 15px;
+        letter-spacing: 1px;
+      }
+    }
+
+    .project-item:hover {
+      .project-btn {
+        opacity: 1;
+      }
+    }
+    .project-page-image {
+      border-radius: 22px;
+
+      width: 100%;
+      height: auto;
+      cursor: pointer;
+    }
+  }
+  .title {
+    text-align: center;
+    margin-bottom: 40px;
+  }
+}
