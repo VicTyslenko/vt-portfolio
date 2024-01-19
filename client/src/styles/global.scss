@@ -1,15 +1,21 @@
+.global-container {
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 body {
+  overflow-x: hidden;
   font-family: "Open Sans", sans-serif;
   color: black;
   transition: background-color 0.5s, color 0.5s;
 }
 body.night-theme {
-  background-color: #000000;
+  background-color:#1e1e29;
   color: #ecf0f1;
 }
 h1,

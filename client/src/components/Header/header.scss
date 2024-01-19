@@ -1,8 +1,29 @@
 @import "../../utils/mixins";
 
 .header-wrapper {
-  padding: 20px 0;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  z-index: 1;
+  width: auto;
+  padding: 20px 60px;
   @include flex-center(space-between, center);
+  .title {
+    position: relative;
+    font-weight: 400;
+  }
+  .title::before {
+    position: absolute;
+    content: "";
+    display: block;
+    width: 500px;
+    height: 130px;
+    background-color: black;
+    z-index: -1;
+    left: -60px;
+    top: -17px;
+  }
   .nav-bar {
     @include flex-center(center, center);
     gap: 30px;

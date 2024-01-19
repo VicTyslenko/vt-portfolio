@@ -1,38 +1,33 @@
 @import "../../../../utils/mixins";
-.main-container {
-  .main-section {
-    padding: 100px 0;
-    @include flex-center(space-between, center);
-    .image-wrapp {
-      transform: skew(6deg); /* наклон блока */
-      background: linear-gradient(to right, grey, beige);
-      overflow: hidden
-    }
-    .main-image {
-      @include standart-image-size(400px, 100%, auto);
-      transform: skew(-6deg);
-    }
 
-    .subtitle {
-      margin-bottom: 20px;
-    }
-    .description {
-      max-width: 430px;
-      margin-bottom: 15px;
-    }
-    .contact-icons {
-      margin-bottom: 10px;
-    }
+.main-section {
+  padding: 50px 90px;
+  @include global-container();
+  @include flex-center(space-between, center);
 
-    .download-cv-btn {
-      cursor: pointer;
-      padding: 10px;
-      @include flex-center(center, center);
-      @include button-style(initial, 10px, grey, white);
-    }
-    .divider {
-      margin-top: 100px;
-      margin-bottom: 50px;
-    }
+  .main-image {
+    @include standart-image-size(100%, 500px, auto);
+  }
+
+  .subtitle {
+    margin-bottom: 20px;
+  }
+  .description {
+    max-width: 430px;
+    margin-bottom: 15px;
+  }
+  .contact-icons {
+    margin-bottom: 10px;
+  }
+
+  .download-cv-btn {
+    cursor: pointer;
+    padding: 10px;
+    @include flex-center(center, center);
+    @include button-style(initial, 10px, grey, white);
+  }
+  .divider {
+    margin-top: 100px;
+    margin-bottom: 50px;
   }
 }
