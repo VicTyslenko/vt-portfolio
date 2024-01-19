@@ -9,7 +9,7 @@ const MainSection = () => {
   return (
     <>
       <section className="main-section">
-        {/* <div className="main-info">
+        <div className="main-info">
           <h1 className="title">Victor Tyslenko</h1>
           <h2 className="subtitle">Frontend Developer</h2>
           <p className="description">
