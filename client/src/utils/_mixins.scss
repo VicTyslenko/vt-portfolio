@@ -30,3 +30,7 @@
   border: $border;
   cursor: $cursor;
 }
+@mixin global-link-style($textDecoration: none, $color: #fff) {
+  text-decoration: $textDecoration;
+  color: $color;
+}

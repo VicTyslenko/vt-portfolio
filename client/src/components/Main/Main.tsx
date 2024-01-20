@@ -9,10 +9,15 @@ import "./main.scss";
 const Main = () => {
   return (
     <div className="full-width-container">
-      {/* <MainSection />
+      <MainSection />
+      <hr
+        style={{
+          margin: "20px 0",
+        }}
+      />
       <SkillsSection />
       <ProjectsSection />
-      <FooterSection /> */}
+      <FooterSection />
     </div>
   );
 };
