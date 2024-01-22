@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import "../../styles/global.scss";
 import "./header.scss";
 
-const Header = () => {
+const Header:React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const scrollToTop = () => {
     window.scrollTo({

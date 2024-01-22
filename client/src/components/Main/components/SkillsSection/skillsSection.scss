@@ -1,11 +1,11 @@
 @import "../../../../utils/mixins";
 .skills-section {
   padding: 50px 0;
-  width: 113%;
   .skills-wrapp {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     row-gap: 20px;
+    text-align: center;
   }
 }
 .skills-item {

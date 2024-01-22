@@ -35,4 +35,12 @@
   .main-image {
     @include standart-image-size($width: 300px, $height: auto);
   }
+  .line {
+    margin: 0 auto;
+
+    max-width: 1320px;
+  }
+  .devider {
+    margin-top: 50px;
+  }
 }

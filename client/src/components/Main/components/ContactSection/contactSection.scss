@@ -2,7 +2,7 @@
 
 .contact-section {
   .contact-wrapp {
-    padding: 100px;
+    padding: 50px 100px;
     @include flex-center(space-between, center);
   }
 
@@ -14,5 +14,12 @@
     max-width: 400px;
   }
   .left-side {
+  }
+  .form-wrapp {
+    width: 400px;
+    @include flex-center($direction: column);
+  }
+  .text-field{
+    width: 100%;
   }
 }
