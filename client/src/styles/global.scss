@@ -11,13 +11,10 @@
 body {
   overflow-x: hidden;
   font-family: "Open Sans", sans-serif;
-  color: black;
-  transition: background-color 0.5s, color 0.5s;
+  background-color:#111f26fa;
+  color: #fff;
 }
-body.night-theme {
-  background-color:#1e1e29;
-  color: #ecf0f1;
-}
+
 h1,
 h2,
 h3,

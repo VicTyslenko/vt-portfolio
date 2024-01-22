@@ -1,8 +1,8 @@
-import Box from "@mui/material/Box";
-import TextField from "@mui/material/TextField";
 import Button from "../../components/Button/Button";
 import { Formik, Form } from "formik";
-import validationSchema from "./validation";
+
+import { Input, FormBoxElement } from "../../components";
+// import validationSchema from "./validation";
 import "./contactPage.scss";
 
 interface FormValues {
@@ -35,110 +35,53 @@ const ContactPage = () => {
       >
         {(props) => (
           <Form onSubmit={props.handleSubmit}>
-            <Box
-              component="div"
-              sx={{
-                display: "grid",
-                gridTemplateColumns: "repeat(2, 1fr)",
-
-                gap: "50px",
-                "& > :not(style)": { m: 1 },
-                "& .MuiInput-underline:before": {
-                  borderBottomColor: "white",
-                },
-                "& .MuiInput-underline:after": {
-                  borderBottomColor: "white",
-                },
-                "& .MuiInputLabel-root": {
-                  color: "white !important",
-                },
-                "& .MuiInput-underline:hover:before": {
-                  borderBottomColor: "white !important",
-                },
-              }}
-            >
-              <TextField
+            <FormBoxElement className="form-box-element">
+              <Input
                 name="firstName"
                 className="text-field"
-                id="standard-basic"
                 label="First name"
                 variant="standard"
                 value={props.values.firstName}
                 onChange={props.handleChange}
               />
-              <TextField
+              <Input
                 name="lastName"
                 className="text-field"
-                id="standard-basic"
                 label="Last name"
                 variant="standard"
                 value={props.values.lastName}
                 onChange={props.handleChange}
               />
-              <TextField
+              <Input
                 name="email"
                 className="text-field"
-                sx={{
-                  input: { color: "white" },
-                }}
-                id="standard-basic"
                 label="Email"
                 variant="standard"
                 value={props.values.email}
                 onChange={props.handleChange}
               />
-              <TextField
+              <Input
                 name="mobile"
                 className="text-field"
-                id="standard-basic"
                 label="Mobile"
                 variant="standard"
                 value={props.values.mobile}
                 onChange={props.handleChange}
               />
-            </Box>
-            <Box
-              sx={{
-                "& > :not(style)": { mt: 8 },
-                "& .MuiInput-underline:before": {
-                  borderBottomColor: "white",
-                },
-                "& .MuiInput-underline:after": {
-                  borderBottomColor: "white",
-                },
-                "& .MuiInputLabel-root": {
-                  color: "white !important",
-                },
-                "& .MuiInput-underline:hover:before": {
-                  borderBottomColor: "white !important",
-                },
-              }}
-            >
-              <TextField
+            </FormBoxElement>
+            <FormBoxElement className="message-box-element">
+              <Input
                 name="message"
                 value={props.values.message}
                 onChange={props.handleChange}
-                className="text-field"
-                sx={{
-                  "& .MuiOutlinedInput-root": {
-                    "& fieldset": {
-                      borderColor: "white",
-                    },
-                    "&:hover fieldset": {
-                      borderColor: "white",
-                    },
-                    "&.Mui-focused fieldset": {
-                      borderColor: "white",
-                    },
-                  },
-                }}
+                className="message-input"
                 fullWidth
                 label="Message"
-                id="message"
                 multiline
                 rows={6}
               />
-            </Box>
+            </FormBoxElement>
+
             <Button type="submit" className="contact-button">
               Send message
             </Button>

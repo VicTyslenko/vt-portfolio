@@ -1,8 +1,12 @@
+@import "../../../../utils/mixins";
 .projects-section {
-  padding: 100px 0;
+  padding: 100px;
   .projects-title {
-    font-size: 40px;
-    margin-bottom: 30px;
+    font-size: 50px;
+    margin-bottom: 70px;
+  }
+  .global-link {
+    @include global-link-style();
   }
 }
 .projects-wrapp {
@@ -10,7 +14,12 @@
   grid-template-columns: 1fr 1fr;
   gap: 40px;
 }
+.projects-image-wrapp{
+  height: 350px;
+}
 .projects-image {
   width: 100%;
-  height: auto;
+  height: 100%;
+  border-radius: 20px;
+
 }

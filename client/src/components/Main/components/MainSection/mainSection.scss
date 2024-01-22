@@ -1,33 +1,46 @@
 @import "../../../../utils/mixins";
-
+@import "../../../../utils/variables";
 .main-section {
-  padding: 50px 90px;
-  @include global-container();
-  @include flex-center(space-between, center);
-
+  margin-top: 114px;
+  position: relative;
+  .main-text {
+    position: absolute;
+    top: 22%;
+    right: 10%;
+    z-index: 6;
+    .title {
+      font-size: 60px;
+      // font-family: $font-family-poppins;
+      font-family: "Courier New", Courier, monospace;
+      font-weight: 600;
+    }
+    .subtitle {
+      font-family: "Courier New", Courier, monospace;
+      font-size: 35px;
+    }
+    .description {
+      max-width: 400px;
+    }
+  }
+  .image-wrapp {
+    position: relative;
+    right: 15px;
+    z-index: 5;
+    width: 700px;
+    height: 550px;
+    @include flex-center(center, flex-end);
+    background: radial-gradient(circle, #285366, #000000);
+    border-radius: 0 20px 20px 0;
+  }
   .main-image {
-    @include standart-image-size(100%, 500px, auto);
+    @include standart-image-size($width: 300px, $height: auto);
   }
+  .line {
+    margin: 0 auto;
 
-  .subtitle {
-    margin-bottom: 20px;
+    max-width: 1320px;
   }
-  .description {
-    max-width: 430px;
-    margin-bottom: 15px;
-  }
-  .contact-icons {
-    margin-bottom: 10px;
-  }
-
-  .download-cv-btn {
-    cursor: pointer;
-    padding: 10px;
-    @include flex-center(center, center);
-    @include button-style(initial, 10px, grey, white);
-  }
-  .divider {
-    margin-top: 100px;
-    margin-bottom: 50px;
+  .devider {
+    margin-top: 50px;
   }
 }

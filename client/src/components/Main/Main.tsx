@@ -5,14 +5,16 @@ import {
   FooterSection,
 } from "./components";
 import "./main.scss";
+import "../../styles/global.scss";
 
-const Main = () => {
+const Main: React.FC = () => {
   return (
     <div className="full-width-container">
-      {/* <MainSection />
+      <MainSection />
+
       <SkillsSection />
       <ProjectsSection />
-      <FooterSection /> */}
+      <FooterSection />
     </div>
   );
 };

@@ -1,17 +1,56 @@
 @import "../../utils/mixins";
+
 .contact-page-container {
   max-width: 700px;
   text-align: center;
   margin: 0 auto;
+
+  .form-box-element {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 50px;
+    > :not(style) {
+      margin: 8px;
+    }
+    .MuiInput-underline:before,
+    .MuiInput-underline:after {
+      border-bottom-color: white;
+    }
+    .MuiInputLabel-root {
+      color: white !important;
+    }
+    .MuiInput-underline:hover:before {
+      border-bottom-color: white !important;
+    }
+  }
+
+  .message-box-element {
+    > :not(style) {
+      margin-top: 100px;
+    }
+
+    .MuiInputLabel-root {
+      color: white !important;
+    }
+  }
+
   .title {
     text-align: center;
-  margin: 100px 0;
+    margin: 100px 0;
   }
-  .text-field {
-    width: 100%;
-  }
-  .text-field .MuiInputBase-input {
-    color: white;
+
+  .message-input {
+    .MuiInputBase-input {
+      color: white;
+    }
+    .MuiOutlinedInput-root {
+      & fieldset,
+      &:hover fieldset,
+      & .Mui-focused fieldset {
+        border-color: #fff;
+      }
+    }
   }
   .contact-button {
     @include button-style(200px, 20px, #4646f4, #fff);
