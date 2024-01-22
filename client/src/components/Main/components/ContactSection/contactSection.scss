@@ -5,7 +5,41 @@
     padding: 50px 100px;
     @include flex-center(space-between, center);
   }
+  .form-wrapp {
+    width: 400px;
+    @include flex-center($direction: column);
+    .name-input {
+      margin-bottom: 20px;
+    }
+    .message {
+      padding-top: 60px;
+    }
 
+    .MuiInput-underline:before,
+    .MuiInput-underline:after,
+    .MuiInput-underline:hover:before {
+      border-bottom-color: #fff;
+    }
+    .MuiInputLabel-root {
+      color: #fff !important;
+    }
+
+    .MuiInputBase-input {
+      color: white;
+    }
+    .message-input {
+      .MuiInputBase-input {
+        color: white;
+      }
+      .MuiOutlinedInput-root {
+        & fieldset,
+        &:hover fieldset,
+        & .Mui-focused fieldset {
+          border-color: #fff;
+        }
+      }
+    }
+  }
   .title {
     font-size: 60px;
     margin-bottom: 20px;
@@ -13,13 +47,14 @@
   .description {
     max-width: 400px;
   }
-  .left-side {
-  }
-  .form-wrapp {
-    width: 400px;
-    @include flex-center($direction: column);
-  }
-  .text-field{
+
+  .text-field {
     width: 100%;
+  }
+  .submit-btn {
+    @include button-style();
+    margin-top: 26px;
+    text-transform: uppercase;
+    font-weight: 600;
   }
 }

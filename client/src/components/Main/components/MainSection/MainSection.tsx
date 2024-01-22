@@ -19,9 +19,9 @@ const MainSection = () => {
             facilis et laborum est atque.
           </p>
         </div>
-        <div className="line">
+        {/* <div className="devider-wrapp"> */}
           <hr className="devider" />
-        </div>
+        {/* </div> */}
       </div>
     </section>
   );

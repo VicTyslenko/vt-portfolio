@@ -35,7 +35,7 @@
   .main-image {
     @include standart-image-size($width: 300px, $height: auto);
   }
-  .line {
+  .devider-wrapp {
     margin: 0 auto;
 
     max-width: 1320px;

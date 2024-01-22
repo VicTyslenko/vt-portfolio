@@ -1,6 +1,7 @@
 import { Formik, Form } from "formik";
-import Box from "@mui/material/Box";
-import TextField from "@mui/material/TextField";
+import Input from "../../../Input/Input";
+import Button from "../../../Button/Button";
+import FormBoxElement from "../../../FormBoxElement/FormBoxElement";
 import "./contactSection.scss";
 
 interface FormValues {
@@ -9,7 +10,9 @@ interface FormValues {
   message?: string;
 }
 const ContactSection = () => {
-  const formSubmit = (values: FormValues) => {};
+  const formSubmit = (values: FormValues) => {
+    console.log(values);
+  };
   return (
     <section className="contact-section">
       <div className="contact-wrapp">
@@ -31,46 +34,27 @@ const ContactSection = () => {
             formSubmit(values);
           }}
         >
-          <Form>
-            <Box
-              className="form-wrapp"
-              component="div"
-              sx={{
-                gap: "50px",
-                "& > :not(style)": { m: 1 },
-                "& .MuiInput-underline:before": {
-                  borderBottomColor: "white",
-                },
-                "& .MuiInput-underline:after": {
-                  borderBottomColor: "white",
-                },
-                "& .MuiInputLabel-root": {
-                  color: "white !important",
-                },
-                "& .MuiInput-underline:hover:before": {
-                  borderBottomColor: "white !important",
-                },
-              }}
-            >
-              <TextField
-                className="text-field"
-                id="standard-basic"
-                label="Standard"
+          <Form
+            style={{
+              textAlign: "right",
+            }}
+          >
+            <FormBoxElement className="form-wrapp">
+              <Input
+                className="text-field name-input"
+                label="Name"
                 variant="standard"
               />
-              <TextField
-                className="text-field"
-                id="standard-basic"
-                label="Standard"
+              <Input className="text-field" label="Email" variant="standard" />
+              <Input
+                className="text-field message"
+                label="Message"
                 variant="standard"
               />
-              <TextField
-                className="text-field"
-                id="standard-basic"
-                label="Standard"
-                variant="standard"
-              />
-            </Box>
+            </FormBoxElement>
+            <Button type="submit" className="submit-btn">
+              Send message
+            </Button>
           </Form>
         </Formik>
       </div>

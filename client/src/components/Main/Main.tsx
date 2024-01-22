@@ -4,14 +4,16 @@ import {
   ProjectsSection,
   FooterSection,
 } from "./components";
-import "./main.scss";
 import "../../styles/global.scss";
 
 const Main: React.FC = () => {
   return (
-    <div className="full-width-container">
+    <div
+      style={{
+        width: "100%",
+      }}
+    >
       <MainSection />
-
       <SkillsSection />
       <ProjectsSection />
       <FooterSection />

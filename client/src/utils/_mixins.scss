@@ -16,19 +16,23 @@
 }
 
 @mixin button-style(
-  $width,
-  $padding,
-  $background,
-  $color,
+  $paddingBottom: 9px,
+  $color: #fff,
   $border: none,
-  $cursor: pointer
+  $background: inherit,
+  $cursor: pointer,
+  $borderBottomColor: #09a75a,
+  $borderBottomWidth: 2px,
+  $borderBottomStyle: solid,
+  $fontSize: 12px
 ) {
-  width: $width;
-  padding: $padding;
   background-color: $background;
+  padding-bottom: $paddingBottom;
   color: $color;
   border: $border;
   cursor: $cursor;
+  border-bottom: $borderBottomWidth $borderBottomStyle $borderBottomColor;
+  font-size: $fontSize;
 }
 @mixin global-link-style($textDecoration: none, $color: #fff) {
   text-decoration: $textDecoration;

@@ -1,14 +1,9 @@
 import { Box } from "@mui/material";
 
-interface FormBoxElementProps {
-  className: string;
-  children: React.ReactNode;
-}
-const FormBoxElement: React.FC<FormBoxElementProps> = ({
-  className,
-  children,
-}) => {
-  return <Box className={className}>{children}</Box>;
+type FormBoxElementProps = React.ComponentProps<typeof Box>;
+
+const FormBoxElement: React.FC<FormBoxElementProps> = (props) => {
+  return <Box {...props} />;
 };
 
 export default FormBoxElement;
