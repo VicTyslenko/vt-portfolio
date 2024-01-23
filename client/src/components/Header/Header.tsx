@@ -5,8 +5,9 @@ import "../../styles/global.scss";
 import "./header.scss";
 
 const Header: React.FC = () => {
+  //making title invisible
   const { isVisible } = useContext(HeaderVisibilityContext);
-
+  //adding Header background while scrolling down
   const [isScrolled, setIsScrolled] = useState(false);
   const scrollToTop = () => {
     window.scrollTo({
@@ -23,11 +24,14 @@ const Header: React.FC = () => {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
+
   return (
     <div className="global-container">
       <div className={`header-wrapper ${isScrolled ? "scrolled" : ""}`}>
         <Link className="title-link" to="./home">
-          <h1 className={`title ${!isVisible ? "title-hidden" : ""}`}>Tyslenko.V</h1>
+          <h1 className={`title ${!isVisible ? "title-hidden" : ""}`}>
+            Tyslenko.V
+          </h1>
         </Link>
         <nav className="nav-bar">
           <Link className="nav-bar-link" onClick={scrollToTop} to="./home">

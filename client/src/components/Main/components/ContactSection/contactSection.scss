@@ -1,8 +1,9 @@
 @import "../../../../utils/mixins";
 
 .contact-section {
+  padding: 50px 100px;
   .contact-wrapp {
-    padding: 50px 100px;
+    border-bottom: 1px solid #fff;
     @include flex-center(space-between, center);
   }
   .form-wrapp {
@@ -53,7 +54,7 @@
   }
   .submit-btn {
     @include button-style();
-    margin-top: 26px;
+    margin: 26px 0 50px 0;
     text-transform: uppercase;
     font-weight: 600;
   }

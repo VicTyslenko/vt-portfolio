@@ -58,10 +58,6 @@ const ContactSection = () => {
           </Form>
         </Formik>
       </div>
-
-      <div className="divider">
-        <hr />
-      </div>
     </section>
   );
 };

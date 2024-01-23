@@ -17,7 +17,9 @@
     color: #fff;
   }
   .title.title-hidden {
-    opacity: 0;
+    &::before {
+      display: none;
+    }
   }
   .title::before {
     position: absolute;

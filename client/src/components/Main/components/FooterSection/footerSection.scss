@@ -4,5 +4,18 @@
 }
 .footer-wrapp {
   @include flex-center(space-between, center);
-  padding: 50px 100px;
+  padding: 10px 100px 30px;
+  .icons-wrapp {
+    @include flex-center(center, center);
+    gap: 23px;
+  }
+
+  .icons-wrapp .icons-link {
+    color: #fff;
+    @include flex-center();
+  }
+  .icons-wrapp svg {
+    width: 20px;
+    height: 20px;
+  }
 }

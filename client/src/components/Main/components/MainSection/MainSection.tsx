@@ -12,7 +12,9 @@ const MainSection = () => {
           <img className="main-image" src="/img/Subject.png" alt="portfolio" />
         </div>
         <div className="main-text">
-          <h1 className="title">I'm Victor Tyslenko</h1>
+          <h1 className="title">
+            I'm <span className="title-name">Victor Tyslenko</span>{" "}
+          </h1>
           <p className="subtitle">Frontend Web Developer</p>
           <p className="description">
             Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sed totam
@@ -20,7 +22,7 @@ const MainSection = () => {
           </p>
         </div>
         {/* <div className="devider-wrapp"> */}
-          <hr className="devider" />
+        <hr className="devider" />
         {/* </div> */}
       </div>
     </section>
