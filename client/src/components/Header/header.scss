@@ -9,13 +9,15 @@
   width: auto;
   padding: 20px 60px;
   @include flex-center(space-between, center);
-
   .title,
   .title-link {
     position: relative;
     font-weight: 400;
     text-decoration: none;
     color: #fff;
+  }
+  .title.title-hidden {
+    opacity: 0;
   }
   .title::before {
     position: absolute;
