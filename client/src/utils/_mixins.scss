@@ -24,7 +24,7 @@
   $borderBottomColor: #09a75a,
   $borderBottomWidth: 2px,
   $borderBottomStyle: solid,
-  $fontSize: 12px
+  $fontWeight: 600
 ) {
   background-color: $background;
   padding-bottom: $paddingBottom;
@@ -32,7 +32,7 @@
   border: $border;
   cursor: $cursor;
   border-bottom: $borderBottomWidth $borderBottomStyle $borderBottomColor;
-  font-size: $fontSize;
+  font-weight: $fontWeight;
 }
 @mixin global-link-style($textDecoration: none, $color: #fff) {
   text-decoration: $textDecoration;

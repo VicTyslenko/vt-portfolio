@@ -1,25 +1,32 @@
 @import "../../../../utils/mixins";
 .projects-section {
   padding: 100px;
+  
+  .title-wrapp {
+    @include flex-center(space-between, center);
+    margin-bottom: 70px;
+  }
   .projects-title {
     font-size: 50px;
-    margin-bottom: 70px;
   }
   .global-link {
     @include global-link-style();
   }
-}
-.projects-wrapp {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 40px;
-}
-.projects-image-wrapp{
-  height: 350px;
-}
-.projects-image {
-  width: 100%;
-  height: 100%;
-  border-radius: 20px;
-
+  .projects-wrapp {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+  }
+  .projects-image-wrapp {
+    height: 350px;
+  }
+  .projects-image {
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+  }
+  .contact-btn {
+    @include button-style();
+    font-size: 20px;
+  }
 }

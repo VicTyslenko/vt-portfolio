@@ -3,6 +3,12 @@
   background-color: #132d39;
 }
 .footer-wrapp {
+  .title {
+    cursor: pointer;
+  }
+  .title:hover {
+    color: #09a75a;
+  }
   @include flex-center(space-between, center);
   padding: 10px 100px 30px;
   .icons-wrapp {
@@ -17,5 +23,9 @@
   .icons-wrapp svg {
     width: 20px;
     height: 20px;
+  }
+  .icons-wrapp svg:hover {
+    color: #09a75a;
+    transition: all 0.3s ease;
   }
 }

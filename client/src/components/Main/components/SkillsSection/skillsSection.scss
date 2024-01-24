@@ -3,16 +3,13 @@
   padding: 50px 0;
   .skills-wrapp {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    row-gap: 20px;
-    text-align: center;
+    grid-template-columns: repeat(3, 1fr);
+    justify-items: center;
+    row-gap: 70px;
   }
 }
-.skills-item {
-  width: 100%;
-  @include flex-center(center, left, column);
-  gap: 15px;
-}
+
 .skill {
   font-size: 35px;
+  margin-bottom: 10px;
 }

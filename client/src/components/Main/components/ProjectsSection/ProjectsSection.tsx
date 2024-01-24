@@ -1,13 +1,22 @@
 import { Link } from "react-router-dom";
+import Button from "../../../Button/Button";
 import "../../../../styles/global.scss";
 import "./projectsSection.scss";
 const ProjectsSection = () => {
   return (
     <section className="projects-section">
       <div className="global-container">
-        <Link className="global-link" to="/projects">
-          <h1 className="projects-title">Projects</h1>
-        </Link>
+        <div className="title-wrapp">
+          <Link className="global-link" to="/projects">
+            <h1 className="projects-title">Projects</h1>
+          </Link>
+          <Link to="/contact">
+            <Button type="button" className="contact-btn">
+              Contact me
+            </Button>
+          </Link>
+        </div>
+
         <div className="projects-wrapp">
           <div className="projects-item">
             <a

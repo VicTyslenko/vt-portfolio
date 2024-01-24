@@ -15,32 +15,32 @@
     .message {
       padding-top: 60px;
     }
+    //styles for MUI Text Field
 
     .MuiInput-underline:before,
-    .MuiInput-underline:after,
     .MuiInput-underline:hover:before {
       border-bottom-color: #fff;
     }
+
     .MuiInputLabel-root {
       color: #fff !important;
+    }
+
+    .MuiTextField-root {
+      .MuiInput-underline:after {
+        border-bottom-color: #09a75a;
+      }
+      &:focus-within .MuiInputLabel-root {
+        color: #09a75a !important;
+      }
     }
 
     .MuiInputBase-input {
       color: white;
     }
-    .message-input {
-      .MuiInputBase-input {
-        color: white;
-      }
-      .MuiOutlinedInput-root {
-        & fieldset,
-        &:hover fieldset,
-        & .Mui-focused fieldset {
-          border-color: #fff;
-        }
-      }
-    }
   }
+  //  styles for MUI Text Field end
+
   .title {
     font-size: 60px;
     margin-bottom: 20px;
@@ -49,13 +49,9 @@
     max-width: 400px;
   }
 
-  .text-field {
-    width: 100%;
-  }
   .submit-btn {
     @include button-style();
     margin: 26px 0 50px 0;
     text-transform: uppercase;
-    font-weight: 600;
   }
 }

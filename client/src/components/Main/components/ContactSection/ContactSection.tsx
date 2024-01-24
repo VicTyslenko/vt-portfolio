@@ -10,6 +10,7 @@ interface FormValues {
   message?: string;
 }
 const ContactSection = () => {
+
   const formSubmit = (values: FormValues) => {
     console.log(values);
   };
@@ -44,12 +45,19 @@ const ContactSection = () => {
                 className="text-field name-input"
                 label="Name"
                 variant="standard"
+                fullWidth
               />
-              <Input className="text-field" label="Email" variant="standard" />
+              <Input
+                className="text-field"
+                label="Email"
+                variant="standard"
+                fullWidth
+              />
               <Input
                 className="text-field message"
                 label="Message"
                 variant="standard"
+                fullWidth
               />
             </FormBoxElement>
             <Button type="submit" className="submit-btn">

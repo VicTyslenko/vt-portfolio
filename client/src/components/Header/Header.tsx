@@ -1,20 +1,25 @@
 import { Link } from "react-router-dom";
 import { useState, useEffect, useContext } from "react";
 import { HeaderVisibilityContext } from "../../context/headerVisibilityContext";
+import { scrollToTop } from "../../helpers";
 import "../../styles/global.scss";
 import "./header.scss";
 
 const Header: React.FC = () => {
+  //scrolling up on click
+  const handleScrollToTopClick = (
+    event: React.MouseEvent<HTMLAnchorElement>
+  ) => {
+    event.preventDefault();
+    scrollToTop();
+  };
+
   //making title invisible
   const { isVisible } = useContext(HeaderVisibilityContext);
   //adding Header background while scrolling down
   const [isScrolled, setIsScrolled] = useState(false);
-  const scrollToTop = () => {
-    window.scrollTo({
-      top: 0,
-      behavior: "smooth",
-    });
-  };
+
+  //adding background to Header whenn scrolling
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 100);
@@ -34,7 +39,11 @@ const Header: React.FC = () => {
           </h1>
         </Link>
         <nav className="nav-bar">
-          <Link className="nav-bar-link" onClick={scrollToTop} to="./home">
+          <Link
+            className="nav-bar-link"
+            onClick={handleScrollToTopClick}
+            to="./home"
+          >
             Home
           </Link>
           <Link className="nav-bar-link" to="./about">
