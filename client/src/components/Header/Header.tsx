@@ -1,17 +1,20 @@
 import { Link } from "react-router-dom";
 import { useState, useEffect, useContext } from "react";
+import { useNavigate } from "react-router-dom";
 import { HeaderVisibilityContext } from "../../context/headerVisibilityContext";
 import { scrollToTop } from "../../helpers";
 import "../../styles/global.scss";
 import "./header.scss";
 
 const Header: React.FC = () => {
+  const navigation = useNavigate();
   //scrolling up on click
   const handleScrollToTopClick = (
     event: React.MouseEvent<HTMLAnchorElement>
   ) => {
     event.preventDefault();
     scrollToTop();
+    navigation("./home");
   };
 
   //making title invisible
@@ -32,7 +35,11 @@ const Header: React.FC = () => {
 
   return (
     <div className="global-container">
-      <div className={`header-wrapper ${isScrolled ? "scrolled" : ""}`}>
+      <div
+        className={`header-wrapper ${
+          isScrolled ? "scrolled" : "scrolled-back"
+        }`}
+      >
         <Link className="title-link" to="./home">
           <h1 className={`title ${!isVisible ? "title-hidden" : ""}`}>
             Tyslenko.V

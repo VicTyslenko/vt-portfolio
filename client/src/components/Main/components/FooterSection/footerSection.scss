@@ -7,7 +7,7 @@
     cursor: pointer;
   }
   .title:hover {
-    color: #09a75a;
+    color: #1689a9;
   }
   @include flex-center(space-between, center);
   padding: 10px 100px 30px;
@@ -25,7 +25,7 @@
     height: 20px;
   }
   .icons-wrapp svg:hover {
-    color: #09a75a;
+    color: #047695;
     transition: all 0.3s ease;
   }
 }

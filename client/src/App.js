@@ -1,17 +1,21 @@
 import { useState, useEffect } from "react";
 import { Main, Header } from "./components";
 import { AboutPage, ContactPage, ProjectsPage, ServicesPage } from "./pages";
+import { scrollToTop } from "./helpers";
 import { HeaderVisibilityContext } from "./context/headerVisibilityContext";
 import { Routes, Route, useLocation } from "react-router-dom";
 
 const App = () => {
-  //removing title element from other pages except '/' or '/home'
+  //removing title element from other pages except '/'
   const [headerVisible, setHeaderVisible] = useState(true);
   const location = useLocation();
   useEffect(() => {
-    setHeaderVisible(
-      location.pathname === "/" || location.pathname === "/home"
-    );
+    if (location.pathname === "/" || location.pathname === "/home") {
+      setHeaderVisible(true);
+    } else {
+      setHeaderVisible(false);
+    }
+    scrollToTop(0, "instant");
   }, [location]);
 
   return (

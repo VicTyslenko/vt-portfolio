@@ -21,7 +21,7 @@
   $border: none,
   $background: inherit,
   $cursor: pointer,
-  $borderBottomColor: #09a75a,
+  $borderBottomColor: #1f9cbe,
   $borderBottomWidth: 2px,
   $borderBottomStyle: solid,
   $fontWeight: 600
@@ -37,4 +37,47 @@
 @mixin global-link-style($textDecoration: none, $color: #fff) {
   text-decoration: $textDecoration;
   color: $color;
+}
+
+@mixin slideInFromTop($duration: 1s, $translate: -100%) {
+  @keyframes slideInFromTop {
+    0% {
+      transform: translateY($translate);
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+
+  animation: $duration ease-out 0s 1 slideInFromTop;
+}
+@mixin slideInFromBottom($duration: 1s, $translate: 70%) {
+  @keyframes slideInFromBottom {
+    0% {
+      transform: translateY(#{$translate});
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+
+  animation: $duration ease-out 0s 1 slideInFromBottom;
+}
+@mixin slowSlideFromBottom($duration: 1s, $translate: 10%) {
+  @keyframes slowSlideFromBottom {
+    0% {
+      transform: translateY(#{$translate});
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+
+  animation: $duration ease-out 0s 1 slowSlideFromBottom;
 }

@@ -1,5 +1,5 @@
 @import "../../utils/mixins";
-
+@import "../../utils/variables";
 .header-wrapper {
   position: fixed;
   left: 0;
@@ -9,17 +9,38 @@
   width: auto;
   padding: 20px 60px;
   @include flex-center(space-between, center);
+
+  //adding background when scrolling
+  &.scrolled {
+    background-color: black;
+    opacity: 0.8;
+    transition: all 0.6s ease;
+    .title::before {
+      opacity: 0;
+    }
+    .title {
+      opacity: 0;
+    }
+    z-index: 10;
+  }
+  .title.title-hidden {
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  &.scrolled-back {
+    transition: all 0.6s ease;
+    .title::before {
+      transition: all 1.7s ease;
+    }
+  }
+
   .title,
   .title-link {
     position: relative;
     font-weight: 400;
     text-decoration: none;
     color: #fff;
-  }
-  .title.title-hidden {
-    &::before {
-      display: none;
-    }
   }
   .title::before {
     position: absolute;
@@ -32,45 +53,33 @@
     left: -60px;
     top: -17px;
   }
-  &.scrolled {
-    background-color: black;
-    opacity: 0.8;
-    transition: all 0.6s ease;
-    .title::before {
-      display: none;
-    }
-    .title {
-      opacity: 0;
-    }
-    z-index: 10;
-  }
+
   .nav-bar {
     @include flex-center(center, center);
     gap: 30px;
+
+    .nav-bar-link,
+    .home-link {
+      color: $prime-color;
+      text-decoration: none;
+      font-size: 15px;
+      border-bottom: 1px solid transparent;
+      padding-bottom: 5px;
+      // font-size: 28px;
+    }
   }
-  .nav-bar .nav-bar-link,
-  .home-link {
-    color: white;
-    text-decoration: none;
-    font-size: 15px;
-    // font-size: 28px;
-  }
+
   .nav-bar-link:hover {
-    color: #09a75a;
-    transition: all 0.5s ease;
+    color: $bright-blue;
+    border-bottom: 1px solid $bright-blue;
+    transition: all 0.3s ease;
   }
   .theme-btn {
     @include flex-center(center, center);
     border: none;
     cursor: pointer;
   }
-  .theme-btn.night {
-    background-color: #000e1b;
-    color: white;
-  }
-  .theme-btn.day {
-    background-color: white;
-  }
+
   .theme-icons {
     width: 22px;
     height: 22px;

@@ -1,10 +1,22 @@
 @import "../../utils/mixins";
+@import "../../utils/variables";
 
 .contact-page-container {
   max-width: 700px;
   text-align: center;
   margin: 0 auto;
+  padding-top: 100px;
 
+  .title {
+    text-align: center;
+    @include slideInFromTop();
+  }
+  .title span {
+    color: $bright-blue;
+  }
+  .form-wrapp {
+    @include slowSlideFromBottom();
+  }
   .form-box-element {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -15,45 +27,40 @@
     }
     .MuiInput-underline:before,
     .MuiInput-underline:after {
-      border-bottom-color: white;
+      border-bottom-color: $prime-color;
     }
     .MuiInputLabel-root {
       color: white !important;
     }
     .MuiInput-underline:hover:before {
-      border-bottom-color: white !important;
+      border-bottom-color: $prime-color !important;
     }
   }
 
   .message-box-element {
     > :not(style) {
-      margin-top: 100px;
+      margin-top: 50px;
     }
 
     .MuiInputLabel-root {
-      color: white !important;
+      color: $prime-color !important;
     }
   }
 
-  .title {
-    text-align: center;
-    margin: 100px 0;
+  .MuiInputBase-input {
+    color: $prime-color;
   }
-
   .message-input {
-    .MuiInputBase-input {
-      color: white;
-    }
     .MuiOutlinedInput-root {
       & fieldset,
       &:hover fieldset,
       & .Mui-focused fieldset {
-        border-color: #fff;
+        border-color: $prime-color;
       }
     }
   }
   .contact-button {
     @include button-style();
-    margin-top: 20px;
+    margin-top: 50px;
   }
 }

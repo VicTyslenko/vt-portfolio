@@ -19,7 +19,9 @@ const ContactPage = () => {
 
   return (
     <div className="contact-page-container">
-      <h1 className="title">Contact me</h1>
+      <h1 className="title">
+        Contact <span>Me</span>
+      </h1>
       <Formik
         initialValues={{
           firstName: "",
@@ -34,7 +36,7 @@ const ContactPage = () => {
         // validationSchema={validationSchema}
       >
         {(props) => (
-          <Form onSubmit={props.handleSubmit}>
+          <Form className="form-wrapp" onSubmit={props.handleSubmit}>
             <FormBoxElement className="form-box-element">
               <Input
                 name="firstName"
