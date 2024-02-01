@@ -8,7 +8,7 @@ const ProjectsSection = () => {
       <div className="global-container">
         <div className="title-wrapp">
           <Link className="global-link" to="/projects">
-            <h1 className="projects-title">Projects</h1>
+            <h1 className="projects-title">Latest projects</h1>
           </Link>
           <Link to="/contact">
             <Button type="button" className="contact-btn">

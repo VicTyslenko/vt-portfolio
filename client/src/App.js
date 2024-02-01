@@ -14,8 +14,9 @@ const App = () => {
       setHeaderVisible(true);
     } else {
       setHeaderVisible(false);
+      scrollToTop(0, "instant");
     }
-    scrollToTop(0, "instant");
+    // scrollToTop(0, "smooth");
   }, [location]);
 
   return (

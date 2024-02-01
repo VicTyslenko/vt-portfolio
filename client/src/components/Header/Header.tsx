@@ -33,13 +33,16 @@ const Header: React.FC = () => {
     };
   }, []);
 
+  const getHeaderClass = () => {
+    let headerClass = isScrolled ? "scrolled" : "scrolled-back";
+    if (!isVisible) {
+      headerClass += " background-hidden";
+    }
+    return headerClass;
+  };
   return (
     <div className="global-container">
-      <div
-        className={`header-wrapper ${
-          isScrolled ? "scrolled" : "scrolled-back"
-        }`}
-      >
+      <div className={`header-wrapper ${getHeaderClass()}`}>
         <Link className="title-link" to="./home">
           <h1 className={`title ${!isVisible ? "title-hidden" : ""}`}>
             Tyslenko.V

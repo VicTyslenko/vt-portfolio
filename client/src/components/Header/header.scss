@@ -9,7 +9,9 @@
   width: auto;
   padding: 20px 60px;
   @include flex-center(space-between, center);
-
+  &.background-hidden {
+    
+  }
   //adding background when scrolling
   &.scrolled {
     background-color: black;
