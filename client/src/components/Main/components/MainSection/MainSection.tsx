@@ -45,9 +45,13 @@ const MainSection = () => {
             facilis et laborum est atque.
           </p>
           <div className="wrapp">
-            <Button type="button" className="cv-btn">
+            <a
+              href="/public/VictorTyslenko_CV/Frontend-Developer_CV.pdf"
+              className="cv-link"
+              download="Frontend-Developer_CV.pdf"
+            >
               Download CV
-            </Button>
+            </a>
           </div>
         </motion.div>
         {/* <div className="devider-wrapp"> */}

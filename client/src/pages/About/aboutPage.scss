@@ -18,6 +18,9 @@
   .description {
     max-width: 500px;
   }
+  .btn-wrapp {
+    @include flex-center(flex-start);
+  }
   .about-btn {
     margin-top: 40px;
     @include second-button-style();

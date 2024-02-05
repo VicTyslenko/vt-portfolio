@@ -50,7 +50,7 @@
     width: 100%;
     @include flex-center(flex-end);
   }
-  .cv-btn {
+  .cv-link {
     @include main-button-style();
     @include flex-center();
   }

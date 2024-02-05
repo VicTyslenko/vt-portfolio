@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-// import { HeaderVisibilityContext } from "../../context/headerVisibilityContext";
+
 import { RootState } from "../../store";
 import { useSelector } from "react-redux";
 import { scrollToTop } from "../../helpers";
@@ -10,12 +10,13 @@ import "./header.scss";
 
 const Header: React.FC = () => {
   const navigation = useNavigate();
+
   const headerVisible = useSelector(
     (state: RootState) => state.page.isHeaderVisible
   );
   const page = useSelector((state: RootState) => state.page.isHomeLocation);
 
-  //scrolling up on click
+  //scroll to top on click for Home page only
   const handleScrollToTopClick = (
     event: React.MouseEvent<HTMLAnchorElement>
   ) => {
@@ -27,11 +28,9 @@ const Header: React.FC = () => {
     }
   };
 
-  //making title invisible
-  //adding Header background while scrolling down
-  const [isScrolled, setIsScrolled] = useState(false);
-
   //adding background to Header when scrolling
+
+  const [isScrolled, setIsScrolled] = useState(false);
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 100);
