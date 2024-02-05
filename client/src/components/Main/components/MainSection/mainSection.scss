@@ -46,4 +46,12 @@
   .devider {
     margin-top: 50px;
   }
+  .wrapp {
+    width: 100%;
+    @include flex-center(flex-end);
+  }
+  .cv-btn {
+    @include main-button-style();
+    @include flex-center();
+  }
 }

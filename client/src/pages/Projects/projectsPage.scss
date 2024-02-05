@@ -14,7 +14,6 @@
 
     .project-item {
       position: relative;
-      // @include slideInFromBottom();
 
       .description-block {
         @include flex-center(flex-end, center, column);
@@ -58,8 +57,7 @@
     }
   }
   .load-more-btn {
-    @include main-button-style();
-    // @include slideInFromBottom();
+    @include second-button-style();
     margin-top: 20px;
   }
 }

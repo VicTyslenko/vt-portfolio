@@ -60,7 +60,7 @@
     }
   }
   .contact-button {
-    @include main-button-style();
+    @include second-button-style($width: fit-content);
     margin-top: 50px;
   }
 }

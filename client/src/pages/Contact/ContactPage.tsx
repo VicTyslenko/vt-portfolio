@@ -24,8 +24,6 @@ const ContactPage = () => {
         className="title"
         {...globalAnimation({
           yInitial: -30,
-          duration: 1,
-          ease: "easeOut",
         })}
       >
         Contact <span>Me</span>
@@ -47,8 +45,6 @@ const ContactPage = () => {
           <motion.div
             {...globalAnimation({
               yInitial: 30,
-              duration: 1,
-              ease: "easeOut",
             })}
           >
             <Form className="form-wrapp" onSubmit={props.handleSubmit}>

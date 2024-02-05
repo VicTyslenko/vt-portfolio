@@ -1,28 +1,37 @@
 import { Link } from "react-router-dom";
-import { useState, useEffect, useContext } from "react";
+import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import { HeaderVisibilityContext } from "../../context/headerVisibilityContext";
+// import { HeaderVisibilityContext } from "../../context/headerVisibilityContext";
+import { RootState } from "../../store";
+import { useSelector } from "react-redux";
 import { scrollToTop } from "../../helpers";
 import "../../styles/global.scss";
 import "./header.scss";
 
 const Header: React.FC = () => {
   const navigation = useNavigate();
+  const headerVisible = useSelector(
+    (state: RootState) => state.page.isHeaderVisible
+  );
+  const page = useSelector((state: RootState) => state.page.isHomeLocation);
+
   //scrolling up on click
   const handleScrollToTopClick = (
     event: React.MouseEvent<HTMLAnchorElement>
   ) => {
     event.preventDefault();
-    scrollToTop();
-    navigation("./home");
+    if (!page) {
+      navigation("/");
+    } else {
+      scrollToTop(0, "smooth");
+    }
   };
 
   //making title invisible
-  const { isVisible } = useContext(HeaderVisibilityContext);
   //adding Header background while scrolling down
   const [isScrolled, setIsScrolled] = useState(false);
 
-  //adding background to Header whenn scrolling
+  //adding background to Header when scrolling
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 100);
@@ -35,7 +44,7 @@ const Header: React.FC = () => {
 
   const getHeaderClass = () => {
     let headerClass = isScrolled ? "scrolled" : "scrolled-back";
-    if (!isVisible) {
+    if (!headerVisible) {
       headerClass += " background-hidden";
     }
     return headerClass;
@@ -43,8 +52,8 @@ const Header: React.FC = () => {
   return (
     <div className="global-container">
       <div className={`header-wrapper ${getHeaderClass()}`}>
-        <Link className="title-link" to="./home">
-          <h1 className={`title ${!isVisible ? "title-hidden" : ""}`}>
+        <Link className="title-link" to="/">
+          <h1 className={`title ${!headerVisible ? "title-hidden" : ""}`}>
             Tyslenko.V
           </h1>
         </Link>
@@ -52,21 +61,21 @@ const Header: React.FC = () => {
           <Link
             className="nav-bar-link"
             onClick={handleScrollToTopClick}
-            to="./home"
+            to="/"
           >
             Home
           </Link>
-          <Link className="nav-bar-link" to="./about">
+          <Link className="nav-bar-link" to="/about">
             About
           </Link>
-          <Link className="nav-bar-link" to="./projects">
+          <Link className="nav-bar-link" to="/projects">
             Projects
           </Link>
-          <Link className="nav-bar-link" to="./services">
+          <Link className="nav-bar-link" to="/services">
             Services
           </Link>
 
-          <Link className="nav-bar-link" to="./contact">
+          <Link className="nav-bar-link" to="/contact">
             Contact
           </Link>
         </nav>
