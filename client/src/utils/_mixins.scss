@@ -1,3 +1,5 @@
+@import "./variables";
+
 @mixin global-container($maxWidth: 1400px, $margin: 0 auto, $width: 100%) {
   max-width: $maxWidth;
   width: $width;
@@ -15,7 +17,7 @@
   height: $height;
 }
 
-@mixin button-style(
+@mixin main-button-style(
   $paddingBottom: 9px,
   $color: #fff,
   $border: none,
@@ -34,50 +36,27 @@
   border-bottom: $borderBottomWidth $borderBottomStyle $borderBottomColor;
   font-weight: $fontWeight;
 }
+
+@mixin second-button-style(
+  $padding: 15px,
+  $color: $prime-color,
+  $border: none,
+  $background: $secondary-color,
+  $cursor: pointer,
+  $radius: 5px,
+  $fontWeight: 600,
+  $width: 115px
+) {
+  width: $width;
+  background-color: $background;
+  padding: $padding;
+  color: $color;
+  cursor: $cursor;
+  border: $border;
+  font-weight: $fontWeight;
+  border-radius: $radius;
+}
 @mixin global-link-style($textDecoration: none, $color: #fff) {
   text-decoration: $textDecoration;
   color: $color;
-}
-
-@mixin slideInFromTop($duration: 1s, $translate: -100%) {
-  @keyframes slideInFromTop {
-    0% {
-      transform: translateY($translate);
-      opacity: 0;
-    }
-    100% {
-      transform: translateY(0);
-      opacity: 1;
-    }
-  }
-
-  animation: $duration ease-out 0s 1 slideInFromTop;
-}
-@mixin slideInFromBottom($duration: 1s, $translate: 70%) {
-  @keyframes slideInFromBottom {
-    0% {
-      transform: translateY(#{$translate});
-      opacity: 0;
-    }
-    100% {
-      transform: translateY(0);
-      opacity: 1;
-    }
-  }
-
-  animation: $duration ease-out 0s 1 slideInFromBottom;
-}
-@mixin slowSlideFromBottom($duration: 1s, $translate: 10%) {
-  @keyframes slowSlideFromBottom {
-    0% {
-      transform: translateY(#{$translate});
-      opacity: 0;
-    }
-    100% {
-      transform: translateY(0);
-      opacity: 1;
-    }
-  }
-
-  animation: $duration ease-out 0s 1 slowSlideFromBottom;
 }

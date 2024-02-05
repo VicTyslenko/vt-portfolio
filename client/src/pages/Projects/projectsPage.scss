@@ -5,7 +5,6 @@
   padding: 150px 110px 50px;
   .title {
     margin-bottom: 40px;
-    @include slideInFromTop();
   }
 
   .projects-page-wrapp {
@@ -15,7 +14,7 @@
 
     .project-item {
       position: relative;
-      @include slideInFromBottom();
+      // @include slideInFromBottom();
 
       .description-block {
         @include flex-center(flex-end, center, column);
@@ -59,8 +58,8 @@
     }
   }
   .load-more-btn {
-    @include button-style();
-    @include slideInFromBottom();
+    @include main-button-style();
+    // @include slideInFromBottom();
     margin-top: 20px;
   }
 }

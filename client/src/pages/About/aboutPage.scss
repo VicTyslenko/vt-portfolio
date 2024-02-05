@@ -1,14 +1,25 @@
 @import "../../utils/mixins";
+@import "../../utils/variables";
 .about-page-container {
-  padding: 100px 0;
-  @include flex-center(space-evenly, center);
+  padding: 130px 0;
+  @include flex-center(center, center);
+  gap: 50px;
+  .title span {
+    color: $bright-blue;
+  }
+  .subtitle {
+    margin-bottom: 20px;
+  }
+
   .image-wrapp img {
-    @include standart-image-size(400px, 100%, auto);
+    @include standart-image-size(330px, 100%, auto);
+    border-radius: 20px;
   }
   .description {
     max-width: 500px;
   }
   .about-btn {
-    @include button-style(initial, 10px, grey, white);
+    margin-top: 40px;
+    @include second-button-style();
   }
 }

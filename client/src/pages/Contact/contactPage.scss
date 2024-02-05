@@ -9,13 +9,13 @@
 
   .title {
     text-align: center;
-    @include slideInFromTop();
+    // @include slideInFromTop();
   }
   .title span {
     color: $bright-blue;
   }
   .form-wrapp {
-    @include slowSlideFromBottom();
+    // @include slowSlideFromBottom();
   }
   .form-box-element {
     display: grid;
@@ -60,7 +60,7 @@
     }
   }
   .contact-button {
-    @include button-style();
+    @include main-button-style();
     margin-top: 50px;
   }
 }

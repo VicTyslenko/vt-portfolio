@@ -50,7 +50,7 @@
   }
 
   .submit-btn {
-    @include button-style();
+    @include main-button-style();
     margin: 26px 0 50px 0;
     text-transform: uppercase;
   }

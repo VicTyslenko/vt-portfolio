@@ -3,6 +3,8 @@ import { Main, Header } from "./components";
 import { AboutPage, ContactPage, ProjectsPage, ServicesPage } from "./pages";
 import { scrollToTop } from "./helpers";
 import { HeaderVisibilityContext } from "./context/headerVisibilityContext";
+import { pageTransition } from "./animations/animations";
+import { motion } from "framer-motion";
 import { Routes, Route, useLocation } from "react-router-dom";
 
 const App = () => {
