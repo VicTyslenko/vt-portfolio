@@ -4,7 +4,7 @@
   padding: 50px 100px;
   .contact-wrapp {
     border-bottom: 1px solid #fff;
-    @include flex-center(space-between, center);
+    @include flex-center(space-between, normal);
   }
   .form-wrapp {
     width: 400px;

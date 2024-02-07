@@ -38,20 +38,21 @@
   .main-image {
     @include standart-image-size($width: 300px, $height: auto);
   }
-  .devider-wrapp {
-    margin: 0 auto;
+  // .divider-wrapp {
+  //   margin: 0 auto;
 
-    max-width: 1320px;
-  }
-  .devider {
+  //   max-width: 1320px;
+  // }
+  .divider {
     margin-top: 50px;
   }
-  .wrapp {
+  .link-wrapp {
     width: 100%;
     @include flex-center(flex-end);
   }
   .cv-link {
     @include main-button-style();
     @include flex-center();
+    text-decoration: none;
   }
 }

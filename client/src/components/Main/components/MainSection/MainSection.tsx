@@ -44,9 +44,9 @@ const MainSection = () => {
             Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sed totam
             facilis et laborum est atque.
           </p>
-          <div className="wrapp">
+          <div className="link-wrapp">
             <a
-              href="/public/VictorTyslenko_CV/Frontend-Developer_CV.pdf"
+              href="/VictorTyslenko_CV/Frontend-Developer_CV.pdf"
               className="cv-link"
               download="Frontend-Developer_CV.pdf"
             >
@@ -55,7 +55,7 @@ const MainSection = () => {
           </div>
         </motion.div>
         {/* <div className="devider-wrapp"> */}
-        <hr className="devider" />
+        <hr className="divider" />
         {/* </div> */}
       </div>
     </section>

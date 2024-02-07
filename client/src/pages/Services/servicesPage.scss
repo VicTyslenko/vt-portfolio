@@ -1,0 +1,28 @@
+@import "../../utils/mixins";
+@import "../../utils/variables";
+
+.services-page-container {
+  padding: 130px 100px;
+  text-align: center;
+  .title {
+    margin-bottom: 40px;
+  }
+  .title span {
+    color: $bright-blue;
+  }
+
+  .services-item {
+    padding: 20px;
+    border-radius: 10px;
+    border-bottom: 3px solid $bright-blue;
+    border-top: 3px solid $bright-blue;
+  }
+  .services-btn {
+    @include second-button-style();
+    margin-top: 40px;
+  }
+  .icons {
+    width: 60px;
+    height: 60px;
+  }
+}
