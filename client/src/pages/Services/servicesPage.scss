@@ -2,8 +2,14 @@
 @import "../../utils/variables";
 
 .services-page-container {
-  padding: 130px 100px;
+  padding: 160px 100px;
   text-align: center;
+
+  /// add style to specific class from slick-carousel
+  .slick-slide {
+    padding: 15px 0;
+  }
+  ///
   .title {
     margin-bottom: 40px;
   }
@@ -13,9 +19,22 @@
 
   .services-item {
     padding: 20px;
+    min-height: 300px;
+    max-width: 340px;
+    // width: 100%;
     border-radius: 10px;
     border-bottom: 3px solid $bright-blue;
     border-top: 3px solid $bright-blue;
+    // box-shadow: 0 0.1rem 0.5rem $bright-blue;
+    cursor: pointer;
+  }
+
+  .services-item:hover {
+    transform: scale(1.05);
+
+    .service-name {
+      color: $bright-blue;
+    }
   }
   .services-btn {
     @include second-button-style();
