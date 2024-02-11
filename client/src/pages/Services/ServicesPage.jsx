@@ -43,7 +43,6 @@ const ServicesPage = () => {
           <div className="services-item">
             <div className="flex-content">
               <div className="icon-wrapp">
-                {/* <DiResponsive className="icons" /> */}
                 <svg
                   height="40"
                   viewBox="0 0 30 30"

@@ -1,8 +1,9 @@
 import { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { Main, Header } from "./components";
+import NewServices from "./pages/Services/ServicesPage";
 
-import { AboutPage, ContactPage, ProjectsPage, ServicesPage } from "./pages";
+import { AboutPage, ContactPage, ProjectsPage } from "./pages";
 import {
   setHomeLocation,
   setHeaderVisible,
@@ -35,8 +36,8 @@ const App = () => {
         <Route path="/home" element={<Main />} />
         <Route path="/about" element={<AboutPage />} />
         <Route path="/projects" element={<ProjectsPage />} />
-        <Route path="/services" element={<ServicesPage />} />
         <Route path="/contact" element={<ContactPage />} />
+        <Route path="/services" element={<NewServices />} />
       </Routes>
     </div>
   );
