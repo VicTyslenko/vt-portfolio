@@ -5,40 +5,46 @@
   padding: 160px 100px;
   text-align: center;
 
-  /// add style to specific class from slick-carousel
+  // add style to specific class from slick-carousel
   .slick-slide {
     padding: 15px 0;
   }
-  ///
+  //
   .title {
-    margin-bottom: 40px;
+    // margin-bottom: 40px;
   }
   .title span {
     color: $bright-blue;
   }
 
   .services-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     padding: 20px;
-    min-height: 300px;
+    height: 300px;
     max-width: 340px;
-    // width: 100%;
-    border-radius: 10px;
+    border-radius: 20px;
     border-bottom: 3px solid $bright-blue;
     border-top: 3px solid $bright-blue;
-    // box-shadow: 0 0.1rem 0.5rem $bright-blue;
     cursor: pointer;
+    transition: all 0.5s ease;
   }
-
+  .flex-content {
+    height: 100%;
+    @include flex-center(space-between, center, column);
+  }
   .services-item:hover {
-    transform: scale(1.05);
+    transform: scale(1.03);
 
     .service-name {
       color: $bright-blue;
+      transition: all 0.5s ease;
     }
   }
   .services-btn {
     @include second-button-style();
-    margin-top: 40px;
+    justify-self: end;
   }
   .icons {
     width: 60px;
