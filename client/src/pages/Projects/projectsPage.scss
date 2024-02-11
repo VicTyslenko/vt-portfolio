@@ -1,10 +1,13 @@
 @import "../../utils/mixins";
-
+@import '../../utils/variables';
 .projects-page-container {
   text-align: center;
   padding: 150px 110px 50px;
   .title {
     margin-bottom: 40px;
+  }
+  .title span{
+    color: $bright-blue;
   }
 
   .projects-page-wrapp {

@@ -13,7 +13,7 @@ const ProjectsPage = () => {
         className="title"
         {...globalAnimation({ yInitial: -70, duration: 1, ease: "easeOut" })}
       >
-        My projects
+        My <span>projects</span>
       </motion.h1>
 
       <motion.div
