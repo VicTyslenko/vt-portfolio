@@ -2,7 +2,7 @@
 @import "../../utils/variables";
 
 .services-page-container {
-  padding: 160px 100px;
+  padding: 140px 100px;
   text-align: center;
 
   // add style to specific class from slick-carousel
@@ -11,7 +11,7 @@
   }
   //
   .title {
-    // margin-bottom: 40px;
+    margin-bottom: 40px;
   }
   .title span {
     color: $bright-blue;
@@ -27,7 +27,6 @@
     border-radius: 20px;
     border-bottom: 3px solid $bright-blue;
     border-top: 3px solid $bright-blue;
-    cursor: pointer;
     transition: all 0.5s ease;
   }
   .flex-content {
@@ -35,17 +34,25 @@
     @include flex-center(space-between, center, column);
   }
   .services-item:hover {
-    transform: scale(1.03);
+    transform: scale(1.02);
 
     .service-name {
       color: $bright-blue;
-      transition: all 0.5s ease;
+      transition: all 0.3s ease;
     }
   }
   .services-btn {
     @include second-button-style();
     justify-self: end;
   }
+  // .services-btn:hover {
+  //   // transition: all 0.3s ease;
+  //   @include second-button-style(
+  //     $color: $bright-blue,
+  //     $background: rgba(17, 31, 38, 0.4),
+  //     $border: 0.5px solid $bright-blue
+  //   );
+  // }
   .icons {
     width: 60px;
     height: 60px;

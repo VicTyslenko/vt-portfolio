@@ -40,7 +40,7 @@
 @mixin second-button-style(
   $padding: 15px,
   $color: $prime-color,
-  $border: none,
+  $border: 0.5px solid transparent,
   $background: $secondary-color,
   $cursor: pointer,
   $radius: 5px,
@@ -56,6 +56,7 @@
   font-weight: $fontWeight;
   border-radius: $radius;
 }
+
 @mixin global-link-style($textDecoration: none, $color: #fff) {
   text-decoration: $textDecoration;
   color: $color;

@@ -57,8 +57,8 @@ const ServicesPage = () => {
               </div>
               <h3 className="service-name">Responsive Web Design</h3>
               <p className="description">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. A,
-                commodi. Accusantium dicta commodi voluptate quibusdam.
+                Crafting seamless, visually appealing websites optimized for
+                performance across all devices and screen sizes.
               </p>
               <Button type="button" className="services-btn">
                 Learn more
@@ -67,71 +67,88 @@ const ServicesPage = () => {
           </div>
 
           <div className="services-item">
-            <div className="icon-wrapp">
-              <GrTechnology style={iconsStyle} />
+            <div className="flex-content">
+              <div className="icon-wrapp">
+                <GrTechnology style={iconsStyle} />
+              </div>
+              <h3 className="service-name">
+                Frontend Development Technologies
+              </h3>
+              <p className="description">
+                Utilizing the latest technologies like HTML5, CSS3, JavaScript,
+                and frameworks (React, Angular, Vue) to build dynamic,
+                user-centric web experiences.
+              </p>
+              <Button type="button" className="services-btn">
+                Learn more
+              </Button>
             </div>
-            <h3 className="service-name">Frontend Development Technologies</h3>
-            <p className="description">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. A,
-              commodi. Accusantium dicta commodi voluptate quibusdam.
-            </p>
-            <Button type="button" className="services-btn">
-              Learn more
-            </Button>
           </div>
           <div className="services-item">
-            <div className="icon-wrapp">
-              <GrOptimize style={iconsStyle} />
+            <div className="flex-content">
+              <div className="icon-wrapp">
+                <GrOptimize style={iconsStyle} />
+              </div>
+              <h3 className="service-name">User Experience Optimization</h3>
+              <p className="description">
+                Enhancing user satisfaction by improving usability,
+                accessibility, and interaction of web applications for a
+                seamless digital experience.
+              </p>
+              <Button type="button" className="services-btn">
+                Learn more
+              </Button>
             </div>
-            <h3 className="service-name">User Experience Optimization</h3>
-            <p className="description">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. A,
-              commodi. Accusantium dicta commodi voluptate quibusdam.
-            </p>
-            <Button type="button" className="services-btn">
-              Learn more
-            </Button>
           </div>
           <div className="services-item">
-            <div className="icon-wrapp">
-              <MdOutlineDesignServices style={iconsStyle} />
+            <div className="flex-content">
+              <div className="icon-wrapp">
+                <MdOutlineDesignServices style={iconsStyle} />
+              </div>
+              <h3 className="service-name">User Interface Design</h3>
+              <p className="description">
+                Designing intuitive, visually appealing user interfaces that
+                ensure a seamless and engaging user experience across all
+                platforms.
+              </p>
+              <Button type="button" className="services-btn">
+                Learn more
+              </Button>
             </div>
-            <h3 className="service-name">User Interface Design</h3>
-            <p className="description">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. A,
-              commodi. Accusantium dicta commodi voluptate quibusdam.
-            </p>
-            <Button type="button" className="services-btn">
-              Learn more
-            </Button>
           </div>
           <div className="services-item">
-            <div className="icon-wrapp">
-              <SiAmazoncloudwatch style={iconsStyle} />
+            <div className="flex-content">
+              <div className="icon-wrapp">
+                <SiAmazoncloudwatch style={iconsStyle} />
+              </div>
+              <h3 className="service-name">
+                Cloud Infrastructure Setup and Management
+              </h3>
+              <p className="description">
+                Deploying and managing scalable, secure cloud infrastructures
+                using AWS to optimize performance and reliability for business
+                applications.
+              </p>
+              <Button type="button" className="services-btn">
+                Learn more
+              </Button>
             </div>
-            <h3 className="service-name">
-              Cloud Infrastructure Setup and Management
-            </h3>
-            <p className="description">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. A,
-              commodi. Accusantium dicta commodi voluptate quibusdam.
-            </p>
-            <Button type="button" className="services-btn">
-              Learn more
-            </Button>
           </div>
           <div className="services-item">
-            <div className="icon-wrapp">
-              <TbApi style={iconsStyle} />
+            <div className="flex-content">
+              <div className="icon-wrapp">
+                <TbApi style={iconsStyle} />
+              </div>
+              <h3 className="service-name">RESTful API Development</h3>
+              <p className="description">
+                Building efficient, scalable RESTful APIs with Node.js to enable
+                seamless integration and communication between software
+                applications.
+              </p>
+              <Button type="button" className="services-btn">
+                Learn more
+              </Button>
             </div>
-            <h3 className="service-name">RESTful API Development</h3>
-            <p className="description">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. A,
-              commodi. Accusantium dicta commodi voluptate quibusdam.
-            </p>
-            <Button type="button" className="services-btn">
-              Learn more
-            </Button>
           </div>
         </Slider>
       </motion.div>

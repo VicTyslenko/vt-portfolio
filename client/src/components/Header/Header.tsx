@@ -70,7 +70,7 @@ const Header: React.FC = () => {
           <Link className="nav-bar-link" to="/projects">
             Projects
           </Link>
-          <Link className="nav-bar-link" to="/new">
+          <Link className="nav-bar-link" to="/services">
             Services
           </Link>
 
