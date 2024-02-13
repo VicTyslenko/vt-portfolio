@@ -25,6 +25,9 @@ const ProjectsSection = () => {
               rel="noreferrer"
             >
               <div className="projects-image-wrapp">
+                <div className="hidden-block">
+                  <span className="overlay-text">Visit website</span>
+                </div>
                 <img
                   className="projects-image"
                   src="/img/projects/apple-project.png"
@@ -34,9 +37,7 @@ const ProjectsSection = () => {
             </a>
 
             <p className="projects-name">Apple store</p>
-            <p className="description">
-              React TypeScript
-            </p>
+            <p className="description">React TypeScript</p>
           </div>
           <div className="projects-item">
             <a
@@ -54,9 +55,7 @@ const ProjectsSection = () => {
             </a>
 
             <p className="projects-name">Apple store</p>
-            <p className="description">
-              React TypeScript
-            </p>
+            <p className="description">React TypeScript</p>
           </div>
           <div className="projects-item">
             <a
@@ -73,9 +72,7 @@ const ProjectsSection = () => {
               </div>
             </a>
             <p className="projects-name">Apple store</p>
-            <p className="description">
-              React TypeScript
-            </p>
+            <p className="description">React TypeScript</p>
           </div>
           <div className="projects-item">
             <a
@@ -92,9 +89,7 @@ const ProjectsSection = () => {
               </div>
             </a>
             <p className="projects-name">Apple store</p>
-            <p className="description">
-              React TypeScript
-            </p>
+            <p className="description">React TypeScript</p>
           </div>
         </div>
       </div>

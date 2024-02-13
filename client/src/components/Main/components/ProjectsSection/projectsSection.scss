@@ -1,8 +1,9 @@
 @import "../../../../utils/mixins";
+@import "../../../../utils/variables";
 .projects-section {
   padding: 100px;
 
-  .projects-name{
+  .projects-name {
     font-size: 24px;
   }
   .title-wrapp {
@@ -21,11 +22,38 @@
     gap: 40px;
   }
   .projects-image-wrapp {
+    position: relative;
     transition: all 0.3s cubic-bezier(0, 0, 0.5, 1);
     height: 350px;
   }
+  .overlay-text {
+    color: $prime-color;
+    font-size: 20px;
+  }
+  .hidden-block {
+    @include flex-center();
+    opacity: 0;
+    background-color: rgba(0, 0, 0, 0.7);
+    position: absolute;
+    bottom: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+    border: none;
+    padding: 13px;
+    transition: opacity 0.4s ease;
+    outline: none;
+    cursor: pointer;
+  }
+
   .projects-image-wrapp:hover {
     transform: scale3d(1.01, 1.01, 1.01);
+    .hidden-block {
+      opacity: 1;
+    }
+    &::after {
+      opacity: 0.5;
+    }
   }
 
   .projects-image {
