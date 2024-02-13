@@ -1,9 +1,9 @@
 @import "../../../../utils/mixins";
-
+@import "../../../../utils/variables";
 .contact-section {
   padding: 50px 100px;
   .contact-wrapp {
-    border-bottom: 1px solid #fff;
+    border-bottom: 1px solid $prime-color;
     @include flex-center(space-between, normal);
   }
   .form-wrapp {
@@ -19,34 +19,36 @@
 
     .MuiInput-underline:before,
     .MuiInput-underline:hover:before {
-      border-bottom-color: #fff;
+      border-bottom-color: $prime-color;
     }
 
     .MuiInputLabel-root {
-      color: #fff !important;
+      color: $prime-color !important;
     }
 
     .MuiTextField-root {
       .MuiInput-underline:after {
-        border-bottom-color: #09a75a;
+        border-bottom-color: $bright-blue;
       }
       &:focus-within .MuiInputLabel-root {
-        color: #09a75a !important;
+        color: $bright-blue !important;
       }
     }
 
     .MuiInputBase-input {
-      color: white;
+      color: $prime-color;
     }
   }
   //  styles for MUI Text Field end
 
   .title {
     font-size: 60px;
-    margin-bottom: 20px;
+    margin-bottom: 35px;
   }
   .description {
-    max-width: 400px;
+    max-width: 386px;
+    width: 100%;
+    text-align: justify;
   }
 
   .submit-btn {

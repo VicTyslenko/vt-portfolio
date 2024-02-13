@@ -35,8 +35,7 @@ const ProjectsSection = () => {
 
             <p className="projects-name">Apple store</p>
             <p className="description">
-              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Impedit,
-              assumenda.
+              React TypeScript
             </p>
           </div>
           <div className="projects-item">
@@ -56,8 +55,7 @@ const ProjectsSection = () => {
 
             <p className="projects-name">Apple store</p>
             <p className="description">
-              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Impedit,
-              assumenda.
+              React TypeScript
             </p>
           </div>
           <div className="projects-item">
@@ -76,8 +74,7 @@ const ProjectsSection = () => {
             </a>
             <p className="projects-name">Apple store</p>
             <p className="description">
-              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Impedit,
-              assumenda.
+              React TypeScript
             </p>
           </div>
           <div className="projects-item">
@@ -96,8 +93,7 @@ const ProjectsSection = () => {
             </a>
             <p className="projects-name">Apple store</p>
             <p className="description">
-              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Impedit,
-              assumenda.
+              React TypeScript
             </p>
           </div>
         </div>
