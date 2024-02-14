@@ -9,45 +9,16 @@
   width: auto;
   padding: 20px 60px;
   @include flex-center(space-between, center);
-  &.background-hidden {
-    
-  }
-  //adding background when scrolling
-  &.scrolled {
-    background-color: black;
-    opacity: 0.8;
-    transition: all 0.6s ease;
-    .title::before {
-      opacity: 0;
-    }
-    .title {
-      opacity: 0;
-    }
-    z-index: 10;
-  }
-  .title.title-hidden {
-    opacity: 0;
-    visibility: hidden;
-  }
 
-  &.scrolled-back {
-    transition: all 0.6s ease;
-    .title::before {
-      transition: all 1.7s ease;
-    }
-  }
-
-  .title,
-  .title-link {
+  .title {
     position: relative;
     font-weight: 400;
-    text-decoration: none;
-    color: #fff;
+    color: $prime-color;
   }
+
   .title::before {
     position: absolute;
     content: "";
-    display: block;
     width: 500px;
     height: 150px;
     background-color: black;
@@ -56,12 +27,40 @@
     top: -17px;
   }
 
+  .title.title-hidden {
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  //scrolling styles start
+  &.scrolled {
+    background-color: black;
+    opacity: 0.8;
+    transition: all 0.9s ease;
+
+    .title,
+    .title::before {
+      opacity: 0;
+      visibility: hidden;
+    }
+
+    z-index: 10;
+  }
+  &.scrolled-back {
+    transition: all 0.7s ease;
+
+    .title,
+    .title::before {
+      transition: all 1.5s ease;
+    }
+  }
+  //scrolling styles end
+
   .nav-bar {
     @include flex-center(center, center);
     gap: 30px;
 
-    .nav-bar-link,
-    .home-link {
+    .nav-bar-link {
       color: $prime-color;
       text-decoration: none;
       font-size: 15px;
@@ -75,15 +74,5 @@
     color: $bright-blue;
     border-bottom: 1px solid $bright-blue;
     transition: all 0.3s ease;
-  }
-  .theme-btn {
-    @include flex-center(center, center);
-    border: none;
-    cursor: pointer;
-  }
-
-  .theme-icons {
-    width: 22px;
-    height: 22px;
   }
 }

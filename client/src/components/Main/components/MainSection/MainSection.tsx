@@ -18,7 +18,11 @@ const MainSection = () => {
             duration: 0.8,
           })}
         >
-          <img className="main-image" src="/img/Subject.png" alt="portfolio" />
+          <img
+            className="main-image"
+            src="/img/portfolio.JPG"
+            alt="portfolio"
+          />
         </motion.div>
         <motion.div
           className="main-text"

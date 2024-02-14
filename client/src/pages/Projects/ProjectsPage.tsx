@@ -27,7 +27,7 @@ const ProjectsPage = () => {
         <div className="project-item">
           <img
             className="project-page-image"
-            src="/img/projects/apple-project.png"
+            src="/img/projects/apple-store.png"
             alt=""
           />
 
@@ -46,28 +46,28 @@ const ProjectsPage = () => {
         <div className="project-item">
           <img
             className="project-page-image"
-            src="/img/projects/medical-project.png"
+            src="/img/projects/medical.png"
             alt=""
           />
         </div>
         <div className="project-item">
           <img
             className="project-page-image"
-            src="/img/projects/original-shop-project.png"
+            src="/img/projects/originalite.png"
             alt=""
           />
         </div>
         <div className="project-item">
           <img
             className="project-page-image"
-            src="/img/projects/apple-project.png"
+            src="/img/projects/apple-store.png"
             alt=""
           />
         </div>
         <div className="project-item">
           <img
             className="project-page-image"
-            src="/img/projects/apple-project.png"
+            src="/img/projects/apple-store.png"
             alt=""
           />
         </div>

@@ -8,7 +8,9 @@ const ProjectsSection = () => {
       <div className="global-container">
         <div className="title-wrapp">
           <Link className="global-link" to="/projects">
-            <h1 className="projects-title">Latest projects</h1>
+            <h1 className="projects-title">
+              Latest <span>projects</span>
+            </h1>
           </Link>
           <Link to="/contact">
             <Button type="button" className="contact-btn">
@@ -30,7 +32,7 @@ const ProjectsSection = () => {
                 </div>
                 <img
                   className="projects-image"
-                  src="/img/projects/apple-project.png"
+                  src="/img/projects/apple-store.png"
                   alt="apple-project"
                 />
               </div>
@@ -66,7 +68,7 @@ const ProjectsSection = () => {
               <div className="projects-image-wrapp">
                 <img
                   className="projects-image"
-                  src="/img/projects/medical-project.png"
+                  src="/img/projects/medical.png"
                   alt="apple-project"
                 />
               </div>
@@ -83,7 +85,7 @@ const ProjectsSection = () => {
               <div className="projects-image-wrapp">
                 <img
                   className="projects-image"
-                  src="/img/projects/original-shop-project.png"
+                  src="/img/projects/originalite.png"
                   alt="apple-project"
                 />
               </div>

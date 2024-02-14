@@ -7,6 +7,7 @@ import { useSelector } from "react-redux";
 import { scrollToTop } from "../../helpers";
 import "../../styles/global.scss";
 import "./header.scss";
+import { isVisible } from "@testing-library/user-event/dist/utils";
 
 const Header: React.FC = () => {
   const navigation = useNavigate();
@@ -51,11 +52,9 @@ const Header: React.FC = () => {
   return (
     <div className="global-container">
       <div className={`header-wrapper ${getHeaderClass()}`}>
-        <Link className="title-link" to="/">
-          <h1 className={`title ${!headerVisible ? "title-hidden" : ""}`}>
-            Tyslenko.V
-          </h1>
-        </Link>
+        <h1 className={`title ${!headerVisible ? "title-hidden" : ""}`}>
+          Tyslenko.V
+        </h1>
         <nav className="nav-bar">
           <Link
             className="nav-bar-link"

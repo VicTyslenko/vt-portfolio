@@ -13,6 +13,9 @@
   .projects-title {
     font-size: 40px;
   }
+  .projects-title span {
+    color: $bright-blue;
+  }
   .global-link {
     @include global-link-style();
   }
@@ -33,7 +36,7 @@
   .hidden-block {
     @include flex-center();
     opacity: 0;
-    background-color: rgba(0, 0, 0, 0.7);
+    background-color: rgba(0, 0, 0, 0.6);
     position: absolute;
     bottom: 0;
     top: 0;
@@ -41,7 +44,7 @@
     right: 0;
     border: none;
     padding: 13px;
-    transition: opacity 0.4s ease;
+    transition: opacity 0.3s ease;
     outline: none;
     cursor: pointer;
   }
