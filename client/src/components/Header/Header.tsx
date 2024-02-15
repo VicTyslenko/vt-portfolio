@@ -7,7 +7,6 @@ import { useSelector } from "react-redux";
 import { scrollToTop } from "../../helpers";
 import "../../styles/global.scss";
 import "./header.scss";
-import { isVisible } from "@testing-library/user-event/dist/utils";
 
 const Header: React.FC = () => {
   const navigation = useNavigate();
@@ -41,18 +40,30 @@ const Header: React.FC = () => {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
-
+  //adding dynamic styles to header-wrapp
   const getHeaderClass = () => {
     let headerClass = isScrolled ? "scrolled" : "scrolled-back";
-    if (!headerVisible) {
-      headerClass += " background-hidden";
-    }
+
     return headerClass;
+  };
+
+  //adding dynamic styles to title and title::before
+  const getTitleClass = () => {
+    let titleClass = !headerVisible ? "title-hidden" : "";
+    if (!page) {
+      titleClass += " no-transition";
+    }
+    return titleClass;
   };
   return (
     <div className="global-container">
       <div className={`header-wrapper ${getHeaderClass()}`}>
-        <h1 className={`title ${!headerVisible ? "title-hidden" : ""}`}>
+        <h1
+          // className={`title ${!headerVisible ? "title-hidden" : ""} ${
+          //   !page ? "no-transition" : ""
+          // }`}
+          className={`title ${getTitleClass()}`}
+        >
           Tyslenko.V
         </h1>
         <nav className="nav-bar">

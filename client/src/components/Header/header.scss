@@ -46,6 +46,7 @@
 
     z-index: 10;
   }
+
   &.scrolled-back {
     transition: all 0.7s ease;
 
@@ -56,6 +57,14 @@
   }
   //scrolling styles end
 
+  // .title {
+  //   &.no-transition {
+  //     transition: none;
+  //   }
+  // }
+  .title.no-transition {
+    transition: none;
+  }
   .nav-bar {
     @include flex-center(center, center);
     gap: 30px;
