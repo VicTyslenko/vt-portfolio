@@ -28,6 +28,14 @@ const App = () => {
     }
   }, [location, dispatch]);
 
+  useEffect(() => {
+    fetch("http://localhost:4444/")
+      .then((response) => response.text())
+      .then((message) => {
+        console.log(message);
+      })
+      .catch((error) => console.log(error));
+  }, []);
   return (
     <div className="app-container">
       <Header />
