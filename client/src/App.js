@@ -29,10 +29,10 @@ const App = () => {
   }, [location, dispatch]);
 
   useEffect(() => {
-    fetch("http://localhost:4444/")
-      .then((response) => response.text())
-      .then((message) => {
-        console.log(message);
+    fetch("http://localhost:4444/projects")
+      .then((response) => response.json())
+      .then((data) => {
+        console.log(data);
       })
       .catch((error) => console.log(error));
   }, []);
