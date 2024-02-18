@@ -1,0 +1,48 @@
+@import "../../../../../utils/mixins";
+@import "../../../../../utils/variables";
+.projects-item {
+  .projects-name {
+    font-size: 24px;
+  }
+
+  .projects-image-wrapp {
+    position: relative;
+    transition: all 0.3s cubic-bezier(0, 0, 0.5, 1);
+    height: 350px;
+  }
+  .hidden-block {
+    @include flex-center();
+    opacity: 0;
+    background-color: rgba(0, 0, 0, 0.6);
+    position: absolute;
+    bottom: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+    border: none;
+    padding: 13px;
+    transition: opacity 0.3s ease;
+    outline: none;
+    cursor: pointer;
+    border-radius: 20px;
+  }
+  .projects-image-wrapp:hover {
+    transform: scale3d(1.01, 1.01, 1.01);
+    .hidden-block {
+      opacity: 1;
+    }
+    &::after {
+      opacity: 0.5;
+    }
+  }
+
+  .projects-image {
+    width: 100%;
+    height: 100%;
+    border-radius: 20px;
+  }
+  .overlay-text {
+    color: $prime-color;
+    font-size: 20px;
+  }
+}

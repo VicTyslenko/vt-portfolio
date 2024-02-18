@@ -1,5 +1,7 @@
 import { Link } from "react-router-dom";
 import Button from "../../../Button/Button";
+import { projectsData } from "./projectsData";
+import ProjectItem from "./ProjectItem/ProjectItem";
 import "../../../../styles/global.scss";
 import "./projectsSection.scss";
 const ProjectsSection = () => {
@@ -20,79 +22,15 @@ const ProjectsSection = () => {
         </div>
 
         <div className="projects-wrapp">
-          <div className="projects-item">
-            <a
-              href="https://react-apple-store.vercel.app/"
-              target="_blank"
-              rel="noreferrer"
-            >
-              <div className="projects-image-wrapp">
-                <div className="hidden-block">
-                  <span className="overlay-text">Visit website</span>
-                </div>
-                <img
-                  className="projects-image"
-                  src="/img/projects/apple-store.png"
-                  alt="apple-project"
-                />
-              </div>
-            </a>
-
-            <p className="projects-name">Apple store</p>
-            <p className="description">React TypeScript</p>
-          </div>
-          <div className="projects-item">
-            <a
-              href="https://victyslenko.github.io/adaptive_insta/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <div className="projects-image-wrapp">
-                <img
-                  className="projects-image"
-                  src="/img/projects/instagram-adaptive-project.png"
-                  alt="apple-project"
-                />
-              </div>
-            </a>
-
-            <p className="projects-name">Apple store</p>
-            <p className="description">React TypeScript</p>
-          </div>
-          <div className="projects-item">
-            <a
-              href="https://booking-medical-appointment.vercel.app/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <div className="projects-image-wrapp">
-                <img
-                  className="projects-image"
-                  src="/img/projects/medical.png"
-                  alt="apple-project"
-                />
-              </div>
-            </a>
-            <p className="projects-name">Apple store</p>
-            <p className="description">React TypeScript</p>
-          </div>
-          <div className="projects-item">
-            <a
-              href="https://falling-shape-5755.fly.dev/"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <div className="projects-image-wrapp">
-                <img
-                  className="projects-image"
-                  src="/img/projects/originalite.png"
-                  alt="apple-project"
-                />
-              </div>
-            </a>
-            <p className="projects-name">Apple store</p>
-            <p className="description">React TypeScript</p>
-          </div>
+          {projectsData.map((project, index) => (
+            <ProjectItem
+              key={index}
+              link={project.link}
+              title={project.title}
+              image={project.image}
+              description={project.description}
+            />
+          ))}
         </div>
       </div>
     </section>
