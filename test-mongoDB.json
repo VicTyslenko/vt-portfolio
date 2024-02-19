@@ -1,0 +1,26 @@
+[
+  {
+    "title": "Originalite",
+    "subtitle": "React / NodeJS",
+    "description": "Online cloth shop",
+    "imageFileName": "originalite.png"
+  },
+  {
+    "title": "Apple store",
+    "subtitle": "React / NodeJS",
+    "description": "Online Apple store",
+    "imageFileName": "apple-store.png"
+  },
+  {
+    "title": "Instagram",
+    "subtitle": "Adaptive / Sass",
+    "description": "Totally responsive web site",
+    "imageFileName": "instagram.png"
+  },
+  {
+    "title": "Medical appointment",
+    "subtitle": "ES6 classes",
+    "description": "Doctor appointment",
+    "imageFileName": "medical.png"
+  }
+]
