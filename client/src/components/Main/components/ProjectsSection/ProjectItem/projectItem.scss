@@ -10,7 +10,8 @@
     transition: all 0.3s cubic-bezier(0, 0, 0.5, 1);
     height: 350px;
   }
-  .hidden-block {
+  .hidden-block,
+  .description {
     @include flex-center();
     opacity: 0;
     background-color: rgba(0, 0, 0, 0.6);
@@ -26,9 +27,11 @@
     cursor: pointer;
     border-radius: 20px;
   }
+
   .projects-image-wrapp:hover {
     transform: scale3d(1.01, 1.01, 1.01);
-    .hidden-block {
+    .hidden-block,
+    .description {
       opacity: 1;
     }
     &::after {

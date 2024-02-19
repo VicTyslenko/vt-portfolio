@@ -5,6 +5,7 @@ const pageLocationSlice = createSlice({
   initialState: {
     isHeaderVisible: false,
     isHomeLocation: false,
+    isProjectsPage: false,
   },
 
   reducers: {
@@ -15,9 +16,13 @@ const pageLocationSlice = createSlice({
     setHomeLocation(state, { payload }) {
       state.isHomeLocation = payload;
     },
+    setProjectsPage(state, { payload }) {
+      state.isProjectsPage = payload;
+    },
   },
 });
 
-export const { setHeaderVisible, setHomeLocation } = pageLocationSlice.actions;
+export const { setHeaderVisible, setHomeLocation, setProjectsPage } =
+  pageLocationSlice.actions;
 
 export default pageLocationSlice.reducer;

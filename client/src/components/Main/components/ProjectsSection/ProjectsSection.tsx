@@ -27,6 +27,7 @@ const ProjectsSection = () => {
               key={index}
               link={project.link}
               title={project.title}
+              subtitle={project.subtitle}
               image={project.image}
               description={project.description}
             />

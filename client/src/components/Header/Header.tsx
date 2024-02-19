@@ -58,14 +58,7 @@ const Header: React.FC = () => {
   return (
     <div className="global-container">
       <div className={`header-wrapper ${getHeaderClass()}`}>
-        <h1
-          // className={`title ${!headerVisible ? "title-hidden" : ""} ${
-          //   !page ? "no-transition" : ""
-          // }`}
-          className={`title ${getTitleClass()}`}
-        >
-          Tyslenko.V
-        </h1>
+        <h1 className={`title ${getTitleClass()}`}>Tyslenko.V</h1>
         <nav className="nav-bar">
           <Link
             className="nav-bar-link"

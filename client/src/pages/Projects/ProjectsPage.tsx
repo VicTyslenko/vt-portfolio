@@ -1,12 +1,10 @@
 import Button from "../../components/Button/Button";
 import { motion } from "framer-motion";
+
 import { globalAnimation } from "../../animations/animations";
 import "./projectsPage.scss";
 
 const ProjectsPage = () => {
-  // const navigate = useNavigate();
-
-  // const someFn = () => {};
   return (
     <div className="projects-page-container">
       <motion.h1

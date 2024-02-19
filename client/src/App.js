@@ -7,6 +7,7 @@ import { AboutPage, ContactPage, ProjectsPage } from "./pages";
 import {
   setHomeLocation,
   setHeaderVisible,
+  setProjectsPage,
 } from "./reducers/pageLocation.reducer";
 import { scrollToTop } from "./helpers";
 
@@ -20,22 +21,18 @@ const App = () => {
     if (location.pathname === "/" || location.pathname === "/home") {
       dispatch(setHeaderVisible(true));
       dispatch(setHomeLocation(true));
+      dispatch(setProjectsPage(false));
+    } else if (location.pathname === "/projects") {
+      dispatch(setProjectsPage(true));
+      dispatch(setHeaderVisible(false));
+      dispatch(setHomeLocation(false));
     } else {
       dispatch(setHeaderVisible(false));
       dispatch(setHomeLocation(false));
-
-      scrollToTop(0, "instant");
     }
+    scrollToTop(0, "instant");
   }, [location, dispatch]);
 
-  useEffect(() => {
-    fetch("http://localhost:4444/projects")
-      .then((response) => response.json())
-      .then((data) => {
-        console.log(data);
-      })
-      .catch((error) => console.log(error));
-  }, []);
   return (
     <div className="app-container">
       <Header />
