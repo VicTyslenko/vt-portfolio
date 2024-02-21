@@ -4,12 +4,23 @@ const router = Router();
 const Project = require("../modules/projects.mongoose");
 
 router.get("/projects", async (req, response) => {
+  const page = parseInt(req.query.page, 10) || 1;
+
+  const pageSize = parseInt(req.query.pageSize, 10) || 4;
   try {
-    const projectsInfo = await Project.find();
-    if (projectsInfo) {
+    const skip = (page - 1) * pageSize;
+
+    const projectsInfo = await Project.find().skip(skip).limit(pageSize);
+    const total = await Project.countDocuments();
+
+    if (projectsInfo.length) {
       response.status(200).json({
         success: true,
         data: projectsInfo,
+        total,
+        page,
+        pageSize,
+        totalPages: Math.ceil(total / pageSize),
       });
     } else {
       response.status(404).json({ message: "projects not found" });

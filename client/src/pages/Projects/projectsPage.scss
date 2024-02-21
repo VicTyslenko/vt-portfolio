@@ -15,15 +15,14 @@
     grid-template-columns: 1fr 1fr 1fr;
     gap: 30px;
 
-    .project-item {
+    .projects-page-item {
       position: relative;
-
       .description-block {
         @include flex-center(flex-end, center, column);
         gap: 5px;
         opacity: 0;
         background-color: rgba(0, 0, 0, 0.5);
-        color: #fff;
+        color: $prime-color;
         position: absolute;
         bottom: 0;
         top: 0;
@@ -36,7 +35,7 @@
         cursor: pointer;
         z-index: 2;
 
-        .technology {
+        .subtitle {
           font-size: small;
         }
       }
@@ -44,12 +43,12 @@
         .description-block {
           opacity: 1;
         }
-        .project-page-image {
+        .projects-page-image {
           filter: blur(2px);
         }
       }
 
-      .project-page-image {
+      .projects-page-image {
         position: relative;
 
         transition: filter 0.3s ease;

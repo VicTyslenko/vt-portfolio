@@ -1,24 +1,23 @@
 import { Link } from "react-router-dom";
 import Button from "../../../Button/Button";
-import { projectsData } from "./projectsData";
 import { useEffect } from "react";
-import { UseDispatch, useDispatch, useSelector } from "react-redux";
-import { RootState, AppDispatch } from "../../../../store";
+import { useDispatch, useSelector } from "react-redux";
 import ProjectItem from "./ProjectItem/ProjectItem";
-import { sendRequest } from "../../../../helpers";
-import { API_URL } from "../../../../config/API";
+import DescriptionModal from "../../../Modal/Modal";
 import { projectsDataFetch } from "../../../../reducers/projectsReducer";
 import "../../../../styles/global.scss";
 import "./projectsSection.scss";
 const ProjectsSection = () => {
-  const dispatch: AppDispatch = useDispatch(); //use types for dispatch
+  const dispatch = useDispatch(); //use types for dispatch
 
-  const projects = useSelector((state: RootState) => {
+  const projectsData = useSelector((state) => {
     return state.projects.projectsData;
   });
-
+  const projectsPage = useSelector((state) => state.page.isProjectsPage);
   useEffect(() => {
-    dispatch(projectsDataFetch());
+    const page = 1;
+    const pageSize = 4;
+    dispatch(projectsDataFetch({ page, pageSize }));
   }, [dispatch]); //activating action load data to payload
 
   return (
@@ -46,6 +45,7 @@ const ProjectsSection = () => {
               subtitle={project.subtitle}
               imageFileName={project.imageFileName}
               description={project.description}
+              pageLocation={projectsPage}
             />
           ))}
         </div>

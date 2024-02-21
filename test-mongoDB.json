@@ -22,5 +22,19 @@
     "subtitle": "ES6 classes",
     "description": "Doctor appointment",
     "imageFileName": "medical.png"
+  },
+  {
+    "title": "Fork App",
+    "subtitle": "Gulp Sass Responsive",
+    "description": "A real gamechanger in the world of web development",
+    "imageFileName": "fork-app.png",
+    "link": ""
+  },
+  {
+    "title": "Weather forecast",
+    "subtitle": "API Fetch token",
+    "description": "Get weather information using API",
+    "imageFileName": "weather-forecast.png",
+    "link": ""
   }
 ]

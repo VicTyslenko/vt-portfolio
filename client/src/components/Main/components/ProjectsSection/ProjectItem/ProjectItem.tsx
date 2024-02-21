@@ -1,12 +1,11 @@
-import { RootState } from "../../../../../store";
-import { useSelector } from "react-redux";
 import "./projectItem.scss";
+
 interface ProjectItemProps {
   link: string;
   title: string;
   subtitle: string;
   imageFileName: string;
-
+  pageLocation: Boolean;
   description?: string;
 }
 
@@ -16,31 +15,38 @@ const ProjectItem: React.FC<ProjectItemProps> = ({
   subtitle,
   imageFileName,
   description,
+  pageLocation,
 }) => {
-  const projectsPage = useSelector(
-    (state: RootState) => state.page.isProjectsPage
-  );
-  //hide description block when not on the projects page
-  const descriptionClass = () => {
-    let descClassName = projectsPage ? "description" : "";
-    return descClassName;
-  };
   const imagePath = `/img/projects/${imageFileName}`;
   return (
-    <div className="projects-item">
-      <a href={link} target="_blank" rel="noreferrer">
-        <div className="projects-image-wrapp">
-          <div className="hidden-block">
-            <span className="overlay-text">Visit website</span>
-          </div>
-          <div className={descriptionClass()}>{description}</div>
-          <img className="projects-image" src={imagePath} alt={title} />
-        </div>
-      </a>
+    <>
+      {!pageLocation ? (
+        <div className="projects-item">
+          <a href={link} target="_blank" rel="noreferrer">
+            <div className="projects-image-wrapp">
+              {!pageLocation && (
+                <div className="hidden-block">
+                  <span className="overlay-text">Visit website</span>
+                </div>
+              )}
 
-      <p className="projects-name">{title}</p>
-      <p className="subtitle">{subtitle}</p>
-    </div>
+              <img className="projects-image" src={imagePath} alt={title} />
+            </div>
+          </a>
+
+          <p className="projects-name">{title}</p>
+          <p className="subtitle">{subtitle}</p>
+        </div>
+      ) : (
+        <div className="projects-page-item">
+          <img className="projects-page-image" src={imagePath} alt={title} />
+          <div className="description-block">
+            <p className="subtitle">{subtitle}</p>
+            <p className="projects-name">{title}</p>
+          </div>
+        </div>
+      )}
+    </>
   );
 };
 

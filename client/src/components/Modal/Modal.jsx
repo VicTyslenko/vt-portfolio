@@ -1,17 +1,13 @@
 import Backdrop from "@mui/material/Backdrop";
-import { useState } from "react";
+import { closeModal } from "../../reducers/modalReducer";
 import Box from "@mui/material/Box";
 import Modal from "@mui/material/Modal";
 import Fade from "@mui/material/Fade";
-import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
+import { useSelector, useDispatch } from "react-redux";
 
-// interface ModalProps {
-//   children: React.ReactNode;
-//   styles?: string;
-// }
 const style = {
-  position: "absolute" as "absolute",
+  // position: "absolute" as "absolute",
   top: "50%",
   left: "50%",
   transform: "translate(-50%, -50%)",
@@ -22,14 +18,15 @@ const style = {
   p: 4,
 };
 
-const SubmitModal = () => {
-  const [open, setOpen] = useState(false);
-  const handleOpen = () => setOpen(true);
-  const handleClose = () => setOpen(false);
+const DescriptionModal = () => {
+  const dispatch = useDispatch();
+  const open = useSelector((state) => state.modal.isModalOpen);
 
+  const handleClose = () => {
+    dispatch(closeModal());
+  };
   return (
     <div>
-      <Button onClick={handleOpen}>Open modal</Button>
       <Modal
         aria-labelledby="transition-modal-title"
         aria-describedby="transition-modal-description"
@@ -58,4 +55,4 @@ const SubmitModal = () => {
   );
 };
 
-export default SubmitModal;
+export default DescriptionModal;
