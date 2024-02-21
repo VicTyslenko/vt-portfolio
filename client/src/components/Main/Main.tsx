@@ -1,3 +1,6 @@
+import { sendRequest } from "../../helpers";
+import { useEffect } from "react";
+import { API_URL } from "../../config/API";
 import {
   MainSection,
   SkillsSection,

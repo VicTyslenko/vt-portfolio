@@ -5,7 +5,8 @@ interface ProjectItemProps {
   link: string;
   title: string;
   subtitle: string;
-  image: string;
+  imageFileName: string;
+
   description?: string;
 }
 
@@ -13,7 +14,7 @@ const ProjectItem: React.FC<ProjectItemProps> = ({
   link,
   title,
   subtitle,
-  image,
+  imageFileName,
   description,
 }) => {
   const projectsPage = useSelector(
@@ -24,7 +25,7 @@ const ProjectItem: React.FC<ProjectItemProps> = ({
     let descClassName = projectsPage ? "description" : "";
     return descClassName;
   };
-
+  const imagePath = `/img/projects/${imageFileName}`;
   return (
     <div className="projects-item">
       <a href={link} target="_blank" rel="noreferrer">
@@ -33,7 +34,7 @@ const ProjectItem: React.FC<ProjectItemProps> = ({
             <span className="overlay-text">Visit website</span>
           </div>
           <div className={descriptionClass()}>{description}</div>
-          <img className="projects-image" src={image} alt={title} />
+          <img className="projects-image" src={imagePath} alt={title} />
         </div>
       </a>
 

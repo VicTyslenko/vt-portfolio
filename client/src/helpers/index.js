@@ -1,3 +1,3 @@
 import scrollToTop from "./scrollToTop";
-
-export { scrollToTop };
+import sendRequest from "./sendRequest";
+export { scrollToTop,sendRequest };

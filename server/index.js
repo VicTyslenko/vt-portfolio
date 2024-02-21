@@ -13,9 +13,9 @@ const projects = require("./routers/projects.api");
 app.use(aboutMeRouter);
 app.use(projects);
 
-app.get("/", (req, res) => {
-  res.send("Hi there");
-});
+// app.get("/", (req, res) => {
+//   res.send("Hi there");
+// });
 app.all("*", (req, res) => {
   res.status(404).send("resource not found");
 });

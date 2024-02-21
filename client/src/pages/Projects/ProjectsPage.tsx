@@ -5,6 +5,7 @@ import { globalAnimation } from "../../animations/animations";
 import "./projectsPage.scss";
 
 const ProjectsPage = () => {
+  // const projects =
   return (
     <div className="projects-page-container">
       <motion.h1
