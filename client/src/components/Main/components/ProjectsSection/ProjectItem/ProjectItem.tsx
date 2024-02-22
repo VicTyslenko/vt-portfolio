@@ -1,3 +1,4 @@
+import { MouseEventHandler } from "react";
 import "./projectItem.scss";
 
 interface ProjectItemProps {
@@ -7,6 +8,8 @@ interface ProjectItemProps {
   imageFileName: string;
   pageLocation: Boolean;
   description?: string;
+
+  onClick?: MouseEventHandler<HTMLDivElement>;
 }
 
 const ProjectItem: React.FC<ProjectItemProps> = ({
@@ -14,10 +17,12 @@ const ProjectItem: React.FC<ProjectItemProps> = ({
   title,
   subtitle,
   imageFileName,
-  description,
+
   pageLocation,
+  onClick,
 }) => {
   const imagePath = `/img/projects/${imageFileName}`;
+
   return (
     <>
       {!pageLocation ? (
@@ -38,7 +43,7 @@ const ProjectItem: React.FC<ProjectItemProps> = ({
           <p className="subtitle">{subtitle}</p>
         </div>
       ) : (
-        <div className="projects-page-item">
+        <div className="projects-page-item" onClick={onClick}>
           <img className="projects-page-image" src={imagePath} alt={title} />
           <div className="description-block">
             <p className="subtitle">{subtitle}</p>

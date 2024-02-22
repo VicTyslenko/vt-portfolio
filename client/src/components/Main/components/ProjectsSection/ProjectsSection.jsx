@@ -3,7 +3,6 @@ import Button from "../../../Button/Button";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import ProjectItem from "./ProjectItem/ProjectItem";
-import DescriptionModal from "../../../Modal/Modal";
 import { projectsDataFetch } from "../../../../reducers/projectsReducer";
 import "../../../../styles/global.scss";
 import "./projectsSection.scss";

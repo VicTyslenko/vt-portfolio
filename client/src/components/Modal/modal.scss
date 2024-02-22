@@ -1,0 +1,13 @@
+@import "../../utils/mixins";
+@import "../../utils/variables";
+
+.modal-wrapp {
+
+    .image-wrapp img{
+        max-width: 100px;
+        
+    }
+  .description {
+    color: black;
+  }
+}

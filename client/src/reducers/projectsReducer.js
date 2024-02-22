@@ -5,6 +5,7 @@ import { API_URL } from "../config/API";
 const initialState = {
   projectsData: [],
   isLoading: false,
+  selectedProject: null,
 };
 
 export const projectsDataFetch = createAsyncThunk(
@@ -13,6 +14,13 @@ export const projectsDataFetch = createAsyncThunk(
     const response = await sendRequest(
       `${API_URL}/projects?page=${page}&pageSize=${pageSize}`
     );
+    return response;
+  }
+);
+export const fetchProjectById = createAsyncThunk(
+  "fetch/projectsId",
+  async (_id) => {
+    const response = await sendRequest(`${API_URL}/projects/${_id}`);
     return response;
   }
 );
@@ -31,6 +39,13 @@ const projectsSlice = createSlice({
       state.isLoading = false;
     });
     builder.addCase(projectsDataFetch.rejected, (state) => {
+      state.isLoading = false;
+    });
+    builder.addCase(fetchProjectById.pending, (state) => {
+      state.isLoading = true;
+    });
+    builder.addCase(fetchProjectById.fulfilled, (state, { payload }) => {
+      state.selectedProject = payload;
       state.isLoading = false;
     });
   },
