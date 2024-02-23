@@ -2,12 +2,46 @@
 @import "../../utils/variables";
 
 .modal-wrapp {
+  .image-wrapp {
+    flex: 1;
+    height: 100%;
+    min-height: 550px;
 
-    .image-wrapp img{
-        max-width: 100px;
-        
+    background-size: cover;
+    background-position: center;
+  }
+  .image-wrapp img {
+    width: 100%;
+    max-width: 400px;
+  }
+
+  .content-wrapp {
+    @include flex-center(normal, initial);
+    // align-items: stretch;
+    gap: 20px;
+
+    .description-block {
+      flex: 1;
+      padding: 30px 30px 0 0;
+      @include flex-center(initial, center, column);
     }
-  .description {
-    color: black;
+
+    .description {
+      color: black;
+      font-size: 17px;
+    }
+
+    .technologies,
+    .features {
+      margin: 10px 0;
+
+      color: red;
+    }
+    .tech-ordered-list,
+    .features-ordered-list {
+      line-height: 22px;
+      padding-left: 10px;
+      color: black;
+    }
   }
 }

@@ -10,15 +10,17 @@ import "./modal.scss";
 interface DescriptionModalProps {
   title: string;
   description: React.ReactNode;
+  technologies: Array<string>;
+  features: Array<string>;
   image: string;
-  // onClick?: MouseEventHandler<HTMLDivElement>;
 }
 
 const DescriptionModal: React.FC<DescriptionModalProps> = ({
   description,
   image,
   title,
-  // onClick,
+  technologies,
+  features,
 }) => {
   const dispatch = useDispatch();
   const open = useSelector((state: RootState) => state.modal.isModalOpen);
@@ -26,6 +28,7 @@ const DescriptionModal: React.FC<DescriptionModalProps> = ({
   const handleClose = () => {
     dispatch(closeModal());
   };
+
   return (
     <>
       <Modal
@@ -44,15 +47,34 @@ const DescriptionModal: React.FC<DescriptionModalProps> = ({
               transform: "translate(-50%, -50%)",
               bgcolor: "background.paper",
               boxShadow: 24,
-              p: 4,
+              width: 1000,
+              minHeight: 500,
             }}
           >
             <div className="content-wrapp">
-              <div className="image-wrapp">
-                <img src={`/img/description-images/${image}`} alt={title} />
-              </div>
+              <div
+                className="image-wrapp"
+                style={{
+                  backgroundImage: `url('/img/description-images/${image}')`,
+                }}
+              ></div>
               <div className="description-block">
-                <p className="description">{description}</p>
+                <h2 className="description">{description}</h2>
+                <h3 className="technologies">Technologies:</h3>
+
+                <ol className="tech-ordered-list">
+                  {technologies?.map((tech, index) => (
+                    <li key={index} className="tech">
+                      {tech}
+                    </li>
+                  ))}
+                </ol>
+                <h3 className="features">Features:</h3>
+                <ol className="features-ordered-list">
+                  {features?.map((tech, index) => (
+                    <li key={index}>{tech}</li>
+                  ))}
+                </ol>
               </div>
             </div>
           </Box>

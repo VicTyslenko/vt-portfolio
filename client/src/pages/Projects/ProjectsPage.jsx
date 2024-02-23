@@ -30,9 +30,9 @@ const ProjectsPage = () => {
   useEffect(() => {
     const page = 1;
     const pageSize = 6;
-
+    // console.log(selectedProject?.technologies);
     dispatch(projectsDataFetch({ page, pageSize }));
-  }, [dispatch]);
+  }, [dispatch, selectedProject]);
   const pageLocation = useSelector((state) => state.page.isProjectsPage);
   return (
     <div className="projects-page-container">
@@ -70,6 +70,9 @@ const ProjectsPage = () => {
           <DescriptionModal
             description={selectedProject?.description}
             image={selectedProject?.descriptionImageName}
+            title={selectedProject?.title}
+            technologies={selectedProject?.technologies}
+            features={selectedProject?.features}
           />
         )}
       </motion.div>

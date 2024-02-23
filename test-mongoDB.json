@@ -2,8 +2,24 @@
   {
     "title": "Originalite",
     "subtitle": "React / NodeJS",
-    "description": "Online cloth shop",
-    "imageFileName": "originalite.png"
+    "description": "This online cloth shop was designed and created by the team of four developers as E-commerse project",
+    "imageFileName": "originalite.png",
+    "technologies": [
+      "Node.js/ Express/ passport/ MongoDB/ mongoose/ jsonwebtoken",
+      "React.js/ Redux/ Sass/ styled-components/ redux-thunk/ swiper/ react-icons/ react-router-dom/ jwt-decode/ framer-motion/ formik/ yup/ @reduxjs/toolkit/ redux-persist/ eslint"
+    ],
+    "features": [
+      "Full-stack JavaScript application development using Node.js for the backend and React.js for the frontend, ensuring a seamless development experience.",
+      "Secure authentication and authorization processes implemented with passport, jsonwebtoken, and JWT (JSON Web Tokens) for enhanced security and user session management.",
+      "State management in React applications streamlined with Redux, @reduxjs/toolkit, and redux-persist, enabling efficient data flow and state persistence across sessions.",
+      "Advanced UI development with React.js, utilizing styled-components and Sass for modular and customizable styling, alongside framer-motion for smooth animations.",
+      "Efficient form handling and validation in React applications with Formik and Yup, providing a user-friendly form experience and reducing development time.",
+      "Dynamic and responsive user interfaces designed with swiper for touch sliders and react-icons for scalable iconography, enhancing user interaction and visual appeal.",
+      "Single Page Application (SPA) routing handled with react-router-dom, offering a seamless and interactive user experience without page reloads.",
+      "Code quality and maintainability ensured with eslint, helping to identify and fix problems in JavaScript code, adhering to best practices.",
+      "Secure and scalable API development with Express, leveraging MongoDB and mongoose for robust data storage and management, facilitating complex data operations.",
+      "Client-side security features with jwt-decode for decoding JSON Web Tokens, ensuring secure transmission of user information."
+    ]
   },
   {
     "title": "Apple store",
