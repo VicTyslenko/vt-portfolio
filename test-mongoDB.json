@@ -52,5 +52,29 @@
     "description": "Get weather information using API",
     "imageFileName": "weather-forecast.png",
     "link": ""
+  },
+  {
+    "title": "Milan holidays",
+    "subtitle": "API Fetch token",
+    "description": "Get the best holidays in Milan area",
+    "imageFileName": "milan-holidays.png",
+    "descriptionImageName": "description-milan-holidays.png",
+    "link": "https://gitlab.com/VictorTyslenko/danit_homework/-/tree/main/Programming%20essentials/html_css_homeworks/Milan%20Holidays?ref_type=heads"
+  },
+  {
+    "title": "Milan holidays",
+    "subtitle": "API Fetch token",
+    "description": "Get the best holidays in Milan area",
+    "imageFileName": "milan-holidays.png",
+    "descriptionImageName": "description-milan-holidays.png",
+    "link": "https://gitlab.com/VictorTyslenko/danit_homework/-/tree/main/Programming%20essentials/html_css_homeworks/Milan%20Holidays?ref_type=heads"
+  },
+  {
+    "title": "Wordpress_theme",
+    "subtitle": "Tabs CSS HTML",
+    "description": "Just Buy And Enjoy These Awesome Features",
+    "imageFileName": "wordpress-theme.png",
+    "descriptionImageName": "wordpress-theme.png",
+    "link": "https://github.com/VicTyslenko/Wordpress_theme"
   }
 ]

@@ -14,12 +14,19 @@
     width: 100%;
     max-width: 400px;
   }
-
+  .loader-wrapp {
+    flex: 1;
+    @include flex-center();
+  }
+  //content wrapper
   .content-wrapp {
+    position: relative;
     @include flex-center(normal, initial);
-    // align-items: stretch;
     gap: 20px;
-
+    .title {
+      color: $bright-blue;
+      font-size: 20px;
+    }
     .description-block {
       flex: 1;
       padding: 30px 30px 0 0;
@@ -35,13 +42,31 @@
     .features {
       margin: 10px 0;
 
-      color: red;
+      color: black;
     }
     .tech-ordered-list,
     .features-ordered-list {
       line-height: 22px;
       padding-left: 10px;
-      color: black;
+      color: #757575;
+    }
+    .features-ordered-list {
+      font-size: 12px;
+    }
+    .tech-ordered-list {
+      color: $secondary-color;
+    }
+    .close-icon {
+      position: absolute;
+      width: 35px;
+      height: 35px;
+      color: $prime-color;
+      left: -35px;
+      top: -35px;
+      cursor: pointer;
+    }
+    .modal-link {
+      text-decoration: none;
     }
   }
 }

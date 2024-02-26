@@ -9,7 +9,9 @@
   .title span {
     color: $bright-blue;
   }
-
+  .loader-wrapp {
+    @include flex-center();
+  }
   .projects-page-wrapp {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
@@ -58,8 +60,11 @@
       }
     }
   }
+  .button-wrapp {
+    grid-column: 1 /-1;
+    margin-top: 20px;
+  }
   .load-more-btn {
     @include second-button-style();
-    margin-top: 20px;
   }
 }
