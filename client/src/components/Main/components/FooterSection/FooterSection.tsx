@@ -1,5 +1,6 @@
 import ContactSection from "../ContactSection/ContactSection";
-import { FaLinkedin } from "react-icons/fa";
+
+import { TiSocialLinkedinCircular } from "react-icons/ti";
 import { FaFacebook } from "react-icons/fa6";
 import { FaGithub } from "react-icons/fa";
 import { scrollToTop } from "../../../../helpers";
@@ -26,7 +27,7 @@ const FooterSection = () => {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <FaLinkedin />
+              <TiSocialLinkedinCircular className="footer-icon-linkedin" />
             </a>
 
             <a
@@ -35,7 +36,7 @@ const FooterSection = () => {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <FaGithub />
+              <FaGithub className="footer-icon" />
             </a>
             <a
               className="icons-link"
@@ -43,7 +44,7 @@ const FooterSection = () => {
               target="_blank"
               rel="noopener noreferrer"
             >
-              <FaFacebook />
+              <FaFacebook className="footer-icon" />
             </a>
           </div>
         </div>

@@ -2,7 +2,7 @@
 @import "../../utils/variables";
 .about-page-container {
   padding: 130px 0;
-  @include flex-center(center, center);
+  @include flex-center(space-evenly, center);
   gap: 50px;
   .title span {
     color: $bright-blue;
@@ -21,8 +21,23 @@
   .btn-wrapp {
     @include flex-center(flex-start);
   }
-  .about-btn {
+  .cv-link {
     margin-top: 40px;
-    @include second-button-style();
+    @include main-button-style();
+    text-decoration: none;
   }
+  .icons-wrapp{
+    margin: 20px 0;
+    @include flex-center(flex-start);
+    gap:30px
+  }
+.icons-wrapp svg{
+width: 25px;
+height: 25px;
+color: $prime-color;
+}
+.icons-wrapp svg:hover{
+  color: $bright-blue;
+  transition: all 0.5s ease;
+}
 }

@@ -10,9 +10,9 @@ const initialState = {
 
 export const projectsDataFetch = createAsyncThunk(
   "data/fetch",
-  async ({ page, pageSize }) => {
+  async ({ collection, page, pageSize }) => {
     const response = await sendRequest(
-      `${API_URL}/projects?page=${page}&pageSize=${pageSize}`
+      `${API_URL}/${collection}?page=${page}&pageSize=${pageSize}`
     );
     return response;
   }

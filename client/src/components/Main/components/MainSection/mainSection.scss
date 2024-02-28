@@ -51,9 +51,4 @@
     width: 100%;
     @include flex-center(flex-end);
   }
-  .cv-link {
-    @include main-button-style();
-    @include flex-center();
-    text-decoration: none;
-  }
 }

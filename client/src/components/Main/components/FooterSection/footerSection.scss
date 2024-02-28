@@ -20,10 +20,15 @@
     color: #fff;
     @include flex-center();
   }
-  .icons-wrapp svg {
+  .footer-icon {
     width: 20px;
     height: 20px;
   }
+  .footer-icon-linkedin {
+    width: 28px;
+    height: 28px;
+  }
+
   .icons-wrapp svg:hover {
     color: #047695;
     transition: all 0.3s ease;

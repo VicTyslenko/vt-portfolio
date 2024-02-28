@@ -3,7 +3,7 @@ import { useEffect } from "react";
 import { FaLinkedin } from "react-icons/fa";
 import { FaFacebook, FaSquareGithub } from "react-icons/fa6";
 import Button from "../../../Button/Button";
-import SubmitModal from "../../../Modal/Modal";
+import SubmitModal from "../../../Modal/DescriptionModal";
 import { globalAnimation } from "../../../../animations/animations";
 import { motion } from "framer-motion";
 import "../../../../styles/global.scss";
@@ -52,15 +52,6 @@ const MainSection = () => {
             Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sed totam
             facilis et laborum est atque.
           </p>
-          <div className="link-wrapp">
-            <a
-              href="/VictorTyslenko_CV/Frontend-Developer_CV.pdf"
-              className="cv-link"
-              download="Frontend-Developer_CV.pdf"
-            >
-              Download CV
-            </a>
-          </div>
         </motion.div>
         {/* <div className="devider-wrapp"> */}
         <hr className="divider" />

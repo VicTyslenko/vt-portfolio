@@ -7,7 +7,7 @@ import { RootState } from "../../store";
 import { useSelector, useDispatch } from "react-redux";
 import PuffLoader from "react-spinners/PuffLoader";
 
-import "./modal.scss";
+import "./description-modal.scss";
 // import { MouseEventHandler } from "react";
 
 interface DescriptionModalProps {
