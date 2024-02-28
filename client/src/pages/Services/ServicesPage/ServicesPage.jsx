@@ -1,28 +1,41 @@
-import { motion } from "framer-motion";
-import "slick-carousel/slick/slick.css";
-import "slick-carousel/slick/slick-theme.css";
-import Button from "../../components/Button/Button";
+import { useEffect } from "react";
+import { useDispatch } from "react-redux";
+import Button from "../../../components/Button/Button";
 import { GrTechnology } from "react-icons/gr";
 import { GrOptimize } from "react-icons/gr";
+import ServicesItem from "../ServicesItem/ServicesItem";
 import { MdOutlineDesignServices } from "react-icons/md";
-import { globalAnimation } from "../../animations/animations";
+import { globalAnimation } from "../../../animations/animations";
+import { usePathParameters } from "../../../hooks";
+import { dataFetch } from "../../../reducers/dataReducer";
 import { SiAmazoncloudwatch } from "react-icons/si";
 import { TbApi } from "react-icons/tb";
 import Slider from "react-slick";
+import { motion } from "framer-motion";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 import "./servicesPage.scss";
-const ServicesPage = () => {
-  const settings = {
-    infinite: true,
-    speed: 700,
-    slidesToShow: 3,
-    slidesToScroll: 3,
-  };
 
-  const iconsStyle = {
-    width: 40,
-    height: 40,
-    color: "#1f9cbe",
-  };
+const sliderSettings = {
+  infinite: true,
+  speed: 700,
+  slidesToShow: 3,
+  slidesToScroll: 3,
+};
+const iconsStyle = {
+  width: 40,
+  height: 40,
+  color: "#1f9cbe",
+};
+
+const ServicesPage = () => {
+  const dispatch = useDispatch();
+  const { collectionName } = usePathParameters();
+  useEffect(() => {
+    const page = 1;
+
+    dispatch(dataFetch({ collectionName }));
+  }, []);
   return (
     <div className="services-page-container">
       <motion.h1
@@ -39,8 +52,8 @@ const ServicesPage = () => {
           yInitial: 30,
         })}
       >
-        <Slider {...settings}>
-          <div className="services-item">
+        <Slider {...sliderSettings}>
+          {/* <div className="services-item">
             <div className="flex-content">
               <div className="icon-wrapp">
                 <svg
@@ -149,7 +162,7 @@ const ServicesPage = () => {
                 Learn more
               </Button>
             </div>
-          </div>
+          </div> */}
         </Slider>
       </motion.div>
     </div>

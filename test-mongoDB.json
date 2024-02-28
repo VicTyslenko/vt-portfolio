@@ -70,11 +70,10 @@
     "link": "https://gitlab.com/VictorTyslenko/danit_homework/-/tree/main/Programming%20essentials/html_css_homeworks/Milan%20Holidays?ref_type=heads"
   },
   {
-    "title": "Wordpress_theme",
-    "subtitle": "Tabs CSS HTML",
+    "icon": "",
+    "title": "Responsive Web Design",
+    "shortDescription": "Web designs for all types of devices",
     "description": "Just Buy And Enjoy These Awesome Features",
-    "imageFileName": "wordpress-theme.png",
-    "descriptionImageName": "wordpress-theme.png",
-    "link": "https://github.com/VicTyslenko/Wordpress_theme"
+    "imageFileName": "wordpress-theme.png"
   }
 ]

@@ -2,23 +2,23 @@ import { Link } from "react-router-dom";
 import Button from "../../../Button/Button";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { usePathParameters } from "../../../../hooks";
 import ProjectItem from "./ProjectItem/ProjectItem";
-import { projectsDataFetch } from "../../../../reducers/projectsReducer";
+import { dataFetch } from "../../../../reducers/dataReducer";
 import "../../../../styles/global.scss";
 import "./projectsSection.scss";
 const ProjectsSection = () => {
   const dispatch = useDispatch(); //use types for dispatch
-
+  const { collectionName } = usePathParameters();
   const projectsData = useSelector((state) => {
-    return state.projects.projectsData;
+    return state.projects.data;
   });
   const projectsPage = useSelector((state) => state.page.isProjectsPage);
   useEffect(() => {
     const page = 1;
     const pageSize = 4;
-    const collection = "projects";
-    dispatch(projectsDataFetch({ collection, page, pageSize }));
-  }, [dispatch]); //activating action load data to payload
+    dispatch(dataFetch({ collectionName, page, pageSize }));
+  }, [dispatch, collectionName]); //activating action load data to payload
 
   return (
     <section className="projects-section">

@@ -5,22 +5,18 @@ import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 import DescriptionModal from "../../components/Modal/DescriptionModal";
 import ProjectItem from "../../components/Main/components/ProjectsSection/ProjectItem/ProjectItem";
+import { usePathParameters } from "../../hooks";
 import { openModal } from "../../reducers/modalReducer";
-import { useLocation } from "react-router-dom";
-import {
-  projectsDataFetch,
-  fetchProjectById,
-} from "../../reducers/projectsReducer";
+import { dataFetch, fetchItemById } from "../../reducers/dataReducer";
 import { globalAnimation } from "../../animations/animations";
 import "./projectsPage.scss";
 
 const ProjectsPage = () => {
   const [pageSize, setPageSize] = useState(6);
-  const location = useLocation();
   const dispatch = useDispatch();
-
+  const { collectionName } = usePathParameters();
   const projectsData = useSelector((state) => {
-    return state.projects.projectsData;
+    return state.projects.data;
   }); //get all projects' data
 
   const selectedProject = useSelector(
@@ -37,10 +33,9 @@ const ProjectsPage = () => {
 
   useEffect(() => {
     const page = 1;
-    const paths = location.pathname.split("/");
-    const collection = paths[1];
-    dispatch(projectsDataFetch({ collection, page, pageSize }));
-  }, [dispatch, pageSize, location.pathname]);
+
+    dispatch(dataFetch({ collectionName, page, pageSize }));
+  }, [dispatch, pageSize, collectionName]);
 
   return (
     <div className="projects-page-container">
@@ -70,7 +65,7 @@ const ProjectsPage = () => {
             pageLocation={pageLocation}
             onClick={() => {
               handleModalOpen();
-              dispatch(fetchProjectById(project._id));
+              dispatch(fetchItemById(collectionName, project._id));
             }}
           />
         ))}

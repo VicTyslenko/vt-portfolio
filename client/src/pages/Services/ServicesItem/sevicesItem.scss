@@ -1,0 +1,35 @@
+@import "../../../utils/mixins";
+@import "../../../utils/variables";
+
+.services-item {
+  @include flex-center(space-between, center, column);
+  padding: 20px;
+  height: 300px;
+  max-width: 340px;
+  border-radius: 20px;
+  border-bottom: 3px solid $bright-blue;
+  border-top: 3px solid $bright-blue;
+  transition: all 0.5s ease;
+
+  .flex-content {
+    height: 100%;
+    @include flex-center(space-between, center, column);
+  }
+  .services-item:hover {
+    transform: scale(1.02);
+
+    .service-name {
+      color: $bright-blue;
+      transition: all 0.3s ease;
+    }
+  }
+  .services-btn {
+    @include second-button-style();
+    justify-self: end;
+  }
+
+  .icons {
+    width: 60px;
+    height: 60px;
+  }
+}

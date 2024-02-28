@@ -1,0 +1,19 @@
+@import "../../../utils/mixins";
+@import "../../../utils/variables";
+
+.services-page-container {
+  padding: 140px 100px;
+  text-align: center;
+
+  // add style to specific class from slick-carousel
+  .slick-slide {
+    padding: 15px 0;
+  }
+  //
+  .title {
+    margin-bottom: 40px;
+  }
+  .title span {
+    color: $bright-blue;
+  }
+}

@@ -1,9 +1,9 @@
 import { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { Main, Header } from "./components";
-import NewServices from "./pages/Services/ServicesPage";
+import NewServices from "./pages/Services/ServicesPage/ServicesPage";
 import { sendRequest } from "./helpers";
-import { dataFetch } from "./reducers/projectsReducer";
+import { dataFetch } from "./reducers/dataReducer";
 import { API_URL } from "./config/API";
 import { AboutPage, ContactPage, ProjectsPage } from "./pages";
 import {
