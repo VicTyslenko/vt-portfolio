@@ -15,7 +15,7 @@
     height: 100%;
     @include flex-center(space-between, center, column);
   }
-  .services-item:hover {
+  &:hover {
     transform: scale(1.02);
 
     .service-name {

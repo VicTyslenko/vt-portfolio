@@ -1,4 +1,5 @@
-import Button from "../../../components/Button/Button"
+import Button from "../../../components/Button/Button";
+import "./servicesItem.scss"
 const ServicesItem = () => {
   return (
     <div className="services-item">

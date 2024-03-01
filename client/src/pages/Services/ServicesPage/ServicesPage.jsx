@@ -32,8 +32,6 @@ const ServicesPage = () => {
   const dispatch = useDispatch();
   const { collectionName } = usePathParameters();
   useEffect(() => {
-    const page = 1;
-
     dispatch(dataFetch({ collectionName }));
   }, []);
   return (
@@ -53,7 +51,7 @@ const ServicesPage = () => {
         })}
       >
         <Slider {...sliderSettings}>
-          {/* <div className="services-item">
+          <div className="services-item">
             <div className="flex-content">
               <div className="icon-wrapp">
                 <svg
@@ -162,7 +160,7 @@ const ServicesPage = () => {
                 Learn more
               </Button>
             </div>
-          </div> */}
+          </div>
         </Slider>
       </motion.div>
     </div>
