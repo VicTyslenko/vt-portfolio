@@ -8,14 +8,11 @@ app.use(express.json());
 const PORT = process.env.PORT || 4444;
 const MONGO_URL =
   "mongodb+srv://vtyslenko:drummerbass4000@portfolio.2tge8sv.mongodb.net/PortfolioDB";
-const aboutMeRouter = require("./routers/aboutMeRoutes.api");
-const projects = require("./routers/projects.api");
-app.use(aboutMeRouter);
-app.use(projects);
 
-// app.get("/", (req, res) => {
-//   res.send("Hi there");
-// });
+const dataRouter = require("./routers/collectionsData.api");
+
+app.use(dataRouter);
+
 app.all("*", (req, res) => {
   res.status(404).send("resource not found");
 });

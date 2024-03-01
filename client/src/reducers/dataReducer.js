@@ -5,7 +5,7 @@ import { API_URL } from "../config/API";
 const initialState = {
   data: [],
   isLoading: false,
-  selectedProject: null,
+  selectedItem: null,
 };
 
 export const dataFetch = createAsyncThunk(
@@ -19,13 +19,13 @@ export const dataFetch = createAsyncThunk(
 );
 export const fetchItemById = createAsyncThunk(
   "fetch/projectsId",
-  async (collectionName, _id) => {
+  async({collectionName, _id}) => {
     const response = await sendRequest(`${API_URL}/${collectionName}/${_id}`);
     return response;
   }
 );
 
-const projectsSlice = createSlice({
+const collectionsDataSlice = createSlice({
   name: "projects",
   initialState,
 
@@ -45,10 +45,11 @@ const projectsSlice = createSlice({
       state.isLoading = true;
     });
     builder.addCase(fetchItemById.fulfilled, (state, { payload }) => {
-      state.selectedProject = payload;
+      state.selectedItem = payload;
+      console.log(payload);
       state.isLoading = false;
     });
   },
 });
 
-export default projectsSlice.reducer;
+export default collectionsDataSlice.reducer;

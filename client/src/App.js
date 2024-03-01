@@ -5,6 +5,7 @@ import NewServices from "./pages/Services/ServicesPage/ServicesPage";
 import { sendRequest } from "./helpers";
 import { dataFetch } from "./reducers/dataReducer";
 import { API_URL } from "./config/API";
+
 import { AboutPage, ContactPage, ProjectsPage } from "./pages";
 import {
   setHomeLocation,
@@ -19,6 +20,7 @@ const App = () => {
   const dispatch = useDispatch();
 
   const location = useLocation();
+
   useEffect(() => {
     if (location.pathname === "/" || location.pathname === "/home") {
       dispatch(setHeaderVisible(true));

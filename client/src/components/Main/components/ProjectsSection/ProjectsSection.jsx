@@ -8,10 +8,12 @@ import { dataFetch } from "../../../../reducers/dataReducer";
 import "../../../../styles/global.scss";
 import "./projectsSection.scss";
 const ProjectsSection = () => {
-  const dispatch = useDispatch(); //use types for dispatch
-  const { collectionName } = usePathParameters();
+  const dispatch = useDispatch();
+
+  const { collectionName } = usePathParameters(); // get collection name by useLocation()
+
   const projectsData = useSelector((state) => {
-    return state.projects.data;
+    return state.collections.data;
   });
   const projectsPage = useSelector((state) => state.page.isProjectsPage);
   useEffect(() => {

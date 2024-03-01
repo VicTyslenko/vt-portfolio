@@ -16,11 +16,11 @@ const ProjectsPage = () => {
   const dispatch = useDispatch();
   const { collectionName } = usePathParameters();
   const projectsData = useSelector((state) => {
-    return state.projects.data;
+    return state.collections.data;
   }); //get all projects' data
 
   const selectedProject = useSelector(
-    (state) => state.projects.selectedProject
+    (state) => state.collections.selectedItem
   );
   const modal = useSelector((state) => state.modal);
   const handleModalOpen = () => {
@@ -33,7 +33,6 @@ const ProjectsPage = () => {
 
   useEffect(() => {
     const page = 1;
-
     dispatch(dataFetch({ collectionName, page, pageSize }));
   }, [dispatch, pageSize, collectionName]);
 
@@ -65,7 +64,7 @@ const ProjectsPage = () => {
             pageLocation={pageLocation}
             onClick={() => {
               handleModalOpen();
-              dispatch(fetchItemById(collectionName, project._id));
+              dispatch(fetchItemById({ collectionName, _id: project._id }));
             }}
           />
         ))}

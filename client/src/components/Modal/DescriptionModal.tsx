@@ -29,7 +29,7 @@ const DescriptionModal: React.FC<DescriptionModalProps> = ({
 }) => {
   const dispatch = useDispatch();
   const open = useSelector((state: RootState) => state.modal.isModalOpen);
-  const loader = useSelector((state: RootState) => state.projects.isLoading);
+  const loader = useSelector((state: RootState) => state.collections.isLoading);
 
   const handleCloseModal = () => {
     dispatch(closeModal());
