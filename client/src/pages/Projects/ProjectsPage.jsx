@@ -15,12 +15,13 @@ const ProjectsPage = () => {
   const [pageSize, setPageSize] = useState(6);
   const dispatch = useDispatch();
   const { collectionName } = usePathParameters();
+
   const projectsData = useSelector((state) => {
-    return state.projects.data;
+    return state.collectionsData.data;
   }); //get all projects' data
 
   const selectedProject = useSelector(
-    (state) => state.projects.selectedProject
+    (state) => state.collectionsData.selectedItem
   );
   const modal = useSelector((state) => state.modal);
   const handleModalOpen = () => {
@@ -32,9 +33,8 @@ const ProjectsPage = () => {
   const pageLocation = useSelector((state) => state.page.isProjectsPage);
 
   useEffect(() => {
-    const page = 1;
-
-    dispatch(dataFetch({ collectionName, page, pageSize }));
+    dispatch(dataFetch({ collectionName, pageSize }));
+    console.log(selectedProject);
   }, [dispatch, pageSize, collectionName]);
 
   return (
