@@ -1,9 +1,12 @@
 const { model, mongoose } = require("mongoose");
 
 const project = new mongoose.Schema({
-  name: {
+  title: {
     type: String,
     required: true,
+  },
+  subtitle: {
+    type:String,
   },
   description: {
     type: String,

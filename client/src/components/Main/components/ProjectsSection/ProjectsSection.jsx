@@ -17,9 +17,8 @@ const ProjectsSection = () => {
   });
   const projectsPage = useSelector((state) => state.page.isProjectsPage);
   useEffect(() => {
-    const page = 1;
     const pageSize = 4;
-    dispatch(dataFetch({ collectionName, page, pageSize }));
+    dispatch(dataFetch({ collectionName, pageSize }));
   }, [dispatch, collectionName]); //activating action load data to payload
 
   return (

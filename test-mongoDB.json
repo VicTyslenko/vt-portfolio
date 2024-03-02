@@ -71,9 +71,8 @@
   },
   {
     "icon": "",
-    "title": "Responsive Web Design",
-    "shortDescription": "Web designs for all types of devices",
-    "description": "Just Buy And Enjoy These Awesome Features",
-    "imageFileName": "wordpress-theme.png"
+    "title": "RESTful API Development",
+    "shortDescription": "Building efficient, scalable RESTful APIs with Node.js to enable seamless integration and communication between software applications.",
+    "description": "Just Buy And Enjoy These Awesome Features"
   }
 ]

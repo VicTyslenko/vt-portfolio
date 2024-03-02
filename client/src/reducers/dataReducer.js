@@ -34,7 +34,6 @@ const collectionsDataSlice = createSlice({
       state.isLoading = true;
     });
     builder.addCase(dataFetch.fulfilled, (state, { payload }) => {
-      //checking if payload is Array
       state.data = Array.isArray(payload) ? payload : [];
       state.isLoading = false;
     });

@@ -3,7 +3,7 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
-import DescriptionModal from "../../components/Modal/DescriptionModal";
+import DescriptionModal from "../../components/Modal/DescriptionModal/DescriptionModal";
 import ProjectItem from "../../components/Main/components/ProjectsSection/ProjectItem/ProjectItem";
 import { usePathParameters } from "../../hooks";
 import { openModal } from "../../reducers/modalReducer";

@@ -21,6 +21,10 @@ const App = () => {
 
   const location = useLocation();
 
+  // fetch(`${API_URL}/services`)
+  //   .then((response) => response.json())
+  //   .then((data) => console.log(data));
+
   useEffect(() => {
     if (location.pathname === "/" || location.pathname === "/home") {
       dispatch(setHeaderVisible(true));

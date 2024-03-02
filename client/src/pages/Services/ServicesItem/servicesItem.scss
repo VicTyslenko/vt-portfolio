@@ -28,8 +28,9 @@
     justify-self: end;
   }
 
-  .icons {
-    width: 60px;
-    height: 60px;
+  .icon-wrapp svg {
+    width: 40px;
+    height: 40px;
+    color: $bright-blue;
   }
 }

@@ -1,14 +1,13 @@
-import { closeModal } from "../../reducers/modalReducer";
+import { closeModal } from "../../../reducers/modalReducer";
 import Box from "@mui/material/Box";
 import { IoIosCloseCircleOutline } from "react-icons/io";
 import Modal from "@mui/material/Modal";
 import Fade from "@mui/material/Fade";
-import { RootState } from "../../store";
+import { RootState } from "../../../store";
 import { useSelector, useDispatch } from "react-redux";
 import PuffLoader from "react-spinners/PuffLoader";
 
 import "./description-modal.scss";
-// import { MouseEventHandler } from "react";
 
 interface DescriptionModalProps {
   title: string;
