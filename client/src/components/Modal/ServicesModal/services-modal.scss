@@ -1,0 +1,30 @@
+@import "../../../utils/variables";
+@import "../../../utils/mixins";
+
+.services-modal-wrapp {
+  text-align: center;
+  min-height: 350px;
+  border-radius: 20px;
+  background-color: rgba(17, 31, 38, 0.9803921569);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 35px 45px;
+  border-bottom: 3px solid #1f9cbe;
+  border-top: 3px solid #7fa7b2;
+  .main-title {
+    font-size: 20px;
+  }
+  .description-list li:not(:last-child) {
+    margin-bottom: 20px;
+  }
+  .main-title{
+    margin-bottom: 25px;
+  }
+  .main-title,
+  .description {
+    color: $prime-color;
+  }
+  
+}

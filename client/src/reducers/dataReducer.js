@@ -45,7 +45,6 @@ const collectionsDataSlice = createSlice({
     });
     builder.addCase(fetchItemById.fulfilled, (state, { payload }) => {
       state.selectedItem = payload;
-      console.log(payload);
       state.isLoading = false;
     });
   },

@@ -1,53 +1,55 @@
 import { useDispatch, useSelector } from "react-redux";
 import { closeModal } from "../../../reducers/modalReducer";
+import { motion } from "framer-motion";
 import Box from "@mui/material/Box";
 import { RootState } from "../../../store";
+import "./services-modal.scss";
 
 import Modal from "@mui/material/Modal";
 
-const style = {
-  position: "absolute" as "absolute",
-  top: "50%",
-  left: "50%",
-  transform: "translate(-50%, -50%)",
-  width: 400,
-  bgcolor: "background.paper",
-  border: "2px solid #000",
-  boxShadow: 24,
-  p: 4,
-};
-
 interface ServicesModalProps {
   subtitle: string;
-  description: string;
+  description: Array<string>;
 }
 
 const ServicesModal: React.FC<ServicesModalProps> = ({
   subtitle,
   description,
 }) => {
-  const dispatch = useDispatch();
+  const fadeInOut = {
+    hidden: { opacity: 0, transition: { duration: 0.3 } },
+    visible: { opacity: 1, transition: { duration: 0.9 } },
+    exit: { opacity: 0, transition: { duration: 0.9 } },
+  };
 
+  const dispatch = useDispatch();
 
   const open = useSelector((state: RootState) => state.modal.isModalOpen);
   const handleClose = () => {
     dispatch(closeModal());
   };
   return (
-    <>
-      <Modal
-        open={open}
-        onClose={handleClose}
-        disableScrollLock={true}
-        aria-labelledby="modal-modal-title"
-        aria-describedby="modal-modal-description"
+    <Modal open={open} onClose={handleClose} disableScrollLock={true}>
+      <motion.div
+        variants={fadeInOut}
+        initial="hidden"
+        animate="visible"
+        exit="exit"
       >
-        <Box sx={style}>
-          <h3 className="subtitle">{subtitle}</h3>
-          <p className="description">{description}</p>
+        <Box className="services-modal-wrapp">
+          <h2 className="main-title">
+            What I use to provide an excellent {subtitle}:
+          </h2>
+          <ol className="description-list">
+            {description?.map((listItem, index) => (
+              <li className="description-item" key={index}>
+                {listItem}
+              </li>
+            ))}
+          </ol>
         </Box>
-      </Modal>
-    </>
+      </motion.div>
+    </Modal>
   );
 };
 

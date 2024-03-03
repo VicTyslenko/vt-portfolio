@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import ServicesItem from "../ServicesItem/ServicesItem";
 import ServicesModal from "../../../components/Modal/ServicesModal/ServicesModal";
+import { AnimatePresence } from "framer-motion";
 import { globalAnimation } from "../../../animations/animations";
 import { usePathParameters } from "../../../hooks";
 import { dataFetch, fetchItemById } from "../../../reducers/dataReducer";
@@ -70,7 +71,8 @@ const ServicesPage = () => {
       </motion.div>
       {modal && (
         <ServicesModal
-          subtitle={selectedService?.subtitle}
+          key="services-modal"
+          subtitle={selectedService?.title}
           description={selectedService?.description}
         />
       )}
