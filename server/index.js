@@ -10,8 +10,10 @@ const MONGO_URL =
   "mongodb+srv://vtyslenko:drummerbass4000@portfolio.2tge8sv.mongodb.net/PortfolioDB";
 
 const dataRouter = require("./routers/collectionsData.api");
+const contactRouter = require("./routers/contacts.api");
 
 app.use(dataRouter);
+app.use(contactRouter);
 
 app.all("*", (req, res) => {
   res.status(404).send("resource not found");

@@ -1,3 +1,4 @@
 import scrollToTop from "./scrollToTop";
 import sendRequest from "./sendRequest";
-export { scrollToTop,sendRequest };
+import formInfoSubmit from "./formInfoSubmit";
+export { scrollToTop,sendRequest,formInfoSubmit };

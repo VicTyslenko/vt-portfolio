@@ -77,7 +77,7 @@ const Header: React.FC = () => {
             Services
           </Link>
 
-          <Link className="nav-bar-link" to="/contact">
+          <Link className="nav-bar-link" to="/contacts">
             Contact
           </Link>
         </nav>

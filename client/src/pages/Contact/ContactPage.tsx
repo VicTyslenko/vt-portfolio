@@ -3,6 +3,8 @@ import { Formik, Form } from "formik";
 import { motion } from "framer-motion";
 import { globalAnimation } from "../../animations/animations";
 import { Input, FormBoxElement } from "../../components";
+import { usePathParameters } from "../../hooks";
+import { formInfoSubmit } from "../../helpers";
 // import validationSchema from "./validation";
 import "./contactPage.scss";
 
@@ -14,10 +16,11 @@ interface FormValues {
   message?: string;
 }
 const ContactPage = () => {
-  const formInfoSubmit = (values: FormValues) => {
-    console.log(values);
-  };
+  const { collectionName } = usePathParameters();
 
+  const handleSubmit = (values: FormValues) => {
+    formInfoSubmit(collectionName, values);
+  };
   return (
     <div className="contact-page-container">
       <motion.h1
@@ -37,7 +40,7 @@ const ContactPage = () => {
           message: "",
         }}
         onSubmit={(values) => {
-          formInfoSubmit(values);
+          handleSubmit(values);
         }}
         // validationSchema={validationSchema}
       >

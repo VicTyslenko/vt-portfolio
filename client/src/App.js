@@ -2,9 +2,6 @@ import { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { Main, Header } from "./components";
 import NewServices from "./pages/Services/ServicesPage/ServicesPage";
-import { sendRequest } from "./helpers";
-import { dataFetch } from "./reducers/dataReducer";
-import { API_URL } from "./config/API";
 
 import { AboutPage, ContactPage, ProjectsPage } from "./pages";
 import {
@@ -20,10 +17,6 @@ const App = () => {
   const dispatch = useDispatch();
 
   const location = useLocation();
-
-  // fetch(`${API_URL}/services`)
-  //   .then((response) => response.json())
-  //   .then((data) => console.log(data));
 
   useEffect(() => {
     if (location.pathname === "/" || location.pathname === "/home") {
@@ -49,7 +42,7 @@ const App = () => {
         <Route path="/home" element={<Main />} />
         <Route path="/about" element={<AboutPage />} />
         <Route path="/projects" element={<ProjectsPage />} />
-        <Route path="/contact" element={<ContactPage />} />
+        <Route path="/contacts" element={<ContactPage />} />
         <Route path="/services" element={<NewServices />} />
       </Routes>
     </div>
