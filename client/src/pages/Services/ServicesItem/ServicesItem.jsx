@@ -12,7 +12,7 @@ const ServicesItem = ({ title, shortDescription, icon, action }) => {
       <div className="flex-content">
         <div className="icon-wrapp">{IconComponent}</div>
         <h3 className="service-name">{title}</h3>
-        <p className="description">{shortDescription}</p>
+        <p className="short-description">{shortDescription}</p>
         <Button type="button" className="services-btn" onClick={action}>
           Learn more
         </Button>

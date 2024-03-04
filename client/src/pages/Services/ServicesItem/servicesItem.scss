@@ -23,6 +23,7 @@
       transition: all 0.3s ease;
     }
   }
+
   .services-btn {
     @include second-button-style();
     justify-self: end;
