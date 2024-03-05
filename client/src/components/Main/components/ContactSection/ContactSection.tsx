@@ -25,10 +25,12 @@ const ContactSection = () => {
             possible.
           </p>
         </div>
-        <Formik
+        {/* <Formik
           initialValues={{
-            name: "",
+            firstName: "",
+            lastName: "",
             email: "",
+            mobile: "",
             message: "",
           }}
           onSubmit={(values) => {
@@ -64,7 +66,7 @@ const ContactSection = () => {
               Send message
             </Button>
           </Form>
-        </Formik>
+        </Formik> */}
       </div>
     </section>
   );

@@ -12,7 +12,6 @@ const formInfoSubmit = async (collectionName, values) => {
       data,
     };
   } catch (error) {
-    console.log("Error", error);
     return {
       succes: false,
       error,

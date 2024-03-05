@@ -14,9 +14,7 @@
   .title span {
     color: $bright-blue;
   }
-  .form-wrapp {
-    // @include slowSlideFromBottom();
-  }
+
   .form-box-element {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -62,5 +60,9 @@
   .contact-button {
     @include second-button-style($width: fit-content);
     margin-top: 50px;
+  }
+  .error-message{
+    color: red;
+    font-size: 15px;
   }
 }

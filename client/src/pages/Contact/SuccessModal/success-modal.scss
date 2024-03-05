@@ -1,0 +1,23 @@
+@import "../../../utils/mixins";
+@import "../../../utils/variables";
+
+.success-modal-wrapp {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  min-width: 500px;
+  min-height: 200px;
+  background-color: black;
+  color: $prime-color;
+  @include flex-center(center, center, column);
+  gap: 20px;
+  border: 1px solid $secondary-color;
+  border-radius: 10px;
+  .title span {
+    color: $bright-blue;
+  }
+  .confirm-button {
+    @include second-button-style();
+  }
+}

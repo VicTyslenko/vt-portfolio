@@ -1,26 +1,46 @@
 import Button from "../../components/Button/Button";
-import { Formik, Form } from "formik";
+import { useState } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { Formik, Form, FormikHelpers } from "formik";
 import { motion } from "framer-motion";
 import { globalAnimation } from "../../animations/animations";
+import { openModal } from "../../reducers/modalReducer";
+import { RootState } from "../../store";
+import SuccessModal from "./SuccessModal/SuccessModal";
 import { Input, FormBoxElement } from "../../components";
 import { usePathParameters } from "../../hooks";
 import { formInfoSubmit } from "../../helpers";
-// import validationSchema from "./validation";
+import validationSchema from "./contactsValidation";
 import "./contactPage.scss";
 
 interface FormValues {
   firstName: string;
   lastName: string;
   email: string;
-  mobile: number | string;
+  mobile: string;
   message?: string;
 }
-const ContactPage = () => {
-  const { collectionName } = usePathParameters();
 
-  const handleSubmit = (values: FormValues) => {
-    formInfoSubmit(collectionName, values);
+const ContactPage = () => {
+  const dispatch = useDispatch();
+
+  const { collectionName } = usePathParameters();
+  const [errorMessage, setErrorMessage] = useState("");
+
+  const modal = useSelector((state: RootState) => state.modal.isModalOpen);
+
+  const handleSubmit = async (values: FormValues) => {
+    const result = await formInfoSubmit(collectionName, values);
+    if (result.error) {
+      const error = (result.error as any).message;
+      setErrorMessage(error);
+    } else {
+      dispatch(openModal());
+      console.log(result.data);
+      setErrorMessage("");
+    }
   };
+
   return (
     <div className="contact-page-container">
       <motion.h1
@@ -39,65 +59,67 @@ const ContactPage = () => {
           mobile: "",
           message: "",
         }}
-        onSubmit={(values) => {
-          handleSubmit(values);
+        onSubmit={async (values, { setValues }) => {
+          await handleSubmit(values);
+          setValues({
+            firstName: "",
+            lastName: "",
+            email: "",
+            mobile: "",
+            message: "",
+          });
         }}
-        // validationSchema={validationSchema}
+        validationSchema={validationSchema}
       >
-        {(props) => (
+        {({ errors, touched }) => (
           <motion.div
             {...globalAnimation({
               yInitial: 30,
             })}
           >
-            <Form className="form-wrapp" onSubmit={props.handleSubmit}>
+            <Form className="form-wrapp">
               <FormBoxElement className="form-box-element">
                 <Input
                   name="firstName"
                   className="text-field"
                   label="First name"
                   variant="standard"
-                  value={props.values.firstName}
-                  onChange={props.handleChange}
+                  error={!!errors.firstName && touched.firstName}
                 />
                 <Input
                   name="lastName"
                   className="text-field"
                   label="Last name"
                   variant="standard"
-                  value={props.values.lastName}
-                  onChange={props.handleChange}
+                  error={!!errors.lastName && touched.lastName}
                 />
                 <Input
                   name="email"
                   className="text-field"
                   label="Email"
                   variant="standard"
-                  value={props.values.email}
-                  onChange={props.handleChange}
+                  error={!!errors.email && touched.email}
                 />
                 <Input
                   name="mobile"
                   className="text-field"
                   label="Mobile"
                   variant="standard"
-                  value={props.values.mobile}
-                  onChange={props.handleChange}
+                  error={!!errors.mobile && touched.mobile}
                 />
               </FormBoxElement>
               <FormBoxElement className="message-box-element">
                 <Input
                   name="message"
-                  value={props.values.message}
-                  onChange={props.handleChange}
                   className="message-input"
+                  error={!!errors.message && touched.message}
                   fullWidth
                   label="Message"
                   multiline
                   rows={6}
                 />
               </FormBoxElement>
-
+              <p className="error-message">{errorMessage}</p>
               <Button type="submit" className="contact-button">
                 Send message
               </Button>
@@ -105,6 +127,7 @@ const ContactPage = () => {
           </motion.div>
         )}
       </Formik>
+      {modal && <SuccessModal />}
     </div>
   );
 };

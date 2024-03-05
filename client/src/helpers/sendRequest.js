@@ -9,8 +9,12 @@ const sendRequest = async (url, method = "GET", body = null) => {
   if (body) {
     options.body = JSON.stringify(body);
   }
-  const response = await fetch(url, options);
 
+  const response = await fetch(url, options);
+  if (!response.ok) {
+    const errorData = await response.json();
+    throw new Error(errorData.message || "Something went wrong");
+  }
   const result = await response.json();
 
   return result.data;
