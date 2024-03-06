@@ -17,6 +17,7 @@
   }
   .description {
     max-width: 500px;
+    line-height: 24px
   }
   .btn-wrapp {
     @include flex-center(flex-start);

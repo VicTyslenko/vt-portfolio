@@ -25,11 +25,13 @@ const AboutPage = () => {
         <h3 className="subtitle">I'm here to help you with your projects!</h3>
 
         <p className="description">
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut sunt
-          doloribus nobis, veniam suscipit esse odio. Porro cum ex enim
-          aspernatur! Tenetur ex voluptatum nesciunt libero obcaecati soluta
-          consequuntur ullam labore, eum, sed officia nihil rem qui explicabo
-          exercitationem atque.
+          As a passionate Frontend Developer, I specialize in creating dynamic
+          and user-friendly web applications. Using technologies like HTML, CSS,
+          SASS, JavaScript, ReactJS, and NodeJS, I strive to deliver seamless
+          and responsive designs. My focus is on optimizing user experience
+          through innovative solutions and clean, efficient code. I continuously
+          seek to stay ahead of industry trends and am committed to personal
+          growth and professional development in the tech field.
         </p>
         <div className="icons-wrapp">
           <a

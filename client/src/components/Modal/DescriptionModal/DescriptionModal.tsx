@@ -1,4 +1,5 @@
 import { closeModal } from "../../../reducers/modalReducer";
+import { motion } from "framer-motion";
 import Box from "@mui/material/Box";
 import { IoIosCloseCircleOutline } from "react-icons/io";
 import Modal from "@mui/material/Modal";
@@ -18,8 +19,13 @@ interface DescriptionModalProps {
   link: string;
 }
 
+//modal animation styles
+const fadeInOut = {
+  hidden: { opacity: 0, transition: { duration: 0.3 } },
+  visible: { opacity: 1, transition: { duration: 0.9 } },
+};
+
 const DescriptionModal: React.FC<DescriptionModalProps> = ({
-  description,
   image,
   title,
   link,
@@ -35,12 +41,17 @@ const DescriptionModal: React.FC<DescriptionModalProps> = ({
   };
 
   return (
-    <>
-      <Modal
-        open={open}
-        onClose={handleCloseModal}
-        disableScrollLock={true}
-        className="modal-wrapp"
+    <Modal
+      open={open}
+      onClose={handleCloseModal}
+      disableScrollLock={true}
+      className="modal-wrapp"
+    >
+      <motion.div
+        variants={fadeInOut}
+        initial="hidden"
+        animate="visible"
+        exit="exit"
       >
         <Fade in={open}>
           <Box
@@ -103,8 +114,8 @@ const DescriptionModal: React.FC<DescriptionModalProps> = ({
             </div>
           </Box>
         </Fade>
-      </Modal>
-    </>
+      </motion.div>
+    </Modal>
   );
 };
 

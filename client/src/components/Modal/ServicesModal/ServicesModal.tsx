@@ -16,10 +16,11 @@ const ServicesModal: React.FC<ServicesModalProps> = ({
   subtitle,
   description,
 }) => {
+  //modal animation styles
   const fadeInOut = {
     hidden: { opacity: 0, transition: { duration: 0.3 } },
     visible: { opacity: 1, transition: { duration: 0.9 } },
-    exit: { opacity: 0, transition: { duration: 0.9 } },
+    // exit: { opacity: 0, transition: { duration: 0.9 } },
   };
 
   const dispatch = useDispatch();
