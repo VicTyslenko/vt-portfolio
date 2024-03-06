@@ -1,5 +1,8 @@
-import { Formik, Form } from "formik";
+import { Formik, Form, FormikHelpers } from "formik";
+import { useState } from "react";
 import Input from "../../../Input/Input";
+import { formInfoSubmit } from "../../../../helpers";
+import validationSchema from "./validation";
 import Button from "../../../Button/Button";
 import FormBoxElement from "../../../FormBoxElement/FormBoxElement";
 import "./contactSection.scss";
@@ -7,12 +10,26 @@ import "./contactSection.scss";
 interface FormValues {
   name: string;
   email: string;
-  message?: string;
+  message: string;
 }
 const ContactSection = () => {
+  const [errorMessage, setErrorMessage] = useState("");
 
-  const formSubmit = (values: FormValues) => {
-    console.log(values);
+  const handleSubmit = async (
+    values: FormValues,
+    { resetForm }: FormikHelpers<FormValues>
+  ) => {
+    const collectionName = "contacts";
+    const result = await formInfoSubmit(collectionName, values);
+    if (result.error) {
+      const error = (result.error as any).message;
+      setErrorMessage(error);
+    } else {
+      setErrorMessage("");
+      console.log(values);
+      alert("The message sent successfully");
+      resetForm();
+    }
   };
   return (
     <section className="contact-section">
@@ -25,48 +42,56 @@ const ContactSection = () => {
             possible.
           </p>
         </div>
-        {/* <Formik
+        <Formik
           initialValues={{
-            firstName: "",
-            lastName: "",
+            name: "",
             email: "",
-            mobile: "",
             message: "",
           }}
-          onSubmit={(values) => {
-            formSubmit(values);
+          onSubmit={(values, formikHelpers) => {
+            handleSubmit(values, formikHelpers);
           }}
+          validationSchema={validationSchema}
         >
-          <Form
-            style={{
-              textAlign: "right",
-            }}
-          >
-            <FormBoxElement className="form-wrapp">
-              <Input
-                className="text-field name-input"
-                label="Name"
-                variant="standard"
-                fullWidth
-              />
-              <Input
-                className="text-field"
-                label="Email"
-                variant="standard"
-                fullWidth
-              />
-              <Input
-                className="text-field message"
-                label="Message"
-                variant="standard"
-                fullWidth
-              />
-            </FormBoxElement>
-            <Button type="submit" className="submit-btn">
-              Send message
-            </Button>
-          </Form>
-        </Formik> */}
+          {({ errors, touched }) => (
+            <Form
+              style={{
+                textAlign: "right",
+              }}
+            >
+              <FormBoxElement className="form-wrapp">
+                <Input
+                  name="name"
+                  className="text-field name-input"
+                  label="Name"
+                  error={!!errors.name && touched.name}
+                  variant="standard"
+                  fullWidth
+                />
+                <Input
+                  name="email"
+                  className="text-field"
+                  label="Email"
+                  error={!!errors.email && touched.email}
+                  variant="standard"
+                  fullWidth
+                />
+                <Input
+                  name="message"
+                  className="text-field message"
+                  label="Message"
+                  error={!!errors.message}
+                  variant="standard"
+                  fullWidth
+                />
+              </FormBoxElement>
+              {errorMessage && <p className="error-message">{errorMessage}</p>}
+              <Button type="submit" className="submit-btn">
+                Send message
+              </Button>
+            </Form>
+          )}
+        </Formik>
       </div>
     </section>
   );

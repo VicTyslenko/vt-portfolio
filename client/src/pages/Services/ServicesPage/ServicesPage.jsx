@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import ServicesItem from "../ServicesItem/ServicesItem";
 import ServicesModal from "../../../components/Modal/ServicesModal/ServicesModal";
 import { globalAnimation } from "../../../animations/animations";
-import { usePathParameters } from "../../../hooks";
+import usePathParameters from "../../../hooks/usePathParameters";
 import { dataFetch, fetchItemById } from "../../../reducers/dataReducer";
 import { openModal } from "../../../reducers/modalReducer";
 import Slider from "react-slick";

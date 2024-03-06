@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import Button from "../../../Button/Button";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { usePathParameters } from "../../../../hooks";
+import usePathParameters from "../../../../hooks/usePathParameters";
 import ProjectItem from "./ProjectItem/ProjectItem";
 import { dataFetch } from "../../../../reducers/dataReducer";
 import "../../../../styles/global.scss";
@@ -30,7 +30,7 @@ const ProjectsSection = () => {
               Latest <span>projects</span>
             </h1>
           </Link>
-          <Link to="/contact">
+          <Link to="/contacts">
             <Button type="button" className="contact-btn">
               Contact me
             </Button>

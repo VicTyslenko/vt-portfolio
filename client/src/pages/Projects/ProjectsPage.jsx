@@ -5,7 +5,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 import DescriptionModal from "../../components/Modal/DescriptionModal/DescriptionModal";
 import ProjectItem from "../../components/Main/components/ProjectsSection/ProjectItem/ProjectItem";
-import { usePathParameters } from "../../hooks";
+import usePathParameters from "../../hooks/usePathParameters";
 import { openModal } from "../../reducers/modalReducer";
 import { dataFetch, fetchItemById } from "../../reducers/dataReducer";
 import { globalAnimation } from "../../animations/animations";

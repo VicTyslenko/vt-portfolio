@@ -50,6 +50,10 @@
     width: 100%;
     text-align: justify;
   }
+  .error-message {
+    color: red;
+    font-size: 14px;
+  }
 
   .submit-btn {
     @include main-button-style();

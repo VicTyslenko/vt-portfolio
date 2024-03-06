@@ -8,7 +8,7 @@ import { openModal } from "../../reducers/modalReducer";
 import { RootState } from "../../store";
 import SuccessModal from "./SuccessModal/SuccessModal";
 import { Input, FormBoxElement } from "../../components";
-import { usePathParameters } from "../../hooks";
+import { usePathParameters } from "../../hooks/usePathParameters";
 import { formInfoSubmit } from "../../helpers";
 import validationSchema from "./contactsValidation";
 import "./contactPage.scss";
