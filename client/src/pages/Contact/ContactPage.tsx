@@ -18,7 +18,7 @@ interface FormValues {
   lastName: string;
   email: string;
   mobile: string;
-  message?: string;
+  message: string;
 }
 
 const ContactPage = () => {
@@ -29,7 +29,10 @@ const ContactPage = () => {
 
   const modal = useSelector((state: RootState) => state.modal.isModalOpen);
 
-  const handleSubmit = async (values: FormValues) => {
+  const handleSubmit = async (
+    values: FormValues,
+    { resetForm }: FormikHelpers<FormValues>
+  ) => {
     const result = await formInfoSubmit(collectionName, values);
     if (result.error) {
       const error = (result.error as any).message;
@@ -38,6 +41,7 @@ const ContactPage = () => {
       dispatch(openModal());
       console.log(result.data);
       setErrorMessage("");
+      resetForm();
     }
   };
 
@@ -59,15 +63,8 @@ const ContactPage = () => {
           mobile: "",
           message: "",
         }}
-        onSubmit={async (values, { setValues }) => {
-          await handleSubmit(values);
-          setValues({
-            firstName: "",
-            lastName: "",
-            email: "",
-            mobile: "",
-            message: "",
-          });
+        onSubmit={(values, formikHelpers) => {
+          handleSubmit(values, formikHelpers);
         }}
         validationSchema={validationSchema}
       >
