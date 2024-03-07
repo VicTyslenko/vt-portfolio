@@ -4,12 +4,15 @@
   .skills-wrapp {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    // justify-items: center;
+    justify-items: center;
     row-gap: 70px;
+  }
+  .experience{
+    @include text-font-style();
+  }
+  .skill {
+    @include title-font-style($fontSize: 40px);
+    margin-bottom: 10px;
   }
 }
 
-.skill {
-  @include title-font-style($fontSize: 40px);
-  margin-bottom: 10px;
-}

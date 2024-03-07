@@ -45,7 +45,6 @@
     height: 100%;
   }
   .overlay-text {
-    color: $prime-color;
-    font-size: 20px;
+    @include text-font-style($fontWeight: 500,$fontSize:20px);
   }
 }

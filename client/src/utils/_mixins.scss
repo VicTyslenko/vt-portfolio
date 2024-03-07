@@ -17,17 +17,20 @@
   height: $height;
 }
 
+// button styles
 @mixin main-button-style(
   $paddingBottom: 9px,
-  $color: #fff,
+  $color: $prime-color,
   $border: none,
   $background: inherit,
   $cursor: pointer,
-  $borderBottomColor: #1f9cbe,
+  $borderBottomColor: $bright-blue,
   $borderBottomWidth: 2px,
   $borderBottomStyle: solid,
-  $fontWeight: 600
+  $fontWeight: 600,
+  $fontFamily: $font-text
 ) {
+  font-family: $fontFamily;
   background-color: $background;
   padding-bottom: $paddingBottom;
   color: $color;
@@ -56,7 +59,7 @@
   font-weight: $fontWeight;
   border-radius: $radius;
 }
-
+//link-styles
 @mixin global-link-style($textDecoration: none, $color: $prime-color) {
   text-decoration: $textDecoration;
   color: $color;
