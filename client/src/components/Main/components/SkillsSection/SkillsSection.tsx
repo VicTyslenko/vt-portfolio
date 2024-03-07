@@ -14,19 +14,19 @@ const SkillsSection = () => {
             <p className="experience">4 years experience</p>
           </div>
           <div className="skills-item">
+            <h3 className="skill">Gulp</h3>
+            <p className="experience">4 years experience</p>
+          </div>
+          <div className="skills-item">
             <h3 className="skill">React</h3>
             <p className="experience">4 years experience</p>
           </div>
           <div className="skills-item">
-            <h3 className="skill">NodeJS</h3>
+            <h3 className="skill">Node</h3>
             <p className="experience">4 years experience</p>
           </div>
           <div className="skills-item">
-            <h3 className="skill">NodeJS</h3>
-            <p className="experience">4 years experience</p>
-          </div>
-          <div className="skills-item">
-            <h3 className="skill">NodeJS</h3>
+            <h3 className="skill">Git</h3>
             <p className="experience">4 years experience</p>
           </div>
         </div>

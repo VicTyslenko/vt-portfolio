@@ -12,8 +12,7 @@
 
   .title {
     position: relative;
-    font-weight: 400;
-    color: $prime-color;
+    @include title-font-style($fontSize: 33px, $fontWeight: 400);
   }
 
   .title::before {
@@ -55,13 +54,7 @@
       transition: all 1.5s ease;
     }
   }
-  //scrolling styles end
 
-  // .title {
-  //   &.no-transition {
-  //     transition: none;
-  //   }
-  // }
   .title.no-transition {
     transition: none;
   }
@@ -70,12 +63,10 @@
     gap: 30px;
 
     .nav-bar-link {
-      color: $prime-color;
+      @include text-font-style($fontSize:16px,$fontWeight:400);
       text-decoration: none;
-      font-size: 15px;
       border-bottom: 1px solid transparent;
       padding-bottom: 5px;
-      // font-size: 28px;
     }
   }
 

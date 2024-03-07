@@ -36,7 +36,7 @@ const MainSection = () => {
           })}
         >
           <h1 className="title">
-            I'm <span className="title-name">Victor Tyslenko</span>{" "}
+            I'm <span className="title-name">Victor Tyslenko</span>
           </h1>
           <motion.p
             className="subtitle"
@@ -49,8 +49,8 @@ const MainSection = () => {
             Frontend Web Developer
           </motion.p>
           <p className="description">
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Sed totam
-            facilis et laborum est atque.
+            Crafting responsive, user-centric websites and web applications with
+            the latest technologies for seamless digital experiences.
           </p>
         </motion.div>
         {/* <div className="devider-wrapp"> */}

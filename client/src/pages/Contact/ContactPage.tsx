@@ -20,7 +20,6 @@ interface FormValues {
   mobile: string;
   message: string;
 }
-
 const ContactPage = () => {
   const dispatch = useDispatch();
 

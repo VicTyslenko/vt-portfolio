@@ -25,6 +25,7 @@ const fadeInOut = {
   visible: { opacity: 1, transition: { duration: 0.9 } },
 };
 
+
 const DescriptionModal: React.FC<DescriptionModalProps> = ({
   image,
   title,

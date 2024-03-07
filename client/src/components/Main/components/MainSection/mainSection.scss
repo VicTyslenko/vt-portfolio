@@ -7,23 +7,24 @@
   .main-text {
     position: absolute;
     top: 22%;
-    right: 10%;
+    right: 22%;
     z-index: 6;
     .title {
-      font-size: 60px;
-      // font-family: $font-family-poppins;
-      font-family: "Courier New", Courier, monospace;
-      font-weight: 600;
+      @include title-font-style();
+      letter-spacing: 5px;
+      margin-bottom: 10px;
     }
     .title-name {
       border-bottom: 2px solid #047695;
     }
     .subtitle {
-      font-family: "Courier New", Courier, monospace;
-      font-size: 35px;
+      @include subtitle-font-style();
+      letter-spacing: 1px;
     }
     .description {
+      @include text-font-style();
       max-width: 400px;
+    letter-spacing: 0.5px;
     }
   }
   .image-wrapp {
