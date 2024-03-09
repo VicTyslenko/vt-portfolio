@@ -6,6 +6,30 @@
     border-bottom: 1px solid $prime-color;
     @include flex-center(space-between, normal);
   }
+
+  .title {
+    @include title-font-style();
+    margin-bottom: 35px;
+  }
+  .description {
+    @include text-font-style();
+    max-width: 430px;
+    width: 100%;
+    text-align: justify;
+    line-height: 30px;
+
+  }
+  .error-message {
+    color: red;
+    font-size: 14px;
+  }
+
+  .submit-btn {
+    @include main-button-style();
+    margin: 26px 0 50px 0;
+    text-transform: uppercase;
+  }
+
   .form-wrapp {
     width: 400px;
     @include flex-center($direction: column);
@@ -40,25 +64,4 @@
     }
   }
   //  styles for MUI Text Field end
-
-  .title {
-    font-size: 60px;
-    margin-bottom: 35px;
-  }
-  .description {
-    max-width: 386px;
-    width: 100%;
-    text-align: justify;
-    line-height: 30px;
-  }
-  .error-message {
-    color: red;
-    font-size: 14px;
-  }
-
-  .submit-btn {
-    @include main-button-style();
-    margin: 26px 0 50px 0;
-    text-transform: uppercase;
-  }
 }

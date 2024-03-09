@@ -10,7 +10,13 @@
   border-bottom: 3px solid $bright-blue;
   border-top: 3px solid $bright-blue;
   transition: all 0.5s ease;
+.service-name{
+@include subtitle-font-style($fontSize:20px);
 
+}
+.short-description{
+  @include text-font-style();
+}
   .flex-content {
     height: 100%;
     @include flex-center(space-between, center, column);

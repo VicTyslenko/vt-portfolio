@@ -39,7 +39,7 @@ const ServicesModal: React.FC<ServicesModalProps> = ({
       >
         <Box className="services-modal-wrapp">
           <h2 className="main-title">
-            What I use to provide an excellent <span>{subtitle}</span>
+            What I use to provide an excellent<span>{subtitle}</span>
           </h2>
           <ol className="description-list">
             {description?.map((listItem, index) => (

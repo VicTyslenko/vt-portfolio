@@ -28,8 +28,10 @@
   $borderBottomWidth: 2px,
   $borderBottomStyle: solid,
   $fontWeight: 600,
-  $fontFamily: $font-text
+  $fontFamily: $font-text,
+  $letterSpacing: 1px
 ) {
+  letter-spacing: $letterSpacing;
   font-family: $fontFamily;
   background-color: $background;
   padding-bottom: $paddingBottom;
@@ -41,6 +43,7 @@
 }
 
 @mixin second-button-style(
+  $fontFamily: $font-text,
   $padding: 15px,
   $color: $prime-color,
   $border: 0.5px solid transparent,
@@ -48,8 +51,11 @@
   $cursor: pointer,
   $radius: 5px,
   $fontWeight: 600,
-  $width: 122px
+  $width: 122px,
+  $letterSpacing: 0.6px
 ) {
+  letter-spacing: $letterSpacing;
+  font-family: $fontFamily;
   width: $width;
   background-color: $background;
   padding: $padding;

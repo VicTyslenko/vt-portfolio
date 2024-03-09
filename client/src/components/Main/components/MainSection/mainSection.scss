@@ -11,7 +11,7 @@
     z-index: 6;
     .title {
       @include title-font-style();
-      letter-spacing: 5px;
+      letter-spacing: 7px;
       margin-bottom: 10px;
     }
     .title-name {
@@ -23,8 +23,9 @@
     }
     .description {
       @include text-font-style();
-      max-width: 400px;
-    letter-spacing: 0.5px;
+      max-width: 450px;
+      letter-spacing: 0.5px;
+      line-height: 27px;
     }
   }
   .image-wrapp {

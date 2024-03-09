@@ -4,6 +4,7 @@
   text-align: center;
   padding: 150px 110px 50px;
   .title {
+    @include title-font-style($fontSize: 32px);
     margin-bottom: 40px;
   }
   .title span {

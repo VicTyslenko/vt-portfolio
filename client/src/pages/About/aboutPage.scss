@@ -4,10 +4,15 @@
   padding: 130px 0;
   @include flex-center(space-evenly, center);
   gap: 50px;
+
+  .title {
+    @include title-font-style();
+  }
   .title span {
     color: $bright-blue;
   }
   .subtitle {
+    @include subtitle-font-style();
     margin-bottom: 20px;
   }
 
@@ -16,8 +21,9 @@
     border-radius: 20px;
   }
   .description {
-    max-width: 500px;
-    line-height: 24px
+    @include text-font-style();
+    max-width: 570px;
+    line-height: 27px;
   }
   .btn-wrapp {
     @include flex-center(flex-start);
@@ -27,18 +33,18 @@
     @include main-button-style();
     text-decoration: none;
   }
-  .icons-wrapp{
+  .icons-wrapp {
     margin: 20px 0;
     @include flex-center(flex-start);
-    gap:30px
+    gap: 30px;
   }
-.icons-wrapp svg{
-width: 25px;
-height: 25px;
-color: $prime-color;
-}
-.icons-wrapp svg:hover{
-  color: $bright-blue;
-  transition: all 0.5s ease;
-}
+  .icons-wrapp svg {
+    width: 25px;
+    height: 25px;
+    color: $prime-color;
+  }
+  .icons-wrapp svg:hover {
+    color: $bright-blue;
+    transition: all 0.5s ease;
+  }
 }

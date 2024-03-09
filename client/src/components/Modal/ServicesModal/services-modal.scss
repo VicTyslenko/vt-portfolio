@@ -14,19 +14,20 @@
   border-bottom: 3px solid #1f9cbe;
   border-top: 3px solid #1f9cbe;
   .main-title {
-    font-size: 20px;
-    color: $prime-color;
+    @include subtitle-font-style();
     margin-bottom: 25px;
   }
-  .main-title span{
+  .main-title span {
     color: $bright-blue;
+    margin-left: 10px;
   }
 
   .description-list li:not(:last-child) {
     margin-bottom: 20px;
   }
-  .description-list-item{
-    line-height: 25px;
+  .description-list-item {
+    @include text-font-style();
+    line-height: 28px;
     text-align: justify;
   }
 }

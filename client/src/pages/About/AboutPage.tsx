@@ -20,7 +20,7 @@ const AboutPage = () => {
             yInitial: -50,
           })}
         >
-          About <span>me</span>
+          About <span>Me</span>
         </motion.h1>
         <h3 className="subtitle">I'm here to help you with your projects!</h3>
 

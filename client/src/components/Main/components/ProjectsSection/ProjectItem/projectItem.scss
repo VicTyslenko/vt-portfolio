@@ -2,10 +2,12 @@
 @import "../../../../../utils/variables";
 .projects-item {
   .projects-name {
-    font-size: 24px;
-    margin-bottom: 10px;
+    @include subtitle-font-style();
+    margin-bottom: 5px;
   }
-
+  .subtitle {
+    @include text-font-style();
+  }
   .projects-image-wrapp {
     position: relative;
     transition: all 0.3s cubic-bezier(0, 0, 0.5, 1);
@@ -45,6 +47,15 @@
     height: 100%;
   }
   .overlay-text {
-    @include text-font-style($fontWeight: 500,$fontSize:20px);
+    @include text-font-style($fontWeight: 500, $fontSize: 20px);
+  }
+}
+//on ProjectsPage styles
+.projects-page-item {
+  .subtitle {
+    @include text-font-style();
+  }
+  .projects-name {
+    @include subtitle-font-style($fontSize: 20px);
   }
 }

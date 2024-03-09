@@ -4,6 +4,7 @@
 }
 .footer-wrapp {
   .title {
+    @include subtitle-font-style();
     cursor: pointer;
   }
   .title:hover {
