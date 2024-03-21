@@ -1,13 +1,17 @@
 const express = require("express");
 const cors = require("cors");
 const mongoose = require("mongoose");
+require("dotenv").config();
+const PORT = process.env.PORT;
+const MONGO_URL = process.env.MONGO_URL;
+
 const app = express();
 
 app.use(cors());
 app.use(express.json());
-const PORT = process.env.PORT || 4444;
-const MONGO_URL =
-  "mongodb+srv://vtyslenko:drummerbass4000@portfolio.2tge8sv.mongodb.net/PortfolioDB";
+// const PORT = process.env.PORT || 4444;
+// const MONGO_URL =
+//   "mongodb+srv://vtyslenko:drummerbass4000@portfolio.2tge8sv.mongodb.net/PortfolioDB";
 
 const dataRouter = require("./routers/collectionsData.api");
 const contactRouter = require("./routers/contacts.api");
@@ -15,10 +19,6 @@ const contactRouter = require("./routers/contacts.api");
 app.use(dataRouter);
 app.use(contactRouter);
 
-
-app.get('/', (req, res) => {
-  res.send('Hello World!');
-});
 app.all("*", (req, res) => {
   res.status(404).send("resource not found");
 });
