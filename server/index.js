@@ -15,6 +15,10 @@ const contactRouter = require("./routers/contacts.api");
 app.use(dataRouter);
 app.use(contactRouter);
 
+
+app.get('/', (req, res) => {
+  res.send('Hello World!');
+});
 app.all("*", (req, res) => {
   res.status(404).send("resource not found");
 });
