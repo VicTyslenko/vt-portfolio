@@ -42,11 +42,12 @@ const ServicesModal: React.FC<ServicesModalProps> = ({
             What I use to provide an excellent<span>{subtitle}</span>
           </h2>
           <ol className="description-list">
-            {description?.map((listItem, index) => (
-              <li className="description-list-item" key={index}>
-                {listItem}
-              </li>
-            ))}
+            {Array.isArray(description) &&
+              description?.map((listItem, index) => (
+                <li className="description-list-item" key={index}>
+                  {listItem}
+                </li>
+              ))}
           </ol>
         </Box>
       </motion.div>

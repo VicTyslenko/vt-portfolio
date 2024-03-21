@@ -24,12 +24,11 @@
     @include flex-center(normal, initial);
     gap: 20px;
     .title {
-      color: $secondary-color;
-      font-size: 20px;
+      @include subtitle-font-style($color: black);
     }
     .description-block {
       flex: 1;
-      padding: 30px 30px 0 0;
+      padding: 30px 30px 30px 0;
       @include flex-center(initial, center, column);
     }
 
@@ -40,21 +39,25 @@
 
     .technologies,
     .features {
+      @include subtitle-font-style(
+        $color: #000000,
+        $fontWeight: 600,
+        $fontSize: 20px
+      );
       margin: 10px 0;
-
-      color: black;
     }
     .tech-ordered-list,
     .features-ordered-list {
+      @include text-font-style($fontSize: 15px, $color: #000000);
+
       line-height: 22px;
       padding-left: 10px;
-      color: #757575;
-    }
-    .features-ordered-list {
-      font-size: 12px;
     }
     .tech-ordered-list {
-      color: $secondary-color;
+      font-weight: 400;
+    }
+    .features-item:not(:last-child) {
+      margin-bottom: 5px;
     }
     .close-icon {
       position: absolute;

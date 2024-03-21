@@ -61,7 +61,7 @@ const ServicesPage = () => {
                 icon={icon}
                 action={() => {
                   handleOpen();
-                  dispatch(fetchItemById({ collectionName, _id }));
+                  dispatch(fetchItemById({ collectionName, _id}));
                 }}
               />
             )

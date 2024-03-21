@@ -25,10 +25,8 @@ const fadeInOut = {
   visible: { opacity: 1, transition: { duration: 0.9 } },
 };
 
-
 const DescriptionModal: React.FC<DescriptionModalProps> = ({
   image,
-  title,
   link,
   technologies,
   features,
@@ -89,14 +87,14 @@ const DescriptionModal: React.FC<DescriptionModalProps> = ({
                   target="_blank"
                   rel="noreferrer"
                 >
-                  <h2 className="title">{title}</h2>
+                  {/* <h2 className="title">Visit project</h2> */}
                 </a>
 
                 <h3 className="technologies">Technologies:</h3>
 
                 <ul className="tech-ordered-list">
                   {technologies?.map((tech, index) => (
-                    <li key={index} className="tech">
+                    <li key={index} className="tech-item">
                       {tech}
                     </li>
                   ))}
@@ -104,7 +102,7 @@ const DescriptionModal: React.FC<DescriptionModalProps> = ({
                 <h3 className="features">Features:</h3>
                 <ol className="features-ordered-list">
                   {features?.map((tech, index) => (
-                    <li key={index}>{tech}</li>
+                    <li key={index} className="features-item">{tech}</li>
                   ))}
                 </ol>
               </div>
