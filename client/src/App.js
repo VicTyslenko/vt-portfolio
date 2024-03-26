@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { useDispatch} from "react-redux";
+import { useDispatch } from "react-redux";
 import { Main, Header } from "./components";
 import NewServices from "./pages/Services/ServicesPage/ServicesPage";
 
