@@ -9,15 +9,23 @@ const app = express();
 
 app.use(cors());
 app.use(express.json());
-// const PORT = process.env.PORT || 4444;
-// const MONGO_URL =
-//   "mongodb+srv://vtyslenko:drummerbass4000@portfolio.2tge8sv.mongodb.net/PortfolioDB";
 
 const dataRouter = require("./routers/collectionsData.api");
 const contactRouter = require("./routers/contacts.api");
 
 app.use(dataRouter);
 app.use(contactRouter);
+
+app.get("/test-db", async (req, res) => {
+  try {
+    const result = await mongoose.connection.db.admin().listDatabases(); // Простой запрос для проверки подключения к DB
+    res.json(result);
+  } catch (error) {
+    res
+      .status(500)
+      .json({ message: "Ошибка подключения к базе данных", error });
+  }
+});
 
 app.all("*", (req, res) => {
   res.status(404).send("resource not found");
