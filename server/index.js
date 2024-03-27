@@ -15,10 +15,11 @@ const contactRouter = require("./routers/contacts.api");
 
 app.use(dataRouter);
 app.use(contactRouter);
-
-app.get("/test-env", (req, res) => {
-  res.send(process.env.MONGO_URL || "Переменная MONGO_URL не установлена");
-});
+app.use(
+  cors({
+    origin: "http://localhost:3000",
+  })
+);
 
 app.all("*", (req, res) => {
   res.status(404).send("resource not found");
