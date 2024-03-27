@@ -15,7 +15,6 @@ import { Routes, Route, useLocation } from "react-router-dom";
 
 const App = () => {
   const dispatch = useDispatch();
-
   const location = useLocation();
 
   useEffect(() => {
