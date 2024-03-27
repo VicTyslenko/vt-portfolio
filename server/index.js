@@ -16,15 +16,8 @@ const contactRouter = require("./routers/contacts.api");
 app.use(dataRouter);
 app.use(contactRouter);
 
-app.get("/test-db", async (req, res) => {
-  try {
-    const result = await mongoose.connection.db.admin().listDatabases(); // Простой запрос для проверки подключения к DB
-    res.json(result);
-  } catch (error) {
-    res
-      .status(500)
-      .json({ message: "Ошибка подключения к базе данных", error });
-  }
+app.get("/test-env", (req, res) => {
+  res.send(process.env.MONGO_URL || "Переменная MONGO_URL не установлена");
 });
 
 app.all("*", (req, res) => {
