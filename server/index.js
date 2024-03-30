@@ -10,11 +10,14 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-const dataRouter = require("./routers/collectionsData.api");
-const contactRouter = require("./routers/contacts.api");
+// const dataRouter = require("./routers/collectionsData.api");
+// const contactRouter = require("./routers/contacts.api");
 
-app.use(dataRouter);
-app.use(contactRouter);
+app.get("/test", (req, res) => {
+  res.status(200).send("Server is working")
+})
+// app.use(dataRouter);
+// app.use(contactRouter);
 
 app.all("*", (req, res) => {
   res.status(404).send("resource not found");
