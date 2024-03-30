@@ -21,7 +21,7 @@ const ProjectItem: React.FC<ProjectItemProps> = ({
   pageLocation,
   onClick,
 }) => {
-  const imagePath = `/img/projects/${imageFileName}`;
+  const imagePath = `${process.env.PUBLIC_URL}/img/projects/${imageFileName}`;
 
   return (
     <>

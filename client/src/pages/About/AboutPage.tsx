@@ -5,6 +5,7 @@ import { FaGithub } from "react-icons/fa";
 import { motion } from "framer-motion";
 import "./aboutPage.scss";
 const AboutPage = () => {
+  const imagePath = `${process.env.PUBLIC_URL}/img/about-me-image.JPG`
   return (
     <div className="about-page-container">
       <motion.div
@@ -76,7 +77,7 @@ const AboutPage = () => {
           duration: 0.8,
         })}
       >
-        <img src="/img/about-me-image.JPG" alt="portfolio" />
+        <img src={imagePath} alt="portfolio" />
       </motion.div>
     </div>
   );

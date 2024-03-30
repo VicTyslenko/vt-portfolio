@@ -75,7 +75,7 @@ const DescriptionModal: React.FC<DescriptionModalProps> = ({
                 <div
                   className="image-wrapp"
                   style={{
-                    backgroundImage: `url('/img/description-images/${image}')`,
+                    backgroundImage: `url('${process.env.PUBLIC_URL}/img/description-images/${image}')`,
                   }}
                 ></div>
               )}
@@ -87,7 +87,6 @@ const DescriptionModal: React.FC<DescriptionModalProps> = ({
                   target="_blank"
                   rel="noreferrer"
                 >
-                  {/* <h2 className="title">Visit project</h2> */}
                 </a>
 
                 <h3 className="technologies">Technologies:</h3>
