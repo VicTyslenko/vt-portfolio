@@ -13,12 +13,12 @@ app.use(express.json());
 const dataRouter = require("./routers/collectionsData.api");
 const contactRouter = require("./routers/contacts.api");
 
-app.get("/test", (req, res) => {
-  res.status(200).send("Server is working");
-});
-app.get("/test-2", (req, res) => {
-  res.status(200).send("Server is good");
-});
+// app.get("/test", (req, res) => {
+//   res.status(200).send("Server is working");
+// });
+// app.get("/test-2", (req, res) => {
+//   res.status(200).send("Server is good");
+// });
 app.use(dataRouter);
 app.use(contactRouter);
 
