@@ -9,7 +9,11 @@ const app = express();
 
 app.use(cors());
 app.use(express.json());
-
+app.use(
+  cors({
+    origin: "https://victyslenko.github.io",
+  })
+);
 const dataRouter = require("./routers/collectionsData.api");
 const contactRouter = require("./routers/contacts.api");
 
