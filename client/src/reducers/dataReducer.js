@@ -10,7 +10,7 @@ const initialState = {
 
 export const dataFetch = createAsyncThunk(
   "data/fetch",
-  async ({ collectionName, page = 1, pageSize }) => {
+  async ({ collectionName, page = 1, pageSize = 4 }) => {
     const response = await sendRequest(
       `${API_URL}/${collectionName}?page=${page}&pageSize=${pageSize}`
     );
@@ -19,12 +19,11 @@ export const dataFetch = createAsyncThunk(
 );
 export const fetchItemById = createAsyncThunk(
   "fetch/projectsId",
-  async({collectionName, _id}) => {
+  async ({ collectionName, _id }) => {
     const response = await sendRequest(`${API_URL}/${collectionName}/${_id}`);
     return response;
   }
 );
-
 
 const collectionsDataSlice = createSlice({
   name: "projects",

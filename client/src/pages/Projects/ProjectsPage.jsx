@@ -33,6 +33,7 @@ const ProjectsPage = () => {
 
   useEffect(() => {
     const page = 1;
+    console.log(pageSize);
     dispatch(dataFetch({ collectionName, page, pageSize }));
   }, [dispatch, pageSize, collectionName]);
 
