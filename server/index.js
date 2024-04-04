@@ -9,13 +9,14 @@ const app = express();
 
 app.use(cors());
 app.use(express.json());
-app.use(
-  cors({
-    origin: "https://victyslenko.github.io",
-  })
-);
+
 const dataRouter = require("./routers/collectionsData.api");
 const contactRouter = require("./routers/contacts.api");
+// const corsOptions = {
+//   origin: "https://victyslenko.github.io",
+//   optionsSuccessStatus: 200, 
+// };
+// app.use(cors(corsOptions));
 
 app.get("/test", (req, res) => {
   res.status(200).send("Server is working");
