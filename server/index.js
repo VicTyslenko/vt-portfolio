@@ -7,6 +7,8 @@ const MONGO_URL = process.env.MONGO_URL;
 
 const app = express();
 
+app.options("*", cors());
+
 app.use(cors());
 app.use(express.json());
 
@@ -14,16 +16,14 @@ const dataRouter = require("./routers/collectionsData.api");
 const contactRouter = require("./routers/contacts.api");
 // const corsOptions = {
 //   origin: "https://victyslenko.github.io",
-//   optionsSuccessStatus: 200, 
+//   optionsSuccessStatus: 200,
 // };
 // app.use(cors(corsOptions));
 
 app.get("/test", (req, res) => {
   res.status(200).send("Server is working");
 });
-app.get("/test-2", (req, res) => {
-  res.status(200).send("Server is good");
-});
+
 app.use(dataRouter);
 app.use(contactRouter);
 
