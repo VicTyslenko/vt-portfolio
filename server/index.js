@@ -10,7 +10,7 @@ const app = express();
 app.use(
   cors({
     origin: [
-      "https://victyslenko.github.io/vt-portfolio/",
+      "https://victyslenko.github.io",
       "http://localhost:3000",
     ],
   })
