@@ -17,8 +17,6 @@ const App = () => {
   const dispatch = useDispatch();
   const location = useLocation();
 
-  console.log(process.env.NODE_ENV);
-
   useEffect(() => {
     if (location.pathname === "/" || location.pathname === "/home") {
       dispatch(setHeaderVisible(true));

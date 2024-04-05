@@ -7,8 +7,14 @@ const MONGO_URL = process.env.MONGO_URL;
 
 const app = express();
 
-app.use(cors());
-
+app.use(
+  cors({
+    origin: [
+      "https://victyslenko.github.io/vt-portfolio",
+      "http://localhost:3000",
+    ],
+  })
+);
 
 app.use(express.json());
 
