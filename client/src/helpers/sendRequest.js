@@ -3,6 +3,8 @@ const sendRequest = async (url, method = "GET", body = null) => {
     method: method,
     headers: {
       "Content-type": "application/json",
+
+      "Access-Control-Allow-Origin": "https://vt-portfolio-server.vercel.app",
     },
   };
 
