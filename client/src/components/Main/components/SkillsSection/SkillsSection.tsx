@@ -8,11 +8,11 @@ const SkillsSection = () => {
           
           <div className="skills-item">
             <h3 className="skill">Javascript</h3>
-            <p className="experience">4 years experience</p>
+            <p className="experience">2 years experience</p>
           </div>
           <div className="skills-item">
             <h3 className="skill">Sass</h3>
-            <p className="experience">3 years experience</p>
+            <p className="experience">2 years experience</p>
           </div>
           <div className="skills-item">
             <h3 className="skill">Gulp</h3>
@@ -28,7 +28,7 @@ const SkillsSection = () => {
           </div>
           <div className="skills-item">
             <h3 className="skill">Git</h3>
-            <p className="experience">4 years experience</p>
+            <p className="experience">2 years experience</p>
           </div>
         </div>
       </div>
