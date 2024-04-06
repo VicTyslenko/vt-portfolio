@@ -9,22 +9,17 @@ const app = express();
 
 app.use(
   cors({
-    origin: [
-      "https://vt-portfolio-client.vercel.app",
-
-      "https://testing-vt.vercel.app",
-    ],
+    origin: ["https://vt-portfolio-client.vercel.app", "http://localhost:3000"],
   })
 );
+app.get("/test", (req, res) => {
+  res.status(200).send("Server is working");
+});
 
 app.use(express.json());
 
 const dataRouter = require("./routers/collectionsData.api");
 const contactRouter = require("./routers/contacts.api");
-
-app.get("/test", (req, res) => {
-  res.status(200).send("Server is working");
-});
 
 app.use(dataRouter);
 app.use(contactRouter);

@@ -1,10 +1,7 @@
-// import { Link } from "react-router-dom";
 import { useEffect } from "react";
-// import { FaLinkedin } from "react-icons/fa";
-// import { FaFacebook, FaSquareGithub } from "react-icons/fa6";
-// import Button from "../../../Button/Button";
-// import SubmitModal from "../../../Modal/DescriptionModal/DescriptionModal";
+
 import { globalAnimation } from "../../../../animations/animations";
+
 import { motion } from "framer-motion";
 import "../../../../styles/global.scss";
 import "./mainSection.scss";
@@ -12,6 +9,7 @@ const MainSection = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, []);
+
   return (
     <section className="main-section">
       <div className="global-container">

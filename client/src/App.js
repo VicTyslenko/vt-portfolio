@@ -1,9 +1,9 @@
 import { useEffect } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { Main, Header } from "./components";
 import { sendRequest } from "./helpers";
 import NewServices from "./pages/Services/ServicesPage/ServicesPage";
-
+import { testFetch } from "./reducers/dataReducer";
 import { AboutPage, ContactPage, ProjectsPage } from "./pages";
 import {
   setHomeLocation,
@@ -16,6 +16,12 @@ import { Routes, Route, useLocation } from "react-router-dom";
 
 const App = () => {
   const dispatch = useDispatch();
+  const testData = useSelector((state) => state.collections.testData);
+
+  console.log(testData);
+  useEffect(() => {
+    dispatch(testFetch());
+  }, [dispatch]);
   const location = useLocation();
 
   useEffect(() => {
@@ -34,11 +40,11 @@ const App = () => {
     scrollToTop(0, "instant");
   }, [location, dispatch]);
 
-  useEffect(() => {
-    sendRequest("https://vt-portfolio-server.vercel.app/test")
-      .then((data) => console.log(data))
-      .catch((error) => console.log(error));
-  }, []);
+  // useEffect(() => {
+  //   sendRequest("https://vt-portfolio-server.vercel.app/test")
+  //     .then((data) => console.log(data))
+  //     .catch((error) => console.log(error));
+  // }, []);
 
   return (
     <div className="app-container">

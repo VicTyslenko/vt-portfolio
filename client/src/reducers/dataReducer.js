@@ -4,9 +4,18 @@ import { API_URL } from "../config/API";
 
 const initialState = {
   data: [],
+  testData: [],
   isLoading: false,
   selectedItem: null,
 };
+
+export const testFetch = createAsyncThunk("test/fetch", async () => {
+  const response = await sendRequest(
+    `https://vt-portfolio-server.vercel.app/test`
+  );
+  console.log(API_URL);
+  return response;
+});
 
 export const dataFetch = createAsyncThunk(
   "data/fetch",
@@ -46,6 +55,9 @@ const collectionsDataSlice = createSlice({
     builder.addCase(fetchItemById.fulfilled, (state, { payload }) => {
       state.selectedItem = payload;
       state.isLoading = false;
+    });
+    builder.addCase(testFetch.fulfilled, (state, { payload }) => {
+      state.testData = payload;
     });
   },
 });
