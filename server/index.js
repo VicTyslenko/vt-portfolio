@@ -11,7 +11,7 @@ app.use(
   cors({
     origin: [
       "https://vt-portfolio-client.vercel.app",
-      "http://localhost:3000",
+
       "https://testing-vt.vercel.app",
     ],
   })
