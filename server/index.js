@@ -12,6 +12,7 @@ app.use(
     origin: [
       "https://vt-portfolio-client-n0g7eibcy-victortyslenkos-projects.vercel.app",
       "http://localhost:3000",
+      "https://testing-vt.vercel.app"
     ],
   })
 );
