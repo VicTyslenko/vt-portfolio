@@ -10,7 +10,7 @@ const app = express();
 app.use(
   cors({
     origin: [
-      "https://vt-portfolio-client.vercel.app/",
+      "https://vt-portfolio-client.vercel.app",
       "http://localhost:3000",
     ],
   })
