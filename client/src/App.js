@@ -1,7 +1,7 @@
 import { useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import { Main, Header } from "./components";
-import { API_URL } from "./config/API";
+import { sendRequest } from "./helpers";
 import NewServices from "./pages/Services/ServicesPage/ServicesPage";
 
 import { AboutPage, ContactPage, ProjectsPage } from "./pages";
@@ -35,11 +35,11 @@ const App = () => {
     scrollToTop(0, "instant");
   }, [location, dispatch]);
 
-  // useEffect(() => {
-  //   sendRequest("https://vt-portfolio-server.vercel.app/projects")
-  //     .then((data) => console.log(data))
-  //     .catch((error) => console.log(error));
-  // }, []);
+  useEffect(() => {
+    sendRequest("https://vt-portfolio-server.vercel.app/test")
+      .then((data) => console.log(data))
+      .catch((error) => console.log(error));
+  }, []);
 
   return (
     <div className="app-container">
