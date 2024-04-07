@@ -33,6 +33,7 @@ const start = async () => {
     mongoose
       .connect(MONGO_URL)
       .then(() => {
+        console.log(MONGO_URL);
         console.log("DB OK");
       })
       .catch((err) => console.log("DB error", err));
