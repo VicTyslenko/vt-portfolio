@@ -1,7 +1,6 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Main, Header } from "./components";
-import { sendRequest } from "./helpers";
 import NewServices from "./pages/Services/ServicesPage/ServicesPage";
 
 import { AboutPage, ContactPage, ProjectsPage } from "./pages";
@@ -18,8 +17,7 @@ const App = () => {
   const dispatch = useDispatch();
 
   const location = useLocation();
-  const testData = useSelector((state) => state.collections.data);
-  console.log(testData);
+
   useEffect(() => {
     if (location.pathname === "/" || location.pathname === "/home") {
       dispatch(setHeaderVisible(true));
