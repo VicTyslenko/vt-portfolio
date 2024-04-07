@@ -29,7 +29,7 @@ router.get("/:collectionName", async (request, response) => {
       totalPages: Math.ceil(total / pageSize),
     });
   } catch (error) {
-    response.status(500).json({ message: `Error getting ${collectionName}` });
+    response.status(500).json({ message: `Error getting ${collectionName}`});
   }
 });
 

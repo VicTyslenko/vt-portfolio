@@ -13,7 +13,7 @@ app.use(
   })
 );
 app.get("/test", (req, res) => {
-  res.status(200).send(`${MONGO_URL}`);
+  res.status(200).send("Test server is working");
 });
 
 app.use(express.json());
@@ -33,7 +33,6 @@ const start = async () => {
     mongoose
       .connect(MONGO_URL)
       .then(() => {
-      
         console.log("DB OK");
       })
       .catch((err) => console.log("DB error", err));
