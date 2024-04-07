@@ -13,7 +13,7 @@ app.use(
   })
 );
 app.get("/test", (req, res) => {
-  res.status(200).send("Server is working");
+  res.status(200).send(`${MONGO_URL}`);
 });
 
 app.use(express.json());
