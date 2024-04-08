@@ -6,18 +6,17 @@ const PORT = process.env.PORT || 4444;
 const MONGO_URL = process.env.MONGO_URL;
 
 const app = express();
-
 app.use(
   cors({
-    origin: [
-      "https://vt-portfolio-client.vercel.app",
-      "http://localhost:3000",
-    ],
+    origin: ["https://vt-portfolio-client.vercel.app", "http://localhost:3000"],
   })
 );
+app.use(express.static("./public"));
+app.use(express.urlencoded({ extended: true }));
 app.get("/test", (req, res) => {
   res.status(200).send("Test server is working");
 });
+
 
 app.use(express.json());
 
