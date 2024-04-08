@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Main, Header } from "./components";
 import NewServices from "./pages/Services/ServicesPage/ServicesPage";
-
+import { sendRequest } from "./helpers";
 import { AboutPage, ContactPage, ProjectsPage } from "./pages";
 import {
   setHomeLocation,
@@ -34,11 +34,11 @@ const App = () => {
     scrollToTop(0, "instant");
   }, [location, dispatch]);
 
-  // useEffect(() => {
-  //   sendRequest("https://vt-portfolio-server.vercel.app")
-  //     .then((data) => console.log(data))
-  //     .catch((error) => console.log(error));
-  // }, []);
+  useEffect(() => {
+    sendRequest("https://vt-portfolio-server.onrender.com/projects")
+      .then((data) => console.log(data))
+      .catch((error) => console.log(error));
+  }, []);
 
   return (
     <div className="app-container">
