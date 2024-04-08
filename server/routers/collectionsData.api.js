@@ -17,7 +17,7 @@ router.get("/:collectionName", async (request, response) => {
 
   try {
     const skip = (page - 1) * pageSize;
-    const data = await config.model.find().skip(skip).limit(pageSize);
+    const data = await config.model.find();
     const total = await config.model.countDocuments();
 
     response.status(200).json({
@@ -29,7 +29,7 @@ router.get("/:collectionName", async (request, response) => {
       totalPages: Math.ceil(total / pageSize),
     });
   } catch (error) {
-    response.status(500).json({ message: `Error getting ${collectionName}`});
+    response.status(500).json({ message: `Error getting ${collectionName}` });
   }
 });
 
