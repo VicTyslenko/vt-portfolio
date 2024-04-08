@@ -1,5 +1,5 @@
 const Project = require("../modules/projects.mongoose");
-// const PersonalInfo = require("../modules/personalInfo.mongoose");
+
 const Service = require("../modules/services.mongoose");
 const Contact = require("../modules/contacts.mongoose");
 const collectionsConfig = {
