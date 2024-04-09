@@ -35,7 +35,7 @@ const App = () => {
   }, [location, dispatch]);
 
   useEffect(() => {
-    sendRequest("http://localhost:4444/services")
+    sendRequest("https://vt-portfolio-server.onrender.com/services")
       .then((data) => console.log(data))
       .catch((error) => console.log(error));
   }, []);
