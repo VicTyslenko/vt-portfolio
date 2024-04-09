@@ -10,7 +10,7 @@ const initialState = {
 
 export const dataFetch = createAsyncThunk(
   "data/fetch",
-  async ({ collectionName, page = 1, pageSize = 4 }) => {
+  async ({ collectionName, page = 1, pageSize }) => {
     const response = await sendRequest(
       `${API_URL}/${collectionName}?page=${page}&pageSize=${pageSize}`
     );

@@ -17,7 +17,7 @@ router.get("/:collectionName", async (request, response) => {
 
   try {
     const skip = (page - 1) * pageSize;
-    const data = await config.model.find();
+    const data = await config.model.find().skip(skip).limit(pageSize);
     const total = await config.model.countDocuments();
 
     response.status(200).json({
