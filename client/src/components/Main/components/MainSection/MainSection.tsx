@@ -22,7 +22,7 @@ const MainSection = () => {
         >
           <img
             className="main-image"
-            src={`${process.env.PUBLIC_URL}/img/portfolio.JPG`}
+            src={`${process.env.PUBLIC_URL}/img/portfolio_image.png`}
             alt="portfolio"
           />
         </motion.div>

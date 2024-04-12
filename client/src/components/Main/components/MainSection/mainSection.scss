@@ -39,13 +39,9 @@
     border-radius: 0 20px 20px 0;
   }
   .main-image {
-    @include standart-image-size($width: 300px, $height: auto);
+    @include standart-image-size($width: 350px, $height: auto);
   }
-  // .divider-wrapp {
-  //   margin: 0 auto;
 
-  //   max-width: 1320px;
-  // }
   .divider {
     margin-top: 50px;
   }

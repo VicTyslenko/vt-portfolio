@@ -34,11 +34,6 @@ const App = () => {
     scrollToTop(0, "instant");
   }, [location, dispatch]);
 
-  useEffect(() => {
-    sendRequest("https://vt-portfolio-server.onrender.com/services")
-      .then((data) => console.log(data))
-      .catch((error) => console.log(error));
-  }, []);
 
   return (
     <div className="app-container">
