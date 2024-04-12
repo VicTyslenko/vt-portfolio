@@ -1,17 +1,14 @@
+import { useLocation } from "react-router-dom";
 import { useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { Main, Header } from "./components";
-import NewServices from "./pages/Services/ServicesPage/ServicesPage";
-import { sendRequest } from "./helpers";
-import { AboutPage, ContactPage, ProjectsPage } from "./pages";
+import { useDispatch } from "react-redux";
+import AppRoutes from "./routers/AppRoutes";
+
 import {
   setHomeLocation,
   setHeaderVisible,
   setProjectsPage,
 } from "./reducers/pageLocation.reducer";
 import { scrollToTop } from "./helpers";
-
-import { Routes, Route, useLocation } from "react-router-dom";
 
 const App = () => {
   const dispatch = useDispatch();
@@ -34,18 +31,9 @@ const App = () => {
     scrollToTop(0, "instant");
   }, [location, dispatch]);
 
-
   return (
     <div className="app-container">
-      <Header />
-      <Routes>
-        <Route path="/" element={<Main />} />
-        <Route path="/home" element={<Main />} />
-        <Route path="/about" element={<AboutPage />} />
-        <Route path="/projects" element={<ProjectsPage />} />
-        <Route path="/contacts" element={<ContactPage />} />
-        <Route path="/services" element={<NewServices />} />
-      </Routes>
+      <AppRoutes />
     </div>
   );
 };
