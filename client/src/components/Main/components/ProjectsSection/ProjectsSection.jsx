@@ -4,6 +4,7 @@ import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import usePathParameters from "../../../../hooks/usePathParameters";
 import ProjectItem from "./ProjectItem/ProjectItem";
+import PuffLoader from "react-spinners/PuffLoader";
 import { dataFetch } from "../../../../reducers/dataReducer";
 import "../../../../styles/global.scss";
 import "./projectsSection.scss";
@@ -15,6 +16,7 @@ const ProjectsSection = () => {
   const projectsData = useSelector((state) => {
     return state.collections.data;
   });
+  const loader = useSelector((state) => state.collections.isLoading);
   const projectsPage = useSelector((state) => state.page.isProjectsPage);
   useEffect(() => {
     const pageSize = 4;
@@ -38,17 +40,21 @@ const ProjectsSection = () => {
         </div>
 
         <div className="projects-wrapp">
-          {projectsData.map((project, index) => (
-            <ProjectItem
-              key={index}
-              link={project.link}
-              title={project.title}
-              subtitle={project.subtitle}
-              imageFileName={project.imageFileName}
-              description={project.description}
-              pageLocation={projectsPage}
-            />
-          ))}
+          {loader ? (
+            <PuffLoader size="100px" color="#20b0ca" />
+          ) : (
+            projectsData.map((project, index) => (
+              <ProjectItem
+                key={index}
+                link={project.link}
+                title={project.title}
+                subtitle={project.subtitle}
+                imageFileName={project.imageFileName}
+                description={project.description}
+                pageLocation={projectsPage}
+              />
+            ))
+          )}
         </div>
       </div>
     </section>
