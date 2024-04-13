@@ -6,16 +6,12 @@ const PORT = process.env.PORT || 4444;
 const MONGO_URL = process.env.MONGO_URL;
 
 const app = express();
-// app.use(cors());
 app.use(
   cors({
     origin: ["https://vt-portfolio-client.vercel.app", "http://localhost:3000"],
   })
 );
-app.get("/test", (req, res) => {
-  const data = { message: "Server is working" };
-  res.json(data);
-});
+
 app.use(express.json());
 
 const dataRouter = require("./routers/collectionsData.api");
