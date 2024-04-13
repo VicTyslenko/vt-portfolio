@@ -11,7 +11,10 @@ app.use(
     origin: ["https://vt-portfolio-client.vercel.app", "http://localhost:3000"],
   })
 );
-
+app.get("/test", (req, res) => {
+  const data = { message: "Server is working" };
+  res.json(data);
+});
 app.use(express.json());
 
 const dataRouter = require("./routers/collectionsData.api");
