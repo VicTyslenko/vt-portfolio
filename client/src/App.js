@@ -14,7 +14,7 @@ const App = () => {
   const dispatch = useDispatch();
 
   const location = useLocation();
-
+  console.log(process.env.REACT_APP_API_URL_PROD);
   useEffect(() => {
     if (location.pathname === "/" || location.pathname === "/home") {
       dispatch(setHeaderVisible(true));
