@@ -1,6 +1,7 @@
 import { useLocation } from "react-router-dom";
 import { useEffect } from "react";
 import { useDispatch } from "react-redux";
+import { Header } from "./components";
 import AppRoutes from "./routers/AppRoutes";
 
 import {
@@ -14,7 +15,6 @@ const App = () => {
   const dispatch = useDispatch();
 
   const location = useLocation();
-  console.log(process.env.NODE_ENV);
   useEffect(() => {
     if (location.pathname === "/" || location.pathname === "/home") {
       dispatch(setHeaderVisible(true));
@@ -33,6 +33,7 @@ const App = () => {
 
   return (
     <div className="app-container">
+      <Header />
       <AppRoutes />
     </div>
   );

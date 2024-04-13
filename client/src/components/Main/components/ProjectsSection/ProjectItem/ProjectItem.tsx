@@ -45,6 +45,7 @@ const ProjectItem: React.FC<ProjectItemProps> = ({
       ) : (
         <div className="projects-page-item" onClick={onClick}>
           <img className="projects-page-image" src={imagePath} alt={title} />
+
           <div className="description-block">
             <p className="subtitle">{subtitle}</p>
             <p className="projects-name">{title}</p>

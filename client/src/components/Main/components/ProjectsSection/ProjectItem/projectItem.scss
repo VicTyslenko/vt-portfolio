@@ -50,7 +50,7 @@
     @include text-font-style($fontWeight: 500, $fontSize: 20px);
   }
 }
-//on ProjectsPage styles
+//for ProjectsPage styles
 .projects-page-item {
   .subtitle {
     @include text-font-style();

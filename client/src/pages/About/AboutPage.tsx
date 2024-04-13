@@ -5,7 +5,7 @@ import { FaGithub } from "react-icons/fa";
 import { motion } from "framer-motion";
 import "./aboutPage.scss";
 const AboutPage = () => {
-  const imagePath = `${process.env.PUBLIC_URL}/img/about-me_image.png`
+  const imagePath = `${process.env.PUBLIC_URL}/img/about-me_image.png`;
   return (
     <div className="about-page-container">
       <motion.div
@@ -26,8 +26,7 @@ const AboutPage = () => {
         <h3 className="subtitle">I'm here to help you with your projects!</h3>
 
         <p className="description">
-          As a passionate Frontend Developer, I specialize in creating dynamic
-          and user-friendly web applications. Using technologies like HTML, CSS,
+          As a passionate Frontend Developer, I specialize in creating dynamic web applications. Using technologies like HTML, CSS,
           SASS, JavaScript, ReactJS, and NodeJS, I strive to deliver seamless
           and responsive designs. My focus is on optimizing user experience
           through innovative solutions and clean, efficient code. I continuously
