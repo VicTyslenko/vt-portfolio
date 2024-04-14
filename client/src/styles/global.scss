@@ -10,21 +10,6 @@
   box-sizing: border-box;
 }
 
-/* Стилизация трека скроллбара */
-::-webkit-scrollbar-track {
-  background: #047695; /* Светлый фон для трека */
-}
-
-/* Стилизация ползунка скроллбара */
-::-webkit-scrollbar-thumb {
-  background: #047695; /* Темный фон для ползунка */
-}
-
-/* Опционально: изменение фона ползунка при наведении */
-::-webkit-scrollbar-thumb:hover {
-  background: #047695; /* Ещё более темный фон при наведении */
-}
-
 body {
   overflow-x: hidden;
   overflow-y: scroll;

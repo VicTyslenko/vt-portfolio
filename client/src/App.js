@@ -15,6 +15,8 @@ const App = () => {
   const dispatch = useDispatch();
 
   const location = useLocation();
+  //setting Header title visible only for Home page
+  // displaying prject items different for Home and Projects page
   useEffect(() => {
     if (location.pathname === "/" || location.pathname === "/home") {
       dispatch(setHeaderVisible(true));

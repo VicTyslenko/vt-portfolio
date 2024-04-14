@@ -6,11 +6,26 @@ const project = new mongoose.Schema({
     required: true,
   },
   subtitle: {
-    type:String,
+    type: String,
   },
   description: {
     type: String,
     required: true,
+  },
+  imageFileName: {
+    type: String,
+  },
+  link: {
+    type: String,
+  },
+  descriptionImageName: {
+    type: String,
+  },
+  technologies: {
+    type: [String],
+  },
+  features: {
+    type: [String],
   },
 });
 

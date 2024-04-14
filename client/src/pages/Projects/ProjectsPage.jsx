@@ -17,7 +17,7 @@ const ProjectsPage = () => {
   const { collectionName } = usePathParameters();
   const projectsData = useSelector((state) => {
     return state.collections.data;
-  }); //get all projects' data
+  }); //get all projects data
 
   const selectedProject = useSelector(
     (state) => state.collections.selectedItem

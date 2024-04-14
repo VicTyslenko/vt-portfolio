@@ -5,7 +5,24 @@ import { FaGithub } from "react-icons/fa";
 import { motion } from "framer-motion";
 import "./aboutPage.scss";
 const AboutPage = () => {
-  const imagePath = `${process.env.PUBLIC_URL}/img/about-me_image.png`;
+  const iconLinks = [
+    {
+      link: "https://www.linkedin.com/in/vic-tyslenko/",
+      icon: <FaLinkedin />,
+    },
+    {
+      link: "https://github.com/VicTyslenko",
+      icon: <FaGithub />,
+    },
+    {
+      link: "https://www.facebook.com/VictorTyslenko",
+      icon: <FaFacebook />,
+    },
+    {
+      link: "https://www.linkedin.com/in/vic-tyslenko/",
+      icon: <FaGithub />,
+    },
+  ];
   return (
     <div className="about-page-container">
       <motion.div
@@ -35,31 +52,11 @@ const AboutPage = () => {
           professional development in the tech field.
         </p>
         <div className="icons-wrapp">
-          <a
-            className="icons-link"
-            href="https://www.linkedin.com/in/vic-tyslenko/"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <FaLinkedin />
-          </a>
-
-          <a
-            className="icons-link"
-            href="https://github.com/VicTyslenko"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <FaGithub />
-          </a>
-          <a
-            className="icons-link"
-            href="https://www.facebook.com/VictorTyslenko"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <FaFacebook />
-          </a>
+          {iconLinks.map(({ link, icon }) => (
+            <a href={link} target="_blank" rel="noopener noreferrer">
+              {icon}
+            </a>
+          ))}
         </div>
         <a
           href="/VictorTyslenko_CV/Frontend-Developer_CV.pdf"
@@ -77,7 +74,7 @@ const AboutPage = () => {
           duration: 0.8,
         })}
       >
-        <img src={imagePath} alt="portfolio" />
+        <img src="/img/about-me_image.png" alt="portfolio" />
       </motion.div>
     </div>
   );

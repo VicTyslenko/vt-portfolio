@@ -5,7 +5,7 @@ const service = new mongoose.Schema({
     type: String,
     required: true,
   },
-  shortDEscription: {
+  shortDescription: {
     type: String,
     required: true,
   },

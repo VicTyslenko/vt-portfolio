@@ -1,37 +1,37 @@
-# Системные файлы
+# System files
 .DS_Store
 Thumbs.db
 
-# Папка с зависимостями
-node_modules/
+# Directory with dependencies
+/node_modules/
 
-# Файлы окружения, где могут храниться чувствительные данные
-.env
+# Environment files where sensitive data may be stored
+*.env*
 
-# Логи
-logs
+# Logs
+/logs/
 *.log
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
-# Директории и файлы редакторов
-.idea/
-.vscode/
+# Editor directories and files
+/.idea/
+/.vscode/
 *.swp
 *.swo
 *.sublime-project
 *.sublime-workspace
 
-# Сборки и зависимости
-/dist
-/tmp
-/out
+# Builds and dependencies
+/dist/
+/tmp/
+/out/
 /.pnp
 .pnp.js
 
-# Другие файлы и директории
-coverage/
+# Other files and directories
+/coverage/
 *.pid
 *.pid.lock
 *.seed
@@ -40,13 +40,7 @@ coverage/
 *.rar
 *.tar.gz
 
-# Файлы конфигурации сборки
-.DS_Store
-/.env.local
-/.env.development.local
-/.env.test.local
-/.env.production.local
 
-# Директории, созданные во время выполнения тестов
+# Directories created during test execution
 /.nyc_output
 /.jest

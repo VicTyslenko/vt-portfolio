@@ -37,9 +37,7 @@ const collectionsDataSlice = createSlice({
       state.data = Array.isArray(payload) ? payload : [];
       state.isLoading = false;
     });
-    builder.addCase(dataFetch.rejected, (state) => {
-      state.isLoading = false;
-    });
+
     builder.addCase(fetchItemById.pending, (state) => {
       state.isLoading = true;
     });
