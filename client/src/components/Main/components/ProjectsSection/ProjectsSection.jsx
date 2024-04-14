@@ -39,11 +39,13 @@ const ProjectsSection = () => {
           </Link>
         </div>
 
-        <div className="projects-wrapp">
-          {loader ? (
-            <PuffLoader size="100px" color="#20b0ca" />
-          ) : (
-            projectsData.map((project, index) => (
+        {loader ? (
+          <div className="loader-wrapp">
+            <PuffLoader size="150px" color="#fff" />
+          </div>
+        ) : (
+          <div className="projects-wrapp">
+            {projectsData.map((project, index) => (
               <ProjectItem
                 key={index}
                 link={project.link}
@@ -53,9 +55,9 @@ const ProjectsSection = () => {
                 description={project.description}
                 pageLocation={projectsPage}
               />
-            ))
-          )}
-        </div>
+            ))}
+          </div>
+        )}
       </div>
     </section>
   );

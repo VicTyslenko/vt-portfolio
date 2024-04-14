@@ -68,4 +68,7 @@
   .load-more-btn {
     @include second-button-style();
   }
+  .loader-wrapp {
+    @include flex-center();
+  }
 }

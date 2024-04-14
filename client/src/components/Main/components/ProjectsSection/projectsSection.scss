@@ -8,7 +8,7 @@
     margin-bottom: 70px;
   }
   .projects-title {
-    @include title-font-style()
+    @include title-font-style();
   }
   .projects-title span {
     color: $bright-blue;
@@ -25,5 +25,8 @@
   .contact-btn {
     @include main-button-style();
     font-size: 20px;
+  }
+  .loader-wrapp {
+    @include flex-center();
   }
 }
