@@ -32,10 +32,10 @@ const App = () => {
   }, [location, dispatch]);
 
   return (
-    <div className="app-container">
+    <>
       <Header />
       <AppRoutes />
-    </div>
+    </>
   );
 };
 

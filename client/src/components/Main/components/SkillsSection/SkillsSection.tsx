@@ -1,35 +1,25 @@
 import "./skillsSection.scss";
 import "../../../../styles/global.scss";
+
 const SkillsSection = () => {
+  const skills = [
+    { name: "Javascript", experience: "3 years experience" },
+    { name: "Sass", experience: "3 years experience" },
+    { name: "Gulp", experience: "2 years experience" },
+    { name: "React", experience: "2 years experience" },
+    { name: "Node", experience: "2 years experience" },
+    { name: "Git", experience: "3 years experience" },
+  ];
   return (
     <section className="skills-section">
       <div className="global-container">
         <div className="skills-wrapp">
-          
-          <div className="skills-item">
-            <h3 className="skill">Javascript</h3>
-            <p className="experience">2 years experience</p>
-          </div>
-          <div className="skills-item">
-            <h3 className="skill">Sass</h3>
-            <p className="experience">2 years experience</p>
-          </div>
-          <div className="skills-item">
-            <h3 className="skill">Gulp</h3>
-            <p className="experience">2 years experience</p>
-          </div>
-          <div className="skills-item">
-            <h3 className="skill">React</h3>
-            <p className="experience">2 years experience</p>
-          </div>
-          <div className="skills-item">
-            <h3 className="skill">Node</h3>
-            <p className="experience">2 years experience</p>
-          </div>
-          <div className="skills-item">
-            <h3 className="skill">Git</h3>
-            <p className="experience">2 years experience</p>
-          </div>
+          {skills.map(({ name, experience }, index) => (
+            <div key={index} className="skills-item">
+              <h3 className="skill">{name}</h3>
+              <p className="experience">{experience}</p>
+            </div>
+          ))}
         </div>
       </div>
     </section>

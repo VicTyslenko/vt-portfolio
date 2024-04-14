@@ -26,12 +26,13 @@ const AboutPage = () => {
         <h3 className="subtitle">I'm here to help you with your projects!</h3>
 
         <p className="description">
-          As a passionate Frontend Developer, I specialize in creating dynamic web applications. Using technologies like HTML, CSS,
-          SASS, JavaScript, ReactJS, and NodeJS, I strive to deliver seamless
-          and responsive designs. My focus is on optimizing user experience
-          through innovative solutions and clean, efficient code. I continuously
-          seek to stay ahead of industry trends and am committed to personal
-          growth and professional development in the tech field.
+          As a passionate Frontend Developer, I specialize in creating dynamic
+          web applications. Using technologies like HTML, CSS, SASS, JavaScript,
+          ReactJS, and NodeJS, I strive to deliver seamless and responsive
+          designs. My focus is on optimizing user experience through innovative
+          solutions and clean, efficient code. I continuously seek to stay ahead
+          of industry trends and am committed to personal growth and
+          professional development in the tech field.
         </p>
         <div className="icons-wrapp">
           <a

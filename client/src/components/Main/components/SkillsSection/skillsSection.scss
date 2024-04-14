@@ -1,14 +1,15 @@
 @import "../../../../utils/mixins";
 .skills-section {
   padding: 50px 0;
+  text-align: center;
   .skills-wrapp {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    justify-items: center;
     row-gap: 70px;
   }
   .experience{
     @include text-font-style();
+    letter-spacing: 1px;
   }
   .skill {
     @include title-font-style($fontSize: 40px);
