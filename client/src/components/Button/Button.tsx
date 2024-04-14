@@ -7,7 +7,7 @@ type ButtonProps = {
 const Button: React.FC<ButtonProps> = ({
   children,
   onClick,
-  className = "",
+  className,
   type,
 }) => {
   return (
