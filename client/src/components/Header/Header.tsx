@@ -11,9 +11,7 @@ import "./header.scss";
 const Header: React.FC = () => {
   const navigation = useNavigate();
 
-  const headerVisible = useSelector(
-    (state: RootState) => state.page.isHeaderVisible
-  );
+
   const page = useSelector((state: RootState) => state.page.isHomeLocation);
 
   //scroll to top on click for Home page only
@@ -47,18 +45,9 @@ const Header: React.FC = () => {
     return headerClass;
   };
 
-  //adding dynamic styles to title and title::before
-  const getTitleClass = () => {
-    let titleClass = !headerVisible ? "title-hidden" : "";
-    if (!page) {
-      titleClass += " no-transition";
-    }
-    return titleClass;
-  };
   return (
     <div className="global-container">
       <div className={`header-wrapper ${getHeaderClass()}`}>
-        <h1 className={`title ${getTitleClass()}`}>Tyslenko.V</h1>
         <nav className="nav-bar">
           <Link
             className="nav-bar-link"
