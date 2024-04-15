@@ -52,8 +52,13 @@ const AboutPage = () => {
           professional development in the tech field.
         </p>
         <div className="icons-wrapp">
-          {iconLinks.map(({ link, icon }) => (
-            <a href={link} target="_blank" rel="noopener noreferrer">
+          {iconLinks.map(({ link, icon }, index) => (
+            <a
+              href={link}
+              key={index}
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               {icon}
             </a>
           ))}

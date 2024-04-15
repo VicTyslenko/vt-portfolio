@@ -5,49 +5,22 @@
   left: 0;
   right: 0;
   top: 0;
-  // z-index: 1;
   width: auto;
   padding: 20px 60px;
 
   @include flex-center(flex-end, center);
-
-  // .title {
-  //   position: relative;
-  //   @include title-font-style($fontSize: 33px, $fontWeight: 400);
-  // }
-
-  // .title.title-hidden {
-  //   opacity: 0;
-  //   visibility: hidden;
-  // }
 
   //scrolling styles start
   &.scrolled {
     background-color: black;
     opacity: 0.8;
     transition: all 0.9s ease;
-
-    // .title,
-    // .title::before {
-    //   opacity: 0;
-    //   visibility: hidden;
-    // }
-
-    // z-index: 10;
   }
 
   &.scrolled-back {
     transition: all 0.7s ease;
-
-    // .title,
-    // .title::before {
-    //   transition: all 1.5s ease;
-    // }
   }
 
-  // .title.no-transition {
-  //   transition: none;
-  // }
   .nav-bar {
     @include flex-center(center, center);
     gap: 30px;
