@@ -30,6 +30,17 @@
       flex: 1;
       padding: 30px 30px 30px 0;
       @include flex-center(initial, center, column);
+      .modal-link {
+        text-decoration: none;
+        @include text-font-style($fontSize: 15px, $color: #000000);
+        font-weight: 400;
+      }
+      .modal-link:hover{
+        color: $secondary-color;
+      }
+      .modal-link-wrapp {
+        margin-top: 20px;
+      }
     }
 
     .description {
@@ -67,9 +78,6 @@
       left: -35px;
       top: -35px;
       cursor: pointer;
-    }
-    .modal-link {
-      text-decoration: none;
     }
   }
 }
