@@ -2,42 +2,57 @@
 @import "../../../../utils/variables";
 .main-section {
   margin-top: 114px;
-  position: relative;
 
-  .main-text {
-    position: absolute;
-    top: 22%;
-    right: 19%;
-    z-index: 6;
-    .title {
-      @include title-font-style();
-      letter-spacing: 7px;
-      margin-bottom: 10px;
-    }
-    .title-name {
-      border-bottom: 2px solid #047695;
-    }
-    .subtitle {
-      @include subtitle-font-style();
-      letter-spacing: 1px;
-    }
-    .description {
-      @include text-font-style();
-      max-width: 450px;
-      letter-spacing: 0.5px;
-      line-height: 27px;
-    }
-  }
-  .image-wrapp {
+  // .main-text {
+  //   position: absolute;
+  //   top: 22%;
+  //   right: 19%;
+  //   z-index: 6;
+  //   .title {
+  //     @include title-font-style();
+  //     letter-spacing: 7px;
+  //     margin-bottom: 10px;
+  //   }
+  //   .title-name {
+  //     border-bottom: 2px solid #047695;
+  //   }
+  //   .subtitle {
+  //     @include subtitle-font-style();
+  //     letter-spacing: 1px;
+  //   }
+  //   .description {
+  //     @include text-font-style();
+  //     max-width: 450px;
+  //     letter-spacing: 0.5px;
+  //     line-height: 27px;
+  //   }
+  // }
+
+  .absolute-wrapp {
     position: relative;
-    right: 15px;
-    z-index: 5;
-    width: 700px;
-    height: 550px;
-    @include flex-center(center, flex-end);
-    background: radial-gradient(circle, #285366, #000000);
-    border-radius: 0 20px 20px 0;
+    // z-index: 0;
+    // width: 700px;
+    // height: 550px;
+    // background-color: $prime-color;
+    .image-wrapp {
+      // z-index: -100;
+      width: 700px;
+      height: 550px;
+      @include flex-center(center, flex-end);
+      background: radial-gradient(circle, #285366, #000000);
+      border-radius: 0 20px 20px 0;
+    }
+    .block-absolute {
+      position: absolute;
+      left: 0;
+      top: -100px;
+      z-index: -1;
+      background-color: #000000;
+      width: 500px;
+      height: 150px;
+    }
   }
+
   .main-image {
     @include standart-image-size($width: 350px, $height: auto);
   }

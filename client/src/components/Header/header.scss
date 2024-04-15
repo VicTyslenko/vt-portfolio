@@ -5,31 +5,21 @@
   left: 0;
   right: 0;
   top: 0;
-  z-index: 1;
+  // z-index: 1;
   width: auto;
   padding: 20px 60px;
-  @include flex-center(space-between, center);
 
-  .title {
-    position: relative;
-    @include title-font-style($fontSize: 33px, $fontWeight: 400);
-  }
+  @include flex-center(flex-end, center);
 
-  .title::before {
-    position: absolute;
-    content: "";
-    width: 500px;
-    height: 150px;
-    background-color: black;
-    z-index: -1;
-    left: -60px;
-    top: -17px;
-  }
+  // .title {
+  //   position: relative;
+  //   @include title-font-style($fontSize: 33px, $fontWeight: 400);
+  // }
 
-  .title.title-hidden {
-    opacity: 0;
-    visibility: hidden;
-  }
+  // .title.title-hidden {
+  //   opacity: 0;
+  //   visibility: hidden;
+  // }
 
   //scrolling styles start
   &.scrolled {
@@ -37,33 +27,33 @@
     opacity: 0.8;
     transition: all 0.9s ease;
 
-    .title,
-    .title::before {
-      opacity: 0;
-      visibility: hidden;
-    }
+    // .title,
+    // .title::before {
+    //   opacity: 0;
+    //   visibility: hidden;
+    // }
 
-    z-index: 10;
+    // z-index: 10;
   }
 
   &.scrolled-back {
     transition: all 0.7s ease;
 
-    .title,
-    .title::before {
-      transition: all 1.5s ease;
-    }
+    // .title,
+    // .title::before {
+    //   transition: all 1.5s ease;
+    // }
   }
 
-  .title.no-transition {
-    transition: none;
-  }
+  // .title.no-transition {
+  //   transition: none;
+  // }
   .nav-bar {
     @include flex-center(center, center);
     gap: 30px;
 
     .nav-bar-link {
-      @include text-font-style($fontSize:16px,$fontWeight:400);
+      @include text-font-style($fontSize: 16px, $fontWeight: 400);
       text-decoration: none;
       border-bottom: 1px solid transparent;
       padding-bottom: 5px;

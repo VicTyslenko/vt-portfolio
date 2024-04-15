@@ -13,19 +13,26 @@ const MainSection = () => {
   return (
     <section className="main-section">
       <div className="global-container">
-        <motion.div
-          className="image-wrapp"
-          {...globalAnimation({
-            yInitial: 60,
-            duration: 0.8,
-          })}
-        >
-          <img
+        <div className="absolute-wrapp">
+          <div className="block-absolute">
+            <p className="title">V.Tyslenko</p>
+          </div>
+
+          <motion.div
+            className="image-wrapp"
+            {...globalAnimation({
+              yInitial: 60,
+              duration: 0.8,
+            })}
+          >
+            <img
             className="main-image"
             src={`${process.env.PUBLIC_URL}/img/portfolio_image.png`}
             alt="portfolio"
           />
-        </motion.div>
+          </motion.div>
+        </div>
+
         <motion.div
           className="main-text"
           {...globalAnimation({
@@ -51,9 +58,8 @@ const MainSection = () => {
             the latest technologies for seamless digital experiences.
           </p>
         </motion.div>
-        {/* <div className="devider-wrapp"> */}
+
         <hr className="divider" />
-        {/* </div> */}
       </div>
     </section>
   );

@@ -58,7 +58,6 @@ const Header: React.FC = () => {
   return (
     <div className="global-container">
       <div className={`header-wrapper ${getHeaderClass()}`}>
-        <h1 className={`title ${getTitleClass()}`}>Tyslenko.V</h1>
         <nav className="nav-bar">
           <Link
             className="nav-bar-link"
@@ -82,6 +81,31 @@ const Header: React.FC = () => {
           </Link>
         </nav>
       </div>
+      {/* <div className={`header-wrapper ${getHeaderClass()}`}>
+        <h1 className={`title ${getTitleClass()}`}>Tyslenko.V</h1>
+        <nav className="nav-bar">
+          <Link
+            className="nav-bar-link"
+            onClick={handleScrollToTopClick}
+            to="/"
+          >
+            Home
+          </Link>
+          <Link className="nav-bar-link" to="/about">
+            About
+          </Link>
+          <Link className="nav-bar-link" to="/projects">
+            Projects
+          </Link>
+          <Link className="nav-bar-link" to="/services">
+            Services
+          </Link>
+
+          <Link className="nav-bar-link" to="/contacts">
+            Contact
+          </Link>
+        </nav>
+      </div> */}
     </div>
   );
 };
