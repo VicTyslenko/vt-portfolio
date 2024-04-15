@@ -34,6 +34,8 @@ const ProjectsPage = () => {
   const pageLocation = useSelector((state) => state.page.isProjectsPage);
 
   useEffect(() => {
+
+
     const page = 1;
 
     dispatch(dataFetch({ collectionName, page, pageSize }));
