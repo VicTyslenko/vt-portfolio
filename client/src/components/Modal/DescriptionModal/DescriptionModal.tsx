@@ -1,3 +1,4 @@
+/* eslint-disable jsx-a11y/anchor-has-content */
 import { closeModal } from "../../../reducers/modalReducer";
 import { motion } from "framer-motion";
 import Box from "@mui/material/Box";
@@ -81,14 +82,6 @@ const DescriptionModal: React.FC<DescriptionModalProps> = ({
               )}
 
               <div className="description-block">
-                <a
-                  className="modal-link"
-                  href={link}
-                  target="_blank"
-                  rel="noreferrer"
-                >
-                </a>
-
                 <h3 className="technologies">Technologies:</h3>
 
                 <ul className="tech-ordered-list">
@@ -101,9 +94,16 @@ const DescriptionModal: React.FC<DescriptionModalProps> = ({
                 <h3 className="features">Features:</h3>
                 <ol className="features-ordered-list">
                   {features?.map((tech, index) => (
-                    <li key={index} className="features-item">{tech}</li>
+                    <li key={index} className="features-item">
+                      {tech}
+                    </li>
                   ))}
                 </ol>
+                <div className="modal-link-wrapp">
+                  <a className="modal-link" target="blank" href={link}>
+                    Visit project
+                  </a>
+                </div>
               </div>
               <IoIosCloseCircleOutline
                 className="close-icon"
