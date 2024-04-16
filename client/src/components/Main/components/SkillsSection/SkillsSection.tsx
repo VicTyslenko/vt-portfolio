@@ -3,12 +3,12 @@ import "../../../../styles/global.scss";
 
 const SkillsSection = () => {
   const skills = [
-    { name: "Javascript", experience: "2 years experience" },
+    { name: "Javascript", experience: "4 years experience" },
     { name: "Sass", experience: "2 years experience" },
     { name: "Gulp", experience: "2 years experience" },
     { name: "React", experience: "2 years experience" },
-    { name: "Node", experience: "1 years experience" },
-    { name: "Git", experience: "2 years experience" },
+    { name: "Node", experience: "2 years experience" },
+    { name: "Git", experience: "4 years experience" },
   ];
   return (
     <section className="skills-section">
