@@ -1,0 +1,7 @@
+@import "./variables";
+
+@mixin mobile-version {
+  @media (max-width: 600px) {
+    @content;
+  }
+}

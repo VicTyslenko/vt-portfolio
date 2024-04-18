@@ -1,5 +1,7 @@
 @import "../../utils/mixins";
 @import "../../utils/variables";
+@import "../../utils/media-queries";
+
 .header-wrapper {
   position: fixed;
   left: 0;
@@ -10,7 +12,10 @@
   z-index: 100;
 
   @include flex-center(flex-end, center);
-
+  // media-query
+  @include mobile-version {
+    display: none;
+  }
   //scrolling styles start
   &.scrolled {
     background-color: black;
