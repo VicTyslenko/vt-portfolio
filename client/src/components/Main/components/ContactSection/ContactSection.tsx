@@ -7,13 +7,13 @@ import { formInfoSubmit } from "../../../../helpers";
 import validationSchema from "./validation";
 import Button from "../../../Button/Button";
 
-import FormBoxElement from "../../../FormBoxElement/FormBoxElement";
 import "./contactSection.scss";
 
 interface FormValues {
   name: string;
   email: string;
   message: string;
+  mobile: string;
 }
 const ContactSection = () => {
   const isMobile = useMediaQuery("(max-width:500px)");
@@ -53,6 +53,7 @@ const ContactSection = () => {
             name: "",
             email: "",
             message: "",
+            mobile: "",
           }}
           onSubmit={(values, formikHelpers) => {
             handleSubmit(values, formikHelpers);
@@ -65,17 +66,19 @@ const ContactSection = () => {
                 textAlign: "right",
               }}
             >
-              <FormBoxElement className="form-wrapp">
+              <div className="mobile-version-content">
                 {isMobile ? (
                   <MobileForm errors={errors} touched={touched} />
                 ) : (
                   <DesktopForm errors={errors} touched={touched} />
                 )}
-              </FormBoxElement>
-              {errorMessage && <p className="error-message">{errorMessage}</p>}
-              <Button type="submit" className="submit-btn">
-                Send message
-              </Button>
+                {errorMessage && (
+                  <p className="error-message">{errorMessage}</p>
+                )}
+                <Button type="submit" className="submit-btn">
+                  Send message
+                </Button>
+              </div>
             </Form>
           )}
         </Formik>

@@ -8,14 +8,19 @@
     & {
       padding: 50px 30px;
     }
+    .mobile-version-content {
+      text-align: center;
+    }
   }
-  // .contact-wrapp {
-  //   border-bottom: 1px solid $prime-color;
-  //   @include flex-center(space-between, normal);
-  //   @include mobile-version {
-  //     @include flex-center(center, center, column);
-  //   }
-  // }
+
+  .contact-wrapp {
+    border-bottom: 1px solid $prime-color;
+    @include flex-center(space-between, normal);
+    // media
+    @include mobile-version {
+      @include flex-center(center, center, column);
+    }
+  }
 
   .title {
     @include title-font-style();
@@ -25,6 +30,7 @@
         @include subtitle-font-style();
       }
       & span {
+        margin-left: 4px;
         color: $bright-blue;
       }
     }
@@ -56,16 +62,9 @@
     @include main-button-style();
     margin: 26px 0 50px 0;
     text-transform: uppercase;
-  }
+    @include mobile-version{
+      @include second-button-style(  $width: 170px,);
 
-  .form-wrapp {
-    width: 400px;
-    @include flex-center($direction: column);
-    // .name-input {
-    //   margin-bottom: 20px;
-    // }
-    // .message {
-    //   padding-top: 60px;
-    // }
+    }
   }
 }

@@ -6,7 +6,7 @@ const MobileForm = (props) => {
     <div className="mobile-form-wrapp">
       <Input
         name="name"
-        className="text-field name-input"
+        className="text-field"
         label="Full Name"
         error={!!errors.name && touched.name}
         variant="outlined"
@@ -30,11 +30,12 @@ const MobileForm = (props) => {
       />
       <Input
         name="message"
-        className="text-field message"
-        label="Message"
+        className="text-field"
         error={!!errors.message}
-        variant="outlined"
         fullWidth
+        label="Message"
+        multiline
+        rows={5}
       />
     </div>
   );

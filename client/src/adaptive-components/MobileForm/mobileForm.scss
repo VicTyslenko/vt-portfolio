@@ -1,28 +1,11 @@
 @import "../../utils/variables";
+@import "../../utils/mixins";
+@import "../../utils/media-queries";
 
 .mobile-form-wrapp {
-  //   .MuiInput-underline:before,
-  //   .MuiInput-underline:hover:before {
-  //     border-bottom-color: $prime-color;
-  //   }
-
-  //   .MuiInputLabel-root {
-  //     color: $prime-color !important;
-  //   }
-
-  //   .MuiTextField-root {
-  //     .MuiInput-underline:after {
-  //       border-bottom-color: $bright-blue;
-  //     }
-  //     &:focus-within .MuiInputLabel-root {
-  //       color: $bright-blue !important;
-  //     }
-  //   }
-
-  //   .MuiInputBase-input {
-  //     color: $prime-color;
-  //   }
-
+  .text-field:not(:last-child) {
+    margin-bottom: 18px;
+  }
   .MuiOutlinedInput-root .MuiOutlinedInput-notchedOutline {
     border-color: white;
   }

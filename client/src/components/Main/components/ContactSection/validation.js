@@ -7,7 +7,7 @@ const validationSchema = Yup.object().shape({
     .required("Required"),
 
   email: Yup.string().email("Invalid email").required("Required"),
-
+  mobile: Yup.string().required("Required"),
   message: Yup.string(),
 });
 
