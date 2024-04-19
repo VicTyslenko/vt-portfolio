@@ -1,6 +1,13 @@
 @import "../../utils/variables";
 
 .desktop-form-wrapp {
+  .name-input {
+    margin-bottom: 20px;
+  }
+  .message-input {
+    padding-top: 60px;
+  }
+  // MUI styles start
   .MuiInput-underline:before,
   .MuiInput-underline:hover:before {
     border-bottom-color: $prime-color;
@@ -22,4 +29,11 @@
   .MuiInputBase-input {
     color: $prime-color;
   }
+
+
+  .MuiInput-underline:hover:before {
+    border-bottom-color: $prime-color !important;
+  }
+  // MUI styles end
 }
+

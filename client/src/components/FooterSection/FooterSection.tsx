@@ -19,7 +19,7 @@ const FooterSection = () => {
         <ContactSection />
         <div className="footer-wrapp">
           <h1 className="title" onClick={handleScrollToTopClick}>
-            vtyslenko
+            <span>v</span>tyslenko
           </h1>
           <div className="icons-wrapp">
             <a

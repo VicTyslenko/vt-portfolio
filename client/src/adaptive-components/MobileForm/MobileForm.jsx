@@ -30,7 +30,7 @@ const MobileForm = (props) => {
       />
       <Input
         name="message"
-        className="text-field"
+        className="text-field "
         error={!!errors.message}
         fullWidth
         label="Message"

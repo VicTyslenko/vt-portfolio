@@ -6,7 +6,7 @@
   // media
   @include mobile-version {
     & {
-      padding: 50px 30px;
+      padding: 50px 30px 0;
     }
     .mobile-version-content {
       text-align: center;
@@ -18,7 +18,10 @@
     @include flex-center(space-between, normal);
     // media
     @include mobile-version {
-      @include flex-center(center, center, column);
+      & {
+        @include flex-center(center, center, column);
+        border-bottom: none;
+      }
     }
   }
 
@@ -62,9 +65,8 @@
     @include main-button-style();
     margin: 26px 0 50px 0;
     text-transform: uppercase;
-    @include mobile-version{
-      @include second-button-style(  $width: 170px,);
-
+    @include mobile-version {
+      @include second-button-style($width: 170px);
     }
   }
 }

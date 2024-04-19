@@ -22,7 +22,7 @@ const DesktopForm = (props) => {
       />
       <Input
         name="message"
-        className="text-field message"
+        className="text-field message-input"
         label="Message"
         error={!!errors.message}
         variant="standard"

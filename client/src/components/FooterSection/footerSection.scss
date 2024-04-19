@@ -1,20 +1,45 @@
 @import "../../utils/mixins";
+@import "../../utils/media-queries";
+@import "../../utils/variables";
 .footer-container {
   background-color: #132d39;
 }
 .footer-wrapp {
+  @include flex-center(space-between, center);
+  padding: 10px 100px 30px;
+
+  @include mobile-version {
+    & {
+      @include flex-center();
+      padding: 0 0 20px 0;
+    }
+  }
   .title {
     @include subtitle-font-style();
     cursor: pointer;
+    // media
+    @include mobile-version {
+      & {
+        @include text-font-style($fontWeight: 400);
+      }
+      & span {
+        color: $bright-blue;
+        font-size: 23px;
+      }
+    }
   }
   .title:hover {
     color: #1689a9;
   }
-  @include flex-center(space-between, center);
-  padding: 10px 100px 30px;
   .icons-wrapp {
     @include flex-center(center, center);
     gap: 15px;
+
+    @include mobile-version {
+      & {
+        display: none;
+      }
+    }
   }
 
   .icons-wrapp .icons-link {

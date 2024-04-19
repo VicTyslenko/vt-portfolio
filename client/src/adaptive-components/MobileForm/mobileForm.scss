@@ -6,6 +6,8 @@
   .text-field:not(:last-child) {
     margin-bottom: 18px;
   }
+
+  // MUI styles start
   .MuiOutlinedInput-root .MuiOutlinedInput-notchedOutline {
     border-color: white;
   }
@@ -29,4 +31,5 @@
   .MuiInputBase-input {
     color: white;
   }
+  // MUI styles end
 }
