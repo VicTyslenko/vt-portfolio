@@ -1,9 +1,15 @@
+@import "../utils/media-queries";
+
 .global-container {
   max-width: 1400px;
   width: 100%;
   margin: 0 auto;
 }
-
+.mobile-container {
+  @include mobile-version {
+    width: fit-content;
+  }
+}
 * {
   margin: 0;
   padding: 0;

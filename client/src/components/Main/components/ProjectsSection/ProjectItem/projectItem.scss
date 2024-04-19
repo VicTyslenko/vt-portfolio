@@ -1,9 +1,16 @@
 @import "../../../../../utils/mixins";
 @import "../../../../../utils/variables";
+@import "../../../../../utils/media-queries";
 .projects-item {
   .projects-name {
     @include subtitle-font-style();
     margin-bottom: 5px;
+    // media
+    @include mobile-version {
+      & {
+        font-size: 16px;
+      }
+    }
   }
   .subtitle {
     @include text-font-style();
@@ -13,6 +20,11 @@
     transition: all 0.3s cubic-bezier(0, 0, 0.5, 1);
     height: 350px;
     margin-bottom: 20px;
+    @include mobile-version {
+      & {
+        max-height: 160px;
+      }
+    }
   }
   .hidden-block,
   .description {

@@ -1,10 +1,11 @@
-import ContactSection from "../ContactSection/ContactSection";
+import ContactSection from "../Main/components/ContactSection/ContactSection";
 
 import { TiSocialLinkedinCircular } from "react-icons/ti";
 import { FaFacebook } from "react-icons/fa6";
 import { FaGithub } from "react-icons/fa";
-import { scrollToTop } from "../../../../helpers";
-import "../../../../styles/global.scss";
+import { FaInstagram } from "react-icons/fa";
+import { scrollToTop } from "../../helpers";
+import "../../styles/global.scss";
 import "./footerSection.scss";
 
 const FooterSection = () => {
@@ -45,6 +46,14 @@ const FooterSection = () => {
               rel="noopener noreferrer"
             >
               <FaFacebook className="footer-icon" />
+            </a>
+            <a
+              className="icons-link"
+              href="https://www.instagram.com/victor_tyslenko"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <FaInstagram className="footer-icon" />
             </a>
           </div>
         </div>

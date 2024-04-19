@@ -1,7 +1,6 @@
 import { useEffect } from "react";
-
 import { globalAnimation } from "../../../../animations/animations";
-
+import MainMobileComponent from "../../../../adaptive-components/MainMobileComponent/MainMobileComponent";
 import { motion } from "framer-motion";
 import "../../../../styles/global.scss";
 import "./mainSection.scss";
@@ -57,7 +56,7 @@ const MainSection = () => {
             </p>
           </motion.div>
         </div>
-
+        <MainMobileComponent />
         <hr className="divider" />
       </div>
     </section>

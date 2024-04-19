@@ -1,14 +1,25 @@
 @import "../../../../utils/mixins";
 @import "../../../../utils/variables";
+@import "../../../../utils/media-queries";
 .projects-section {
   padding: 100px;
-
+  @include mobile-version {
+    & {
+      padding:30px;
+    }
+  }
   .title-wrapp {
     @include flex-center(space-between, center);
     margin-bottom: 70px;
   }
   .projects-title {
     @include title-font-style();
+    // media
+    @include mobile-version {
+      & {
+        font-size: 30px;
+      }
+    }
   }
   .projects-title span {
     color: $bright-blue;

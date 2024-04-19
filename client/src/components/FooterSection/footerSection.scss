@@ -1,4 +1,4 @@
-@import "../../../../utils/mixins";
+@import "../../utils/mixins";
 .footer-container {
   background-color: #132d39;
 }
@@ -14,11 +14,11 @@
   padding: 10px 100px 30px;
   .icons-wrapp {
     @include flex-center(center, center);
-    gap: 23px;
+    gap: 15px;
   }
 
   .icons-wrapp .icons-link {
-    color: #fff;
+    color: $prime-color;
     @include flex-center();
   }
   .footer-icon {

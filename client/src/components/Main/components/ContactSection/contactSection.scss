@@ -1,23 +1,51 @@
 @import "../../../../utils/mixins";
 @import "../../../../utils/variables";
+@import "../../../../utils/media-queries";
 .contact-section {
   padding: 50px 100px;
-  .contact-wrapp {
-    border-bottom: 1px solid $prime-color;
-    @include flex-center(space-between, normal);
+  // media
+  @include mobile-version {
+    & {
+      padding: 50px 30px;
+    }
   }
+  // .contact-wrapp {
+  //   border-bottom: 1px solid $prime-color;
+  //   @include flex-center(space-between, normal);
+  //   @include mobile-version {
+  //     @include flex-center(center, center, column);
+  //   }
+  // }
 
   .title {
     @include title-font-style();
     margin-bottom: 35px;
+    @include mobile-version {
+      & {
+        @include subtitle-font-style();
+      }
+      & span {
+        color: $bright-blue;
+      }
+    }
+    @include desktop-version {
+      & span {
+        display: none;
+      }
+    }
   }
+
   .description {
     @include text-font-style();
     max-width: 430px;
     width: 100%;
     text-align: justify;
     line-height: 30px;
-
+    @include mobile-version {
+      & {
+        display: none;
+      }
+    }
   }
   .error-message {
     color: red;
@@ -33,35 +61,11 @@
   .form-wrapp {
     width: 400px;
     @include flex-center($direction: column);
-    .name-input {
-      margin-bottom: 20px;
-    }
-    .message {
-      padding-top: 60px;
-    }
-    //styles for MUI Text Field
-
-    .MuiInput-underline:before,
-    .MuiInput-underline:hover:before {
-      border-bottom-color: $prime-color;
-    }
-
-    .MuiInputLabel-root {
-      color: $prime-color !important;
-    }
-
-    .MuiTextField-root {
-      .MuiInput-underline:after {
-        border-bottom-color: $bright-blue;
-      }
-      &:focus-within .MuiInputLabel-root {
-        color: $bright-blue !important;
-      }
-    }
-
-    .MuiInputBase-input {
-      color: $prime-color;
-    }
+    // .name-input {
+    //   margin-bottom: 20px;
+    // }
+    // .message {
+    //   padding-top: 60px;
+    // }
   }
-  //  styles for MUI Text Field end
 }

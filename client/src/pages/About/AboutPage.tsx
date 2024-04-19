@@ -1,13 +1,14 @@
 import { globalAnimation } from "../../animations/animations";
 import { FaLinkedin } from "react-icons/fa";
 import { FaFacebook } from "react-icons/fa6";
+import { FaInstagram } from "react-icons/fa";
 import { FaGithub } from "react-icons/fa";
 import { motion } from "framer-motion";
 import "./aboutPage.scss";
 const AboutPage = () => {
   const iconLinks = [
     {
-      link: "https://www.linkedin.com/in/vic-tyslenko/",
+      link: "https://www.linkedin.com/in/vic-tyslenko",
       icon: <FaLinkedin />,
     },
     {
@@ -19,8 +20,8 @@ const AboutPage = () => {
       icon: <FaFacebook />,
     },
     {
-      link: "https://www.linkedin.com/in/vic-tyslenko/",
-      icon: <FaGithub />,
+      link: "https://www.instagram.com/victor_tyslenko",
+      icon: <FaInstagram />,
     },
   ];
   return (

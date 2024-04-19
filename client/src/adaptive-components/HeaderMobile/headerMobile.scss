@@ -1,0 +1,31 @@
+@import "../../utils/variables";
+@import "../../utils/mixins";
+@import "../../utils/media-queries";
+
+.header-mobile-wrapp {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding: 10px 20px;
+  @include flex-center(space-between);
+  .title {
+    @include subtitle-font-style();
+    // color: $bright-blue;
+  }
+
+  .menu-icon {
+    color: $prime-color;
+    width: 40px;
+    height: 40px;
+  }
+  // media
+  @include desktop-version {
+    display: none;
+  }
+}
+
+.menu-item-link {
+  text-decoration: none;
+  color: $secondary-color;
+}

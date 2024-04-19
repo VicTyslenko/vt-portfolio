@@ -2,8 +2,9 @@ import { useLocation } from "react-router-dom";
 import { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { Header } from "./components";
-import AppRoutes from "./routers/AppRoutes";
 
+import AppRoutes from "./routers/AppRoutes";
+import "./styles/global.scss";
 import {
   setHomeLocation,
   setProjectsPage,
@@ -31,7 +32,9 @@ const App = () => {
   return (
     <>
       <Header />
-      <AppRoutes />
+      <div className="mobile-container">
+        <AppRoutes />
+      </div>
     </>
   );
 };

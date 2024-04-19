@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-
+import HeaderMobile from "../../adaptive-components/HeaderMobile/HeaderMobile";
 import { RootState } from "../../store";
 import { useSelector } from "react-redux";
 import { scrollToTop } from "../../helpers";
@@ -10,7 +10,6 @@ import "./header.scss";
 
 const Header: React.FC = () => {
   const navigation = useNavigate();
-
 
   const page = useSelector((state: RootState) => state.page.isHomeLocation);
 
@@ -47,29 +46,32 @@ const Header: React.FC = () => {
 
   return (
     <div className="global-container">
-      <div className={`header-wrapper ${getHeaderClass()}`}>
-        <nav className="nav-bar">
-          <Link
-            className="nav-bar-link"
-            onClick={handleScrollToTopClick}
-            to="/"
-          >
-            Home
-          </Link>
-          <Link className="nav-bar-link" to="/about">
-            About
-          </Link>
-          <Link className="nav-bar-link" to="/projects">
-            Projects
-          </Link>
-          <Link className="nav-bar-link" to="/services">
-            Services
-          </Link>
+      <div>
+        <div className={`header-wrapper ${getHeaderClass()}`}>
+          <nav className="nav-bar">
+            <Link
+              className="nav-bar-link"
+              onClick={handleScrollToTopClick}
+              to="/"
+            >
+              Home
+            </Link>
+            <Link className="nav-bar-link" to="/about">
+              About
+            </Link>
+            <Link className="nav-bar-link" to="/projects">
+              Projects
+            </Link>
+            <Link className="nav-bar-link" to="/services">
+              Services
+            </Link>
 
-          <Link className="nav-bar-link" to="/contacts">
-            Contact
-          </Link>
-        </nav>
+            <Link className="nav-bar-link" to="/contacts">
+              Contact
+            </Link>
+          </nav>
+        </div>
+        <HeaderMobile />
       </div>
     </div>
   );

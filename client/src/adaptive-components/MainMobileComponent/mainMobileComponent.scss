@@ -1,0 +1,51 @@
+@import "../../utils/variables";
+@import "../../utils/mixins";
+@import "../../utils/media-queries";
+
+.main-mobile-wrapp {
+  @include flex-center();
+  margin-bottom: 50px;
+  // media
+  @include desktop-version {
+    display: none;
+  }
+  .main-mobile-content {
+    text-align: center;
+    max-width: 450px;
+  }
+  .greeting-text {
+    @include subtitle-font-style($fontSize: 40px);
+    margin-bottom: 10px;
+    span {
+      color: $bright-blue;
+    }
+  }
+  .title {
+    @include title-font-style();
+    margin-bottom: 12px;
+  }
+  .about-text {
+    @include text-font-style($fontSize: 20px);
+    line-height: 30px;
+    margin-bottom: 30px;
+  }
+
+  .icons-wrapp {
+    @include flex-center();
+    gap: 12px;
+    margin-bottom: 40px;
+  }
+  .main-icons-link {
+    color: $prime-color;
+  }
+  .main-icon {
+    width: 42px;
+    height: 42px;
+  }
+  .main-mobile-button {
+    @include second-button-style($width: 170px);
+  }
+  .main-mobile-link {
+    text-decoration: none;
+  }
+}
