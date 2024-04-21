@@ -4,7 +4,7 @@
 .services-page-container {
   padding: 140px 100px;
   text-align: center;
-
+  height: 100vh;
   // add style to specific class from slick-carousel
   .slick-slide {
     padding: 15px 0;
@@ -16,5 +16,8 @@
   }
   .title span {
     color: $bright-blue;
+  }
+  .loader-wrapp {
+    @include flex-center();
   }
 }

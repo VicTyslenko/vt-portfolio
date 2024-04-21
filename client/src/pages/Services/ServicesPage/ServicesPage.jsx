@@ -6,6 +6,7 @@ import { globalAnimation } from "../../../animations/animations";
 import usePathParameters from "../../../hooks/usePathParameters";
 import { dataFetch, fetchItemById } from "../../../reducers/dataReducer";
 import { openModal } from "../../../reducers/modalReducer";
+import PuffLoader from "react-spinners/PuffLoader";
 import Slider from "react-slick";
 import { motion } from "framer-motion";
 import "slick-carousel/slick/slick.css";
@@ -26,6 +27,7 @@ const ServicesPage = () => {
   const selectedService = useSelector(
     (state) => state.collections.selectedItem
   );
+  const loader = useSelector((state) => state.collections.isLoading);
   const handleOpen = () => {
     dispatch(openModal());
   };
@@ -50,23 +52,29 @@ const ServicesPage = () => {
           yInitial: 30,
         })}
       >
-        <Slider {...sliderSettings}>
-          {servicesData.map(
-            ({ title, shortDescription, description, icon, _id }, index) => (
-              <ServicesItem
-                key={index}
-                title={title}
-                shortDescription={shortDescription}
-                description={description}
-                icon={icon}
-                action={() => {
-                  handleOpen();
-                  dispatch(fetchItemById({ collectionName, _id}));
-                }}
-              />
-            )
-          )}
-        </Slider>
+        {!loader ? (
+          <Slider {...sliderSettings}>
+            {servicesData.map(
+              ({ title, shortDescription, description, icon, _id }, index) => (
+                <ServicesItem
+                  key={index}
+                  title={title}
+                  shortDescription={shortDescription}
+                  description={description}
+                  icon={icon}
+                  action={() => {
+                    handleOpen();
+                    dispatch(fetchItemById({ collectionName, _id }));
+                  }}
+                />
+              )
+            )}
+          </Slider>
+        ) : (
+          <div className="loader-wrapp">
+            <PuffLoader size="100px" color="#fff" />
+          </div>
+        )}
       </motion.div>
       {modal && (
         <ServicesModal
