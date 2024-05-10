@@ -2,7 +2,7 @@ type ButtonProps = {
   children: React.ReactNode;
   onClick?: () => void;
   className?: string;
-  type: "button" | "submit";
+  type?: "button" | "submit";
 };
 const Button: React.FC<ButtonProps> = ({
   children,
@@ -10,6 +10,8 @@ const Button: React.FC<ButtonProps> = ({
   className,
   type,
 }) => {
+
+  
   return (
     <button type={type} className={className} onClick={onClick}>
       {children}
