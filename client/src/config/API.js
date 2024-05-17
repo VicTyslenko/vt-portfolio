@@ -1,4 +1,4 @@
 export const API_URL =
-  process.env.NODE_ENV === "development"
-    ? process.env.REACT_APP_API_URL
-    : process.env.REACT_APP_API_URL_PROD;
+  import.meta.env.MODE === "development"
+    ? import.meta.env.VITE_APP_API_URL
+    : import.meta.env.VITE_APP_API_URL_PROD;

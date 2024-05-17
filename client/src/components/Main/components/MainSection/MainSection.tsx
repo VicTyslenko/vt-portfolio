@@ -5,6 +5,7 @@ import { globalAnimation } from "../../../../animations/animations";
 import { motion } from "framer-motion";
 import "../../../../styles/global.scss";
 import "./mainSection.scss";
+
 const MainSection = () => {
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -25,11 +26,7 @@ const MainSection = () => {
               duration: 0.8,
             })}
           >
-            <img
-              className="main-image"
-              src={`${process.env.PUBLIC_URL}/img/portfolio_image.png`}
-              alt="portfolio"
-            />
+            <img className="main-image" src={`${import.meta.env.VITE_PUBLIC_URL}/img/portfolio_image.png`} alt="portfolio" />
           </motion.div>
           <motion.div
             className="main-text"
@@ -52,8 +49,7 @@ const MainSection = () => {
               Frontend Web Developer
             </motion.p>
             <p className="description">
-              Crafting responsive, user-centric websites and web applications
-              with the latest technologies for seamless digital experiences.
+              Crafting responsive, user-centric websites and web applications with the latest technologies for seamless digital experiences.
             </p>
           </motion.div>
         </div>
