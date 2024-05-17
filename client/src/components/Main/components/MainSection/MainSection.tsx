@@ -26,7 +26,7 @@ const MainSection = () => {
               duration: 0.8,
             })}
           >
-            <img className="main-image" src={`${import.meta.env.VITE_PUBLIC_URL}/img/portfolio_image.png`} alt="portfolio" />
+            <img className="main-image" src="/img/portfolio_image.png" alt="portfolio" />
           </motion.div>
           <motion.div
             className="main-text"
