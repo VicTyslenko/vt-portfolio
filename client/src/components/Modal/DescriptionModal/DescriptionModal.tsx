@@ -26,12 +26,7 @@ const fadeInOut = {
   visible: { opacity: 1, transition: { duration: 0.9 } },
 };
 
-const DescriptionModal: React.FC<DescriptionModalProps> = ({
-  image,
-  link,
-  technologies,
-  features,
-}) => {
+const DescriptionModal: React.FC<DescriptionModalProps> = ({ image, link, technologies, features }) => {
   const dispatch = useDispatch();
   const open = useSelector((state: RootState) => state.modal.isModalOpen);
   const loader = useSelector((state: RootState) => state.collections.isLoading);
@@ -41,18 +36,8 @@ const DescriptionModal: React.FC<DescriptionModalProps> = ({
   };
 
   return (
-    <Modal
-      open={open}
-      onClose={handleCloseModal}
-      disableScrollLock={true}
-      className="modal-wrapp"
-    >
-      <motion.div
-        variants={fadeInOut}
-        initial="hidden"
-        animate="visible"
-        exit="exit"
-      >
+    <Modal open={open} onClose={handleCloseModal} disableScrollLock={true} className="modal-wrapp">
+      <motion.div variants={fadeInOut} initial="hidden" animate="visible" exit="exit">
         <Fade in={open}>
           <Box
             sx={{
@@ -76,7 +61,7 @@ const DescriptionModal: React.FC<DescriptionModalProps> = ({
                 <div
                   className="image-wrapp"
                   style={{
-                    backgroundImage: `url('${process.env.PUBLIC_URL}/img/description-images/${image}')`,
+                    backgroundImage: `url('/img/description-images/${image}')`,
                   }}
                 ></div>
               )}
@@ -105,10 +90,7 @@ const DescriptionModal: React.FC<DescriptionModalProps> = ({
                   </a>
                 </div>
               </div>
-              <IoIosCloseCircleOutline
-                className="close-icon"
-                onClick={handleCloseModal}
-              />
+              <IoIosCloseCircleOutline className="close-icon" onClick={handleCloseModal} />
             </div>
           </Box>
         </Fade>
