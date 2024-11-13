@@ -3,7 +3,7 @@ import { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { Header } from "components/header";
 import AppRoutes from "./routers/AppRoutes";
-
+import { Toaster } from "react-hot-toast";
 import { setHomeLocation, setProjectsPage } from "./reducers/pageLocation.reducer";
 import { scrollToTop } from "./helpers";
 
@@ -29,6 +29,7 @@ const App = () => {
     <>
       <Header />
       <AppRoutes />
+      <Toaster position="top-center" reverseOrder={true} />
     </>
   );
 };
