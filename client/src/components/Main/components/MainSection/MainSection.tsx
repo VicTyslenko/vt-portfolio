@@ -46,10 +46,11 @@ const MainSection = () => {
                 duration: 0.8,
               })}
             >
-              Frontend Web Developer
+              Software Developer
             </motion.p>
             <p className="description">
-              Crafting responsive, user-centric websites and web applications with the latest technologies for seamless digital experiences.
+              Experienced developer focused on creating responsive websites and applications, including user management systems, admin dashboards,
+              commercial shops, utilizing modern technologies for optimized and engaging user experiences.
             </p>
           </motion.div>
         </div>
