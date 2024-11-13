@@ -7,7 +7,7 @@ import { scrollToTop } from "../../helpers";
 import "../../styles/global.scss";
 import "./header.scss";
 
-const Header: React.FC = () => {
+export const Header: React.FC = () => {
   const navigation = useNavigate();
 
   const page = useSelector((state: RootState) => state.page.isHomeLocation);
@@ -66,5 +66,3 @@ const Header: React.FC = () => {
     </div>
   );
 };
-
-export default Header;
