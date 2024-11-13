@@ -1,7 +1,7 @@
 import { useLocation } from "react-router-dom";
 import { useEffect } from "react";
 import { useDispatch } from "react-redux";
-import { Header } from "components/header-component";
+import { Header } from "components/header";
 import AppRoutes from "./routers/AppRoutes";
 
 import { setHomeLocation, setProjectsPage } from "./reducers/pageLocation.reducer";

@@ -1,4 +1,4 @@
-import Button from "../../../components/button-component/Button";
+import Button from "../../../components/button/Button";
 
 import { FaConnectdevelop } from "react-icons/fa";
 import icons from "../icons";

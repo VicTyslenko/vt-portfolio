@@ -1,11 +1,12 @@
 import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+
 import { RootState } from "../../store";
 import { useSelector } from "react-redux";
 import { scrollToTop } from "../../helpers";
-import "../../styles/global.scss";
 import "./header.scss";
+import "styles/global.scss";
 
 export const Header: React.FC = () => {
   const navigation = useNavigate();

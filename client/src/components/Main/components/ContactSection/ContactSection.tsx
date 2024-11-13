@@ -1,9 +1,9 @@
 import { Formik, Form, FormikHelpers } from "formik";
 import { useState } from "react";
-import Input from "../../../input-component/Input";
+import Input from "../../../input/Input";
 import { formInfoSubmit } from "../../../../helpers";
 import validationSchema from "./validation";
-import Button from "../../../button-component/Button";
+import Button from "../../../button/Button";
 import FormBoxElement from "../../../FormBoxElement/FormBoxElement";
 import "./contactSection.scss";
 

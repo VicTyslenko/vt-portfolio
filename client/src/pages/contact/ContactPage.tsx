@@ -1,4 +1,4 @@
-import Button from "../../components/button-component/Button";
+import Button from "../../components/button/Button";
 import { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { Formik, Form, FormikHelpers } from "formik";

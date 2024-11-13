@@ -1,4 +1,4 @@
-import Button from "../../components/button-component/Button";
+import Button from "../../components/button/Button";
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { useDispatch, useSelector } from "react-redux";
