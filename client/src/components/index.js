@@ -1,5 +1,5 @@
 import Main from "./Main/Main";
-import Header from "./Header/Header";
-import Input from "./Input/Input";
+import Header from "./header-component/Header";
+import Input from "./input-component/Input";
 import FormBoxElement from "./FormBoxElement/FormBoxElement";
 export { Main, Header, Input, FormBoxElement };

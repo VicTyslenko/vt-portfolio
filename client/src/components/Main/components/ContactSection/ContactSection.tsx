@@ -1,9 +1,9 @@
 import { Formik, Form, FormikHelpers } from "formik";
 import { useState } from "react";
-import Input from "../../../input/Input";
+import Input from "../../../input-component/Input";
 import { formInfoSubmit } from "../../../../helpers";
 import validationSchema from "./validation";
-import Button from "../../../Button/Button";
+import Button from "../../../button-component/Button";
 import FormBoxElement from "../../../FormBoxElement/FormBoxElement";
 import "./contactSection.scss";
 
@@ -15,10 +15,7 @@ interface FormValues {
 const ContactSection = () => {
   const [errorMessage, setErrorMessage] = useState("");
 
-  const handleSubmit = async (
-    values: FormValues,
-    { resetForm }: FormikHelpers<FormValues>
-  ) => {
+  const handleSubmit = async (values: FormValues, { resetForm }: FormikHelpers<FormValues>) => {
     const collectionName = "contacts";
     const result = await formInfoSubmit(collectionName, values);
     if (result.error) {
@@ -37,9 +34,7 @@ const ContactSection = () => {
         <div className="left-side">
           <h1 className="title">Contact</h1>
           <p className="description">
-            I would love to hear about your project and how I could help.
-            Please, fill in the form, and I will get back to you as soon as
-            possible.
+            I would love to hear about your project and how I could help. Please, fill in the form, and I will get back to you as soon as possible.
           </p>
         </div>
         <Formik
@@ -68,22 +63,8 @@ const ContactSection = () => {
                   variant="standard"
                   fullWidth
                 />
-                <Input
-                  name="email"
-                  className="text-field"
-                  label="Email"
-                  error={!!errors.email && touched.email}
-                  variant="standard"
-                  fullWidth
-                />
-                <Input
-                  name="message"
-                  className="text-field message"
-                  label="Message"
-                  error={!!errors.message}
-                  variant="standard"
-                  fullWidth
-                />
+                <Input name="email" className="text-field" label="Email" error={!!errors.email && touched.email} variant="standard" fullWidth />
+                <Input name="message" className="text-field message" label="Message" error={!!errors.message} variant="standard" fullWidth />
               </FormBoxElement>
               {errorMessage && <p className="error-message">{errorMessage}</p>}
               <Button type="submit" className="submit-btn">

@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import Button from "../../../Button/Button";
+import Button from "../../../button-component/Button";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import usePathParameters from "../../../../hooks/usePathParameters";

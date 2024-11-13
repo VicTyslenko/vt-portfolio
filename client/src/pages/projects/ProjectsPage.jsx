@@ -1,4 +1,4 @@
-import Button from "../../components/Button/Button";
+import Button from "../../components/button-component/Button";
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { useDispatch, useSelector } from "react-redux";
@@ -20,9 +20,7 @@ const ProjectsPage = () => {
     return state.collections.data;
   }); //get all projects data
 
-  const selectedProject = useSelector(
-    (state) => state.collections.selectedItem
-  );
+  const selectedProject = useSelector((state) => state.collections.selectedItem);
   const loader = useSelector((state) => state.collections.isLoading);
   const modal = useSelector((state) => state.modal);
   const handleModalOpen = () => {
@@ -34,8 +32,6 @@ const ProjectsPage = () => {
   const pageLocation = useSelector((state) => state.page.isProjectsPage);
 
   useEffect(() => {
-
-
     const page = 1;
 
     dispatch(dataFetch({ collectionName, page, pageSize }));
@@ -43,10 +39,7 @@ const ProjectsPage = () => {
 
   return (
     <div className="projects-page-container">
-      <motion.h1
-        className="title"
-        {...globalAnimation({ yInitial: -70, duration: 1, ease: "easeOut" })}
-      >
+      <motion.h1 className="title" {...globalAnimation({ yInitial: -70, duration: 1, ease: "easeOut" })}>
         My <span>projects</span>
       </motion.h1>
       {loader ? (
@@ -88,11 +81,7 @@ const ProjectsPage = () => {
             />
           )}
           <div className="button-wrapp">
-            <Button
-              type="button"
-              className="load-more-btn"
-              onClick={handleLoadMore}
-            >
+            <Button type="button" className="load-more-btn" onClick={handleLoadMore}>
               Load more
             </Button>
           </div>

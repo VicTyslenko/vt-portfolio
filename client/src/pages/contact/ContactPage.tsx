@@ -1,4 +1,4 @@
-import Button from "../../components/Button/Button";
+import Button from "../../components/button-component/Button";
 import { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { Formik, Form, FormikHelpers } from "formik";
@@ -28,10 +28,7 @@ const ContactPage = () => {
 
   const modal = useSelector((state: RootState) => state.modal.isModalOpen);
 
-  const handleSubmit = async (
-    values: FormValues,
-    { resetForm }: FormikHelpers<FormValues>
-  ) => {
+  const handleSubmit = async (values: FormValues, { resetForm }: FormikHelpers<FormValues>) => {
     const result = await formInfoSubmit(collectionName, values);
     if (result.error) {
       const error = (result.error as any).message;
@@ -82,27 +79,9 @@ const ContactPage = () => {
                   variant="standard"
                   error={!!errors.firstName && touched.firstName}
                 />
-                <Input
-                  name="lastName"
-                  className="text-field"
-                  label="Last name"
-                  variant="standard"
-                  error={!!errors.lastName && touched.lastName}
-                />
-                <Input
-                  name="email"
-                  className="text-field"
-                  label="Email"
-                  variant="standard"
-                  error={!!errors.email && touched.email}
-                />
-                <Input
-                  name="mobile"
-                  className="text-field"
-                  label="Mobile"
-                  variant="standard"
-                  error={!!errors.mobile && touched.mobile}
-                />
+                <Input name="lastName" className="text-field" label="Last name" variant="standard" error={!!errors.lastName && touched.lastName} />
+                <Input name="email" className="text-field" label="Email" variant="standard" error={!!errors.email && touched.email} />
+                <Input name="mobile" className="text-field" label="Mobile" variant="standard" error={!!errors.mobile && touched.mobile} />
               </FormBoxElement>
               <FormBoxElement className="message-box-element">
                 <Input
