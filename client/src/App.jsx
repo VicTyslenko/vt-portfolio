@@ -1,13 +1,10 @@
 import { useLocation } from "react-router-dom";
 import { useEffect } from "react";
 import { useDispatch } from "react-redux";
-import { Header } from "./components";
+import { Header } from "components/header-component";
 import AppRoutes from "./routers/AppRoutes";
 
-import {
-  setHomeLocation,
-  setProjectsPage,
-} from "./reducers/pageLocation.reducer";
+import { setHomeLocation, setProjectsPage } from "./reducers/pageLocation.reducer";
 import { scrollToTop } from "./helpers";
 
 const App = () => {
