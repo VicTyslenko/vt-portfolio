@@ -7,7 +7,7 @@
   .main-text {
     position: absolute;
     top: 27%;
-    right: 16%;
+    right: -67%;
     z-index: 6;
     .title {
       @include title-font-style();
@@ -33,6 +33,7 @@
     position: relative;
     left: -12px;
     .image-wrapp {
+      position: relative;
       width: 700px;
       height: 550px;
       @include flex-center(center, flex-end);

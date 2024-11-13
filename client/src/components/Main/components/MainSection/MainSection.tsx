@@ -1,9 +1,9 @@
 import { useEffect } from "react";
 
-import { globalAnimation } from "../../../../animations/animations";
+import { globalAnimation } from "animations";
 
 import { motion } from "framer-motion";
-import "../../../../styles/global.scss";
+import "styles/global.scss";
 import "./mainSection.scss";
 
 const MainSection = () => {
@@ -26,32 +26,32 @@ const MainSection = () => {
               duration: 0.8,
             })}
           >
-            <img className="main-image" src="/img/portfolio_image.png" alt="portfolio" />
-          </motion.div>
-          <motion.div
-            className="main-text"
-            {...globalAnimation({
-              yInitial: -40,
-              duration: 0.8,
-            })}
-          >
-            <h1 className="title">
-              I'm <span className="title-name">Victor Tyslenko</span>
-            </h1>
-            <motion.p
-              className="subtitle"
+            <motion.div
+              className="main-text"
               {...globalAnimation({
-                yInitial: 0,
-                xInitial: -40,
+                yInitial: -40,
                 duration: 0.8,
               })}
             >
-              Software Developer
-            </motion.p>
-            <p className="description">
-              Experienced developer focused on creating responsive websites and applications, including user management systems, admin dashboards,
-              commercial shops, utilizing modern technologies for optimized and engaging user experiences.
-            </p>
+              <h1 className="title">
+                I'm <span className="title-name">Victor Tyslenko</span>
+              </h1>
+              <motion.p
+                className="subtitle"
+                {...globalAnimation({
+                  yInitial: 0,
+                  xInitial: -40,
+                  duration: 0.8,
+                })}
+              >
+                Software Developer
+              </motion.p>
+              <p className="description">
+                Experienced developer focused on creating responsive websites and applications, including user management systems, admin dashboards,
+                commercial shops, utilizing modern technologies for optimized and engaging user experiences.
+              </p>
+            </motion.div>
+            <img className="main-image" src="/img/portfolio_image.png" alt="portfolio" />
           </motion.div>
         </div>
 
