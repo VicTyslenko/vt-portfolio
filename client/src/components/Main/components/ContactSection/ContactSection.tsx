@@ -1,6 +1,6 @@
 import { Formik, Form, FormikHelpers } from "formik";
 import { useState } from "react";
-import Input from "../../../Input/Input";
+import Input from "../../../input/Input";
 import { formInfoSubmit } from "../../../../helpers";
 import validationSchema from "./validation";
 import Button from "../../../Button/Button";
