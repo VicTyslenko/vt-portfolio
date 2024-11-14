@@ -1,36 +1,15 @@
-import { Formik, Form, FormikHelpers } from "formik";
-import { useState } from "react";
+import { Formik, Form } from "formik";
 import Input from "../../../input/Input";
-import { formInfoSubmit } from "../../../../helpers";
 import validationSchema from "./validation";
 import Button from "../../../button/Button";
 import FormBoxElement from "../../../FormBoxElement/FormBoxElement";
-import toast from "react-hot-toast";
+
+import { useContactSection } from "./hooks";
 import "./contactSection.scss";
-interface FormValues {
-  name: string;
-  email: string;
-  message: string;
-}
+
 const ContactSection = () => {
-  //Todo: remove useState, leave the form only as the component state
+  const { handleSubmit } = useContactSection();
 
-  const [errorMessage, setErrorMessage] = useState("");
-
-  const handleSubmit = async (values: FormValues, { resetForm }: FormikHelpers<FormValues>) => {
-    const result = await formInfoSubmit("contacts", values);
-    if (result.error) {
-      const error = (result.error as any).message;
-      setErrorMessage(error);
-    } else {
-      setErrorMessage("");
-      console.log(values);
-      toast.success("The message sent successfully!");
-      // alert("The message sent successfully");
-     
-      resetForm();
-    }
-  };
   return (
     <section className="contact-section">
       <div className="contact-wrapp">
@@ -66,10 +45,12 @@ const ContactSection = () => {
                   variant="standard"
                   fullWidth
                 />
+
                 <Input name="email" className="text-field" label="Email" error={!!errors.email && touched.email} variant="standard" fullWidth />
-                <Input name="message" className="text-field message" label="Message" error={!!errors.message} variant="standard" fullWidth />
+
+                <Input name="message" className="text-field message" label="Message" variant="standard" fullWidth />
               </FormBoxElement>
-              {errorMessage && <p className="error-message">{errorMessage}</p>}
+
               <Button type="submit" className="submit-btn">
                 Send message
               </Button>

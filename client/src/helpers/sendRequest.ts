@@ -1,8 +1,14 @@
-const sendRequest = async (url, method = "GET", body = null) => {
-  const options = {
-    method: method,
+interface FormValues {
+  name: string;
+  email: string;
+  message: string;
+}
+
+const sendRequest = async (url: string, method: string = "GET", body: FormValues | null = null) => {
+  const options: RequestInit = {
+    method,
     headers: {
-      "Content-type": "application/json",
+      "Content-Type": "application/json",
     },
   };
 
@@ -11,12 +17,14 @@ const sendRequest = async (url, method = "GET", body = null) => {
   }
 
   const response = await fetch(url, options);
+
   if (!response.ok) {
     const errorData = await response.json();
     throw new Error(errorData.message || "Something went wrong");
   }
-  const result = await response.json();
 
+  const result = await response.json();
   return result.data;
 };
+
 export default sendRequest;
