@@ -6,7 +6,7 @@ interface ProjectItemProps {
   title: string;
   subtitle: string;
   imageFileName: string;
-  pageLocation: Boolean;
+  pageLocation: boolean;
   description?: string;
 
   onClick?: MouseEventHandler<HTMLDivElement>;
