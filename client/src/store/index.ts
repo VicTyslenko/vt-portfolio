@@ -1,10 +1,9 @@
 import { configureStore } from "@reduxjs/toolkit";
 import { combineReducers } from "redux";
-import pageLocationReducer from "../reducers/pageLocation.reducer";
+
 import dataReducer from "../reducers/dataReducer";
 import modalReducer from "../reducers/modalReducer";
 const rootReducer = combineReducers({
-  page: pageLocationReducer,
   collections: dataReducer,
   modal: modalReducer,
 });

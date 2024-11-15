@@ -2,22 +2,14 @@ import { Link } from "react-router-dom";
 import Button from "components/button/Button";
 import ProjectItem from "./ProjectItem/ProjectItem";
 // import PuffLoader from "react-spinners/PuffLoader";
-import { useSelector } from "react-redux";
+import { useLocation } from "react-router-dom";
+
 import { projectsData } from "./data";
 import "styles/global.scss";
 import "./projectsSection.scss";
 
 const ProjectsSection = () => {
-  // const dispatch = useDispatch();
-
-  // const { collectionName } = usePathParameters(); // get collection name by useLocation()
-
-  const projectsPage = useSelector((state) => state.page.isProjectsPage);
-
-  // useEffect(() => {
-  //   const pageSize = 4;
-  //   dispatch(dataFetch({ collectionName, pageSize }));
-  // }, [dispatch, collectionName]); //activating action load data to payload
+  const location = useLocation();
 
   return (
     <section className="projects-section">
@@ -43,8 +35,7 @@ const ProjectsSection = () => {
               title={project.title}
               subtitle={project.subtitle}
               imageFileName={project.imageFileName}
-              description={project.description}
-              pageLocation={projectsPage}
+              pageLocation={location.pathname}
             />
           ))}
         </div>

@@ -2,10 +2,7 @@ import { Header } from "components/header";
 import AppRoutes from "./routers/AppRoutes";
 import { Toaster } from "react-hot-toast";
 
-import { useGetLocation } from "hooks/use-location";
-
 const App = () => {
-  useGetLocation();
   return (
     <>
       <Header />

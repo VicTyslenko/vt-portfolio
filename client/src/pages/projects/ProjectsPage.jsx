@@ -10,6 +10,7 @@ import usePathParameters from "../../hooks/usePathParameters";
 import { openModal } from "../../reducers/modalReducer";
 import { dataFetch, fetchItemById } from "../../reducers/dataReducer";
 import { globalAnimation } from "../../animations/animations";
+import { useLocation } from "react-router-dom";
 import "./projectsPage.scss";
 
 const ProjectsPage = () => {
@@ -20,6 +21,8 @@ const ProjectsPage = () => {
     return state.collections.data;
   }); //get all projects data
 
+  const location = useLocation();
+
   const selectedProject = useSelector((state) => state.collections.selectedItem);
   const loader = useSelector((state) => state.collections.isLoading);
   const modal = useSelector((state) => state.modal);
@@ -29,7 +32,6 @@ const ProjectsPage = () => {
   const handleLoadMore = () => {
     setPageSize((prevPage) => prevPage + 3);
   };
-  const pageLocation = useSelector((state) => state.page.isProjectsPage);
 
   useEffect(() => {
     const page = 1;
@@ -63,7 +65,7 @@ const ProjectsPage = () => {
               subtitle={project.subtitle}
               imageFileName={project.imageFileName}
               description={project.description}
-              pageLocation={pageLocation}
+              pageLocation={location.pathname}
               onClick={() => {
                 handleModalOpen();
                 dispatch(fetchItemById({ collectionName, _id: project._id }));
