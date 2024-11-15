@@ -10,11 +10,15 @@ const transporter = nodemailer.createTransport({
   },
 });
 
-const mailer = (message) => {
-  transporter.sendMail(message, (error, info) => {
-    if (error) return console.log({ error: error });
-    console.log("Success", info);
-  });
+const mailer = async (message) => {
+  try {
+    const info = await transporter.sendMail(message);
+    console.log("Success send email!", info);
+
+    return info;
+  } catch (error) {
+    console.log(error);
+  }
 };
 
 module.exports = mailer;
