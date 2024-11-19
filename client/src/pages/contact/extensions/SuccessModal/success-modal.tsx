@@ -1,11 +1,12 @@
 import Box from "@mui/material/Box";
-import { closeModal } from "../../../reducers/modalReducer";
+import { closeModal } from "reducers/modalReducer";
 import { useSelector, useDispatch } from "react-redux";
-import { RootState } from "../../../store";
-import Button from "../../../components/button/Button";
+import { RootState } from "store";
+import Button from "components/button/Button";
 import Modal from "@mui/material/Modal";
 import "./success-modal.scss";
-const SuccessModal = () => {
+
+export const SuccessModal = () => {
   const dispatch = useDispatch();
   const open = useSelector((state: RootState) => state.modal.isModalOpen);
 
@@ -29,4 +30,3 @@ const SuccessModal = () => {
     </div>
   );
 };
-export default SuccessModal;

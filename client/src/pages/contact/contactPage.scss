@@ -8,7 +8,7 @@
   padding-top: 100px;
 
   .title {
-    @include title-font-style($fontSize:32px);
+    @include title-font-style($fontSize: 32px);
     text-align: center;
   }
   .title span {
@@ -61,8 +61,17 @@
     @include second-button-style($width: fit-content);
     margin-top: 50px;
   }
-  .error-message{
+  .error-message {
     color: red;
     font-size: 15px;
   }
+}
+.loading-message {
+  color: #fff;
+  position: absolute;
+  top: 44%;
+  left: 42%;
+}
+.contact-page-container.loading-opacity {
+  opacity: 0.5;
 }
