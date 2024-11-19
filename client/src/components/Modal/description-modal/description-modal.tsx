@@ -26,7 +26,7 @@ const fadeInOut = {
   visible: { opacity: 1, transition: { duration: 0.9 } },
 };
 
-const DescriptionModal: React.FC<DescriptionModalProps> = ({ image, link, technologies, features }) => {
+export const DescriptionModal: React.FC<DescriptionModalProps> = ({ image, link, technologies, features }) => {
   const dispatch = useDispatch();
   const open = useSelector((state: RootState) => state.modal.isModalOpen);
   const loader = useSelector((state: RootState) => state.collections.isLoading);
@@ -98,5 +98,3 @@ const DescriptionModal: React.FC<DescriptionModalProps> = ({ image, link, techno
     </Modal>
   );
 };
-
-export default DescriptionModal;

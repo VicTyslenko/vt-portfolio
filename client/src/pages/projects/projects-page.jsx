@@ -4,14 +4,14 @@ import { motion } from "framer-motion";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 import PuffLoader from "react-spinners/PuffLoader";
-import DescriptionModal from "../../components/Modal/DescriptionModal/DescriptionModal";
+import { DescriptionModal } from "components/Modal/description-modal";
 import ProjectItem from "../../components/Main/components/ProjectsSection/ProjectItem/ProjectItem";
 import usePathParameters from "../../hooks/usePathParameters";
 import { openModal } from "../../reducers/modalReducer";
 import { dataFetch, fetchItemById } from "../../reducers/dataReducer";
 import { globalAnimation } from "../../animations/animations";
 import { useLocation } from "react-router-dom";
-import "./projectsPage.scss";
+import "./projects-page.scss";
 
 const ProjectsPage = () => {
   const [pageSize, setPageSize] = useState(6);
@@ -26,6 +26,7 @@ const ProjectsPage = () => {
   const selectedProject = useSelector((state) => state.collections.selectedItem);
   const loader = useSelector((state) => state.collections.isLoading);
   const modal = useSelector((state) => state.modal);
+
   const handleModalOpen = () => {
     dispatch(openModal());
   };
@@ -34,9 +35,7 @@ const ProjectsPage = () => {
   };
 
   useEffect(() => {
-    const page = 1;
-
-    dispatch(dataFetch({ collectionName, page, pageSize }));
+    dispatch(dataFetch({ collectionName, pageSize }));
   }, [dispatch, pageSize, collectionName]);
 
   return (
@@ -57,21 +56,22 @@ const ProjectsPage = () => {
             ease: "easeOut",
           })}
         >
-          {projectsData.map((project, index) => (
-            <ProjectItem
-              key={index}
-              link={project.link}
-              title={project.title}
-              subtitle={project.subtitle}
-              imageFileName={project.imageFileName}
-              description={project.description}
-              pageLocation={location.pathname}
-              onClick={() => {
-                handleModalOpen();
-                dispatch(fetchItemById({ collectionName, _id: project._id }));
-              }}
-            />
-          ))}
+          {projectsData.length > 0 &&
+            projectsData.map((project, index) => (
+              <ProjectItem
+                key={index}
+                link={project.link}
+                title={project.title}
+                subtitle={project.subtitle}
+                imageFileName={project.imageFileName}
+                description={project.description}
+                pageLocation={location.pathname}
+                onClick={() => {
+                  handleModalOpen();
+                  dispatch(fetchItemById({ collectionName, _id: project._id }));
+                }}
+              />
+            ))}
           {modal && (
             <DescriptionModal
               description={selectedProject?.description}
@@ -82,11 +82,13 @@ const ProjectsPage = () => {
               link={selectedProject?.link}
             />
           )}
-          <div className="button-wrapp">
-            <Button type="button" className="load-more-btn" onClick={handleLoadMore}>
-              Load more
-            </Button>
-          </div>
+          {projectsData.length < 9 && (
+            <div className="button-wrapp">
+              <Button type="button" className="load-more-btn" onClick={handleLoadMore}>
+                Load more
+              </Button>
+            </div>
+          )}
         </motion.div>
       )}
 
