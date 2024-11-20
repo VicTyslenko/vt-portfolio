@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import Button from "components/button/Button";
-import ProjectItem from "./ProjectItem/ProjectItem";
+import ProjectItem from "./project-item/project-item";
 // import PuffLoader from "react-spinners/PuffLoader";
 import { useLocation } from "react-router-dom";
 

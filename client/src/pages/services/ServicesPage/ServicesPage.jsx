@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import ServicesItem from "../ServicesItem/ServicesItem";
-import ServicesModal from "../../../components/Modal/ServicesModal/ServicesModal";
+import ServicesModal from "../../../components/modal-temp/services-modal/services-modal";
 import { globalAnimation } from "../../../animations/animations";
 import usePathParameters from "../../../hooks/usePathParameters";
 import { dataFetch, fetchItemById } from "../../../reducers/dataReducer";
@@ -24,9 +24,7 @@ const ServicesPage = () => {
   const dispatch = useDispatch();
   const modal = useSelector((state) => state.modal.isModalOpen);
   const servicesData = useSelector((state) => state.collections.data);
-  const selectedService = useSelector(
-    (state) => state.collections.selectedItem
-  );
+  const selectedService = useSelector((state) => state.collections.selectedItem);
   const loader = useSelector((state) => state.collections.isLoading);
   const handleOpen = () => {
     dispatch(openModal());
@@ -54,21 +52,19 @@ const ServicesPage = () => {
       >
         {!loader ? (
           <Slider {...sliderSettings}>
-            {servicesData.map(
-              ({ title, shortDescription, description, icon, _id }, index) => (
-                <ServicesItem
-                  key={index}
-                  title={title}
-                  shortDescription={shortDescription}
-                  description={description}
-                  icon={icon}
-                  action={() => {
-                    handleOpen();
-                    dispatch(fetchItemById({ collectionName, _id }));
-                  }}
-                />
-              )
-            )}
+            {servicesData.map(({ title, shortDescription, description, icon, _id }, index) => (
+              <ServicesItem
+                key={index}
+                title={title}
+                shortDescription={shortDescription}
+                description={description}
+                icon={icon}
+                action={() => {
+                  handleOpen();
+                  dispatch(fetchItemById({ collectionName, _id }));
+                }}
+              />
+            ))}
           </Slider>
         ) : (
           <div className="loader-wrapp">
@@ -76,13 +72,7 @@ const ServicesPage = () => {
           </div>
         )}
       </motion.div>
-      {modal && (
-        <ServicesModal
-          key="services-modal"
-          subtitle={selectedService?.title}
-          description={selectedService?.description}
-        />
-      )}
+      {modal && <ServicesModal key="services-modal" subtitle={selectedService?.title} description={selectedService?.description} />}
     </div>
   );
 };
