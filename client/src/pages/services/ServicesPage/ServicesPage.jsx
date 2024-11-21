@@ -20,7 +20,7 @@ const sliderSettings = {
   slidesToScroll: 3,
 };
 
-const ServicesPage = () => {
+export const ServicesPage = () => {
   const dispatch = useDispatch();
   const modal = useSelector((state) => state.modal.isModalOpen);
   const servicesData = useSelector((state) => state.collections.data);
@@ -77,4 +77,3 @@ const ServicesPage = () => {
   );
 };
 
-export default ServicesPage;

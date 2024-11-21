@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import "./aboutPage.scss";
 import { iconLinks } from "./data";
 
-const AboutPage = () => {
+export const AboutPage = () => {
   return (
     <div className="about-page-container">
       <motion.div
@@ -25,7 +25,8 @@ const AboutPage = () => {
         <h3 className="subtitle">I'm here to help you with your projects!</h3>
 
         <p className="description">
-          Experienced Frontend Developer, I specialize in creating dynamic web applications using technologies such as JavaScript, React, Node, TypeScript and more. My focus is on optimizing user experience through innovative solutions and clean, efficient code. I continuously seek
+          Experienced Frontend Developer, I specialize in creating dynamic web applications using technologies such as JavaScript, React, Node,
+          TypeScript and more. My focus is on optimizing user experience through innovative solutions and clean, efficient code. I continuously seek
           to stay ahead of industry trends and am committed to personal growth and professional development in the tech field.
         </p>
         <div className="icons-wrapp">
@@ -52,5 +53,3 @@ const AboutPage = () => {
     </div>
   );
 };
-
-export default AboutPage;

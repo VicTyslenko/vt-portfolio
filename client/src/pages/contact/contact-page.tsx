@@ -21,7 +21,7 @@ interface FormValues {
   mobile: string;
   message: string;
 }
-const ContactPage = () => {
+ export const ContactPage = () => {
   const dispatch = useDispatch();
 
   const { collectionName } = usePathParameters();
@@ -118,4 +118,3 @@ const ContactPage = () => {
   );
 };
 
-export default ContactPage;

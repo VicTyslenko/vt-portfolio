@@ -13,7 +13,7 @@ import { globalAnimation } from "../../animations/animations";
 import { useLocation } from "react-router-dom";
 import "./projects-page.scss";
 
-const ProjectsPage = () => {
+export const ProjectsPage = () => {
   const [pageSize, setPageSize] = useState(6);
   const dispatch = useDispatch();
   const { collectionName } = usePathParameters();
@@ -102,5 +102,3 @@ const ProjectsPage = () => {
     </div>
   );
 };
-
-export default ProjectsPage;
