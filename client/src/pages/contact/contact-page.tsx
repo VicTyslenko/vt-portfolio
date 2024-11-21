@@ -8,8 +8,9 @@ import { openModal } from "../../reducers/modalReducer";
 import { RootState } from "../../store";
 import { SuccessModal } from "./extensions/SuccessModal/success-modal";
 import { Input, FormBoxElement } from "../../components";
-import { usePathParameters } from "../../hooks/usePathParameters";
-import { formInfoSubmit } from "../../helpers";
+
+import { formInfoSubmit } from "helpers";
+import { useLocation } from "react-router-dom";
 import validationSchema from "./contactsValidation";
 
 import "./contactPage.scss";
@@ -21,11 +22,13 @@ interface FormValues {
   mobile: string;
   message: string;
 }
- export const ContactPage = () => {
+export const ContactPage = () => {
   const dispatch = useDispatch();
 
-  const { collectionName } = usePathParameters();
+  const location = useLocation();
+
   const [errorMessage, setErrorMessage] = useState("");
+
   const [loading, setLoading] = useState(false);
 
   const modal = useSelector((state: RootState) => state.modal.isModalOpen);
@@ -33,7 +36,7 @@ interface FormValues {
   const handleSubmit = async (values: FormValues, { resetForm }: FormikHelpers<FormValues>) => {
     setLoading(true);
 
-    const result = await formInfoSubmit(collectionName, values);
+    const result = await formInfoSubmit(location.pathname, values);
 
     if (result.error) {
       const error = (result.error as any).message;
@@ -117,4 +120,3 @@ interface FormValues {
     </>
   );
 };
-

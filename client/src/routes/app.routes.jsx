@@ -7,7 +7,7 @@ import { Suspense } from "react";
 const AppRoutes = () => {
   return (
     <>
-      <Suspense fallback={<div>Loading...</div>}>
+      <Suspense fallback={<></>}>
         <Routes>
           <Route path={RouteEnum.START} element={<Main />} />
           <Route path={RouteEnum.ABOUT} element={<LazyRoutes.AboutPage />} />

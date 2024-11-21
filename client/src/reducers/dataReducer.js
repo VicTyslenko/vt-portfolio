@@ -8,12 +8,12 @@ const initialState = {
   selectedItem: null,
 };
 
-export const dataFetch = createAsyncThunk("data/fetch", async ({ collectionName, page = 1, pageSize }) => {
-  const response = await sendRequest(`${API_URL}/${collectionName}?page=${page}&pageSize=${pageSize}`);
+export const dataFetch = createAsyncThunk("data/fetch", async ({ collectionName = "/projects", page = 1, pageSize }) => {
+  const response = await sendRequest(`${API_URL}${collectionName}?page=${page}&pageSize=${pageSize}`);
   return response;
 });
 export const fetchItemById = createAsyncThunk("fetch/projectsId", async ({ collectionName, _id }) => {
-  const response = await sendRequest(`${API_URL}/${collectionName}/${_id}`);
+  const response = await sendRequest(`${API_URL}${collectionName}/${_id}`);
   return response;
 });
 

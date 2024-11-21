@@ -6,7 +6,7 @@ import { useEffect } from "react";
 import PuffLoader from "react-spinners/PuffLoader";
 import { DescriptionModal } from "components/modal-temp/description-modal";
 import ProjectItem from "../../components/main-temp/components/projects-section/project-item/project-item";
-import usePathParameters from "../../hooks/usePathParameters";
+
 import { openModal } from "../../reducers/modalReducer";
 import { dataFetch, fetchItemById } from "../../reducers/dataReducer";
 import { globalAnimation } from "../../animations/animations";
@@ -16,12 +16,13 @@ import "./projects-page.scss";
 export const ProjectsPage = () => {
   const [pageSize, setPageSize] = useState(6);
   const dispatch = useDispatch();
-  const { collectionName } = usePathParameters();
+
   const projectsData = useSelector((state) => {
     return state.collections.data;
   }); //get all projects data
 
   const location = useLocation();
+  const currentPage = location.pathname;
 
   const selectedProject = useSelector((state) => state.collections.selectedItem);
   const loader = useSelector((state) => state.collections.isLoading);
@@ -35,8 +36,10 @@ export const ProjectsPage = () => {
   };
 
   useEffect(() => {
-    dispatch(dataFetch({ collectionName, pageSize }));
-  }, [dispatch, pageSize, collectionName]);
+    dispatch(dataFetch({ collectionName: currentPage, pageSize }));
+  }, [dispatch, pageSize, currentPage]);
+
+  console.log("Render!");
 
   return (
     <div className="projects-page-container">
@@ -68,7 +71,7 @@ export const ProjectsPage = () => {
                 pageLocation={location.pathname}
                 onClick={() => {
                   handleModalOpen();
-                  dispatch(fetchItemById({ collectionName, _id: project._id }));
+                  dispatch(fetchItemById({ collectionName: currentPage, _id: project._id }));
                 }}
               />
             ))}
