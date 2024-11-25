@@ -6,40 +6,25 @@ import { useEffect } from "react";
 import PuffLoader from "react-spinners/PuffLoader";
 import { DescriptionModal } from "components/modal-temp/description-modal";
 import ProjectItem from "../../components/main-temp/components/projects-section/project-item/project-item";
-
-import { openModal } from "../../reducers/modalReducer";
+import { useProjects } from "./hooks";
 import { dataFetch, fetchItemById } from "../../reducers/dataReducer";
 import { globalAnimation } from "../../animations/animations";
 import { useLocation } from "react-router-dom";
 import "./projects-page.scss";
 
 export const ProjectsPage = () => {
-  const [pageSize, setPageSize] = useState(6);
-  const dispatch = useDispatch();
-
+  const { handleModalOpen, handleLoadMore } = useProjects();
   const projectsData = useSelector((state) => {
     return state.collections.data;
   }); //get all projects data
 
   const location = useLocation();
   const currentPage = location.pathname;
+  console.log({ currentPage: currentPage });
 
   const selectedProject = useSelector((state) => state.collections.selectedItem);
   const loader = useSelector((state) => state.collections.isLoading);
   const modal = useSelector((state) => state.modal);
-
-  const handleModalOpen = () => {
-    dispatch(openModal());
-  };
-  const handleLoadMore = () => {
-    setPageSize((prevPage) => prevPage + 3);
-  };
-
-  useEffect(() => {
-    dispatch(dataFetch({ collectionName: currentPage, pageSize }));
-  }, [dispatch, pageSize, currentPage]);
-
-  console.log("Render!");
 
   return (
     <div className="projects-page-container">
@@ -71,7 +56,7 @@ export const ProjectsPage = () => {
                 pageLocation={location.pathname}
                 onClick={() => {
                   handleModalOpen();
-                  dispatch(fetchItemById({ collectionName: currentPage, _id: project._id }));
+                  // dispatch(fetchItemById({ collectionName: currentPage, _id: project._id }));
                 }}
               />
             ))}
