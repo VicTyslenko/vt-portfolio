@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import ServicesItem from "../services-item/services-item";
-import ServicesModal from "../../../components/modal-temp/services-modal/services-modal";
+import ServicesModal from "../../../components/modal/services-modal/services-modal";
 import { globalAnimation } from "../../../animations/animations";
 import { dataFetch, fetchItemById } from "../../../reducers/dataReducer";
 import { openModal } from "../../../reducers/modalReducer";

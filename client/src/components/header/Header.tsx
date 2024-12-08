@@ -47,6 +47,8 @@ export const Header: React.FC = () => {
           <Link className="nav-bar-link" onClick={handleScrollToTopClick} to="/">
             Home
           </Link>
+
+          
           <Link className="nav-bar-link" to="/about">
             About
           </Link>

@@ -4,8 +4,8 @@ import { motion } from "framer-motion";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 import PuffLoader from "react-spinners/PuffLoader";
-import { DescriptionModal } from "components/modal-temp/description-modal";
-import ProjectItem from "../../components/main-temp/components/projects-section/project-item/project-item";
+import { DescriptionModal } from "components/modal/description-modal";
+import ProjectItem from "../../components/main/components/projects-section/project-item/project-item";
 import { useProjects } from "./hooks";
 import { dataFetch, fetchItemById } from "../../reducers/dataReducer";
 import { globalAnimation } from "../../animations/animations";
@@ -13,6 +13,7 @@ import { useLocation } from "react-router-dom";
 import "./projects-page.scss";
 
 export const ProjectsPage = () => {
+  const dispatch = useDispatch();
   const { handleModalOpen, handleLoadMore } = useProjects();
   const projectsData = useSelector((state) => {
     return state.collections.data;
@@ -23,6 +24,7 @@ export const ProjectsPage = () => {
   console.log({ currentPage: currentPage });
 
   const selectedProject = useSelector((state) => state.collections.selectedItem);
+
   const loader = useSelector((state) => state.collections.isLoading);
   const modal = useSelector((state) => state.modal);
 
@@ -56,7 +58,7 @@ export const ProjectsPage = () => {
                 pageLocation={location.pathname}
                 onClick={() => {
                   handleModalOpen();
-                  // dispatch(fetchItemById({ collectionName: currentPage, _id: project._id }));
+                  dispatch(fetchItemById({ collectionName: currentPage, _id: project._id }));
                 }}
               />
             ))}
