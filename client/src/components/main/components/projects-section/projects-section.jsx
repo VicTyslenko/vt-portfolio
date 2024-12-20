@@ -1,15 +1,18 @@
 import { Link } from "react-router-dom";
 import Button from "components/button/Button";
 import ProjectItem from "./project-item/project-item";
+
 // import PuffLoader from "react-spinners/PuffLoader";
 import { useLocation } from "react-router-dom";
+import { useGetCollections } from "hooks/use-get-collections";
 
-import { projectsData } from "./data";
 import "styles/global.scss";
 import "./projectsSection.scss";
 
 const ProjectsSection = () => {
   const location = useLocation();
+
+  const { collections: projectsData } = useGetCollections({ collectionName: "/projects", currentPages: 4 });
 
   return (
     <section className="projects-section">

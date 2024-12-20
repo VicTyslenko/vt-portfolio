@@ -24,6 +24,7 @@ export const Header: React.FC = () => {
   //adding background to Header when scrolling
 
   const [isScrolled, setIsScrolled] = useState(false);
+
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 100);
@@ -48,7 +49,6 @@ export const Header: React.FC = () => {
             Home
           </Link>
 
-          
           <Link className="nav-bar-link" to="/about">
             About
           </Link>

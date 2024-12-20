@@ -9,6 +9,7 @@ import PuffLoader from "react-spinners/PuffLoader";
 import Slider from "react-slick";
 import { motion } from "framer-motion";
 import { useLocation } from "react-router-dom";
+import { useGetCollections } from "hooks/use-get-collections";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "./servicesPage.scss";
@@ -25,17 +26,13 @@ export const ServicesPage = () => {
 
   const dispatch = useDispatch();
 
-  const modal = useSelector((state) => state.modal.isModalOpen);
+  const { collections: servicesData } = useGetCollections({ collectionName: location.pathname });
 
-  const servicesData = useSelector((state) => state.collections.data);
+  const modal = useSelector((state) => state.modal.isModalOpen);
 
   const selectedService = useSelector((state) => state.collections.selectedItem);
 
   const loader = useSelector((state) => state.collections.isLoading);
-
-  useEffect(() => {
-    dispatch(dataFetch({ collectionName: location.pathname }));
-  }, [dispatch, location]);
 
   return (
     <div className="services-page-container">

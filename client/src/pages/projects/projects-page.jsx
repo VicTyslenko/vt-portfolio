@@ -1,27 +1,22 @@
 import Button from "../../components/button/Button";
-import { useState } from "react";
 import { motion } from "framer-motion";
 import { useDispatch, useSelector } from "react-redux";
-import { useEffect } from "react";
+import { openModal } from "reducers/modalReducer";
+import { useGetCollections } from "hooks/use-get-collections";
 import PuffLoader from "react-spinners/PuffLoader";
 import { DescriptionModal } from "components/modal/description-modal";
 import ProjectItem from "../../components/main/components/projects-section/project-item/project-item";
-import { useProjects } from "./hooks";
-import { dataFetch, fetchItemById } from "../../reducers/dataReducer";
+import { fetchItemById } from "../../reducers/dataReducer";
 import { globalAnimation } from "../../animations/animations";
 import { useLocation } from "react-router-dom";
 import "./projects-page.scss";
 
 export const ProjectsPage = () => {
   const dispatch = useDispatch();
-  const { handleModalOpen, handleLoadMore } = useProjects();
-  const projectsData = useSelector((state) => {
-    return state.collections.data;
-  }); //get all projects data
 
   const location = useLocation();
-  const currentPage = location.pathname;
-  console.log({ currentPage: currentPage });
+
+  const { collections, handleLoadMore } = useGetCollections({ collectionName: location.pathname, currentPages: 6 });
 
   const selectedProject = useSelector((state) => state.collections.selectedItem);
 
@@ -46,8 +41,8 @@ export const ProjectsPage = () => {
             ease: "easeOut",
           })}
         >
-          {projectsData.length > 0 &&
-            projectsData.map((project, index) => (
+          {collections.length > 0 &&
+            collections.map((project, index) => (
               <ProjectItem
                 key={index}
                 link={project.link}
@@ -57,8 +52,8 @@ export const ProjectsPage = () => {
                 description={project.description}
                 pageLocation={location.pathname}
                 onClick={() => {
-                  handleModalOpen();
-                  dispatch(fetchItemById({ collectionName: currentPage, _id: project._id }));
+                  dispatch(openModal());
+                  dispatch(fetchItemById({ collectionName: location.pathname, _id: project._id }));
                 }}
               />
             ))}
@@ -72,9 +67,9 @@ export const ProjectsPage = () => {
               link={selectedProject?.link}
             />
           )}
-          {projectsData.length < 9 && (
+          {collections.length < 9 && (
             <div className="button-wrapp">
-              <Button type="button" className="load-more-btn" onClick={handleLoadMore}>
+              <Button type="button" className="load-more-btn" onClick={() => handleLoadMore(3)}>
                 Load more
               </Button>
             </div>
