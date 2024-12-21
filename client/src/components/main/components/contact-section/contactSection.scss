@@ -1,9 +1,12 @@
 @import "../../../../utils/mixins";
 @import "../../../../utils/variables";
 .contact-section {
+  position: relative;
   padding: 50px 100px;
+
   .contact-wrapp {
     border-bottom: 1px solid $prime-color;
+
     @include flex-center(space-between, normal);
   }
 
@@ -17,7 +20,6 @@
     width: 100%;
     text-align: justify;
     line-height: 30px;
-
   }
   .error-message {
     color: red;
@@ -31,7 +33,13 @@
   }
 
   .form-wrapp {
+    position: relative;
     width: 400px;
+
+    &.loading {
+      opacity: 0.6;
+    }
+
     @include flex-center($direction: column);
     .name-input {
       margin-bottom: 20px;
@@ -63,5 +71,12 @@
       color: $prime-color;
     }
   }
+
   //  styles for MUI Text Field end
+
+  .loader-wrapp {
+    position: absolute;
+    top: 116px;
+    right: 247px;
+  }
 }

@@ -15,7 +15,7 @@ export const SuccessModal = () => {
   };
 
   return (
-    <div>
+    <>
       <Modal open={open} onClose={handleClose}>
         <Box className="success-modal-wrapp">
           <h2 className="title">
@@ -27,6 +27,6 @@ export const SuccessModal = () => {
           </Button>
         </Box>
       </Modal>
-    </div>
+    </>
   );
 };

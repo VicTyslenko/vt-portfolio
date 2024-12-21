@@ -1,53 +1,21 @@
 import Button from "../../components/button/Button";
-import { useState } from "react";
-import { useSelector, useDispatch } from "react-redux";
-import { Formik, Form, FormikHelpers } from "formik";
+import { Formik, Form } from "formik";
 import { motion } from "framer-motion";
 import { globalAnimation } from "../../animations/animations";
-import { openModal } from "../../reducers/modalReducer";
-import { RootState } from "../../store";
-import { SuccessModal } from "./extensions/SuccessModal/success-modal";
-import { Input, FormBoxElement } from "../../components";
 
-import { formInfoSubmit } from "helpers";
-import { useLocation } from "react-router-dom";
+import { SuccessModal } from "./extensions/SuccessModal/success-modal";
+
+import { useContact } from "./hooks";
+
+import { Input, FormBoxElement } from "../../components";
+import ClockLoader from "react-spinners/ClockLoader";
+
 import validationSchema from "./contactsValidation";
 
 import "./contactPage.scss";
 
-interface FormValues {
-  firstName: string;
-  lastName: string;
-  email: string;
-  mobile: string;
-  message: string;
-}
 export const ContactPage = () => {
-  const dispatch = useDispatch();
-
-  const location = useLocation();
-
-  const [errorMessage, setErrorMessage] = useState("");
-
-  const [loading, setLoading] = useState(false);
-
-  const modal = useSelector((state: RootState) => state.modal.isModalOpen);
-
-  const handleSubmit = async (values: FormValues, { resetForm }: FormikHelpers<FormValues>) => {
-    setLoading(true);
-
-    const result = await formInfoSubmit(location.pathname, values);
-
-    if (result.error) {
-      const error = (result.error as any).message;
-      setErrorMessage(error);
-    } else {
-      setLoading(false);
-      setErrorMessage("");
-      dispatch(openModal());
-      resetForm();
-    }
-  };
+  const { handleSubmit, errorMessage, loading, modal } = useContact();
 
   const containerStyles = loading ? "contact-page-container loading-opacity" : "contact-page-container ";
 
@@ -116,7 +84,11 @@ export const ContactPage = () => {
 
         {modal && <SuccessModal />}
       </div>
-      {loading && <p className="loading-message">Message is sending...</p>}
+      {loading && (
+        <div className="loading-message">
+          <ClockLoader color="white" size="100px" />
+        </div>
+      )}
     </>
   );
 };

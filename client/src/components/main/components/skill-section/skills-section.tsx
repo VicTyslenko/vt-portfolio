@@ -3,6 +3,8 @@ import "../../../../styles/global.scss";
 import { skills } from "./data";
 
 const SkillsSection = () => {
+
+
   return (
     <section className="skills-section">
       <div className="global-container">

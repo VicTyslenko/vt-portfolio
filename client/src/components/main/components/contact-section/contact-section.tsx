@@ -3,12 +3,12 @@ import Input from "../../../input/Input";
 import validationSchema from "./validation";
 import Button from "../../../button/Button";
 import FormBoxElement from "../../../FormBoxElement/FormBoxElement";
-
+import ClockLoader from "react-spinners/ClockLoader";
 import { useContactSection } from "./hooks";
 import "./contactSection.scss";
 
 const ContactSection = () => {
-  const { handleSubmit } = useContactSection();
+  const { handleSubmit, loader } = useContactSection();
 
   return (
     <section className="contact-section">
@@ -29,6 +29,7 @@ const ContactSection = () => {
             handleSubmit(values, formikHelpers);
           }}
           validationSchema={validationSchema}
+          validateOnBlur={false}
         >
           {({ errors, touched }) => (
             <Form
@@ -36,7 +37,13 @@ const ContactSection = () => {
                 textAlign: "right",
               }}
             >
-              <FormBoxElement className="form-wrapp">
+              {loader && (
+                <div className="loader-wrapp">
+                  <ClockLoader size="100px" color="white" />
+                </div>
+              )}
+
+              <FormBoxElement className={loader ? "form-wrapp loading" : "form-wrapp"}>
                 <Input
                   name="name"
                   className="text-field name-input"

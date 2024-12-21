@@ -15,8 +15,4 @@ export const iconLinks = [
     link: "https://www.facebook.com/VictorTyslenko",
     icon: <FaFacebook />,
   },
-  {
-    link: "https://www.linkedin.com/in/vic-tyslenko/",
-    icon: <FaGithub />,
-  },
 ];

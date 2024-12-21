@@ -3,7 +3,7 @@ import ContactSection from "../contact-section/contact-section";
 import { TiSocialLinkedinCircular } from "react-icons/ti";
 import { FaFacebook } from "react-icons/fa6";
 import { FaGithub } from "react-icons/fa";
-import { scrollToTop } from "helpers";
+import scrollToTop from "helpers/scrollToTop";
 import "styles/global.scss";
 import "./footerSection.scss";
 
@@ -12,6 +12,7 @@ const FooterSection = () => {
     event.preventDefault();
     scrollToTop();
   };
+
   return (
     <section className="footer-container">
       <div className="global-container">
