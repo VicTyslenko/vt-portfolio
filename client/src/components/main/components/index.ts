@@ -1,5 +1,5 @@
 import MainSection from "./main-section/main-section";
-import SkillsSection from "./skill-section/skills-section";
+import SkillsSection from "./skills-section/skills-section";
 import ProjectsSection from "./projects-section/projects-section";
 import ContactSection from "./contact-section/contact-section";
 import FooterSection from "./footer-section/footer-section";

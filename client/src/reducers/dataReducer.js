@@ -5,6 +5,7 @@ import { API_URL } from "../config/API";
 const initialState = {
   data: [],
   isLoading: false,
+  itemIsLoading: false,
   selectedItem: null,
 };
 
@@ -31,11 +32,11 @@ const collectionsDataSlice = createSlice({
     });
 
     builder.addCase(fetchItemById.pending, (state) => {
-      state.isLoading = true;
+      state.itemIsLoading = true;
     });
     builder.addCase(fetchItemById.fulfilled, (state, { payload }) => {
       state.selectedItem = payload;
-      state.isLoading = false;
+      state.itemIsLoading = false;
     });
   },
 });

@@ -2,6 +2,7 @@ import Button from "../../components/button/Button";
 import { motion } from "framer-motion";
 import { useDispatch, useSelector } from "react-redux";
 import { openModal } from "reducers/modalReducer";
+
 import { useGetCollections } from "hooks/use-get-collections";
 import PuffLoader from "react-spinners/PuffLoader";
 import { DescriptionModal } from "components/modal/description-modal";
@@ -9,6 +10,7 @@ import ProjectItem from "../../components/main/components/projects-section/proje
 import { fetchItemById } from "../../reducers/dataReducer";
 import { globalAnimation } from "../../animations/animations";
 import { useLocation } from "react-router-dom";
+import { useMemo } from "react";
 import "./projects-page.scss";
 
 export const ProjectsPage = () => {
@@ -57,16 +59,7 @@ export const ProjectsPage = () => {
                 }}
               />
             ))}
-          {modal && (
-            <DescriptionModal
-              description={selectedProject?.description}
-              image={selectedProject?.descriptionImageName}
-              title={selectedProject?.title}
-              technologies={selectedProject?.technologies}
-              features={selectedProject?.features}
-              link={selectedProject?.link}
-            />
-          )}
+
           {collections.length < 9 && (
             <div className="button-wrapp">
               <Button type="button" className="load-more-btn" onClick={() => handleLoadMore(3)}>
@@ -84,6 +77,17 @@ export const ProjectsPage = () => {
           ease: "easeOut",
         })}
       ></motion.div>
+
+      {modal && (
+        <DescriptionModal
+          description={selectedProject?.description}
+          image={selectedProject?.descriptionImageName}
+          title={selectedProject?.title}
+          technologies={selectedProject?.technologies}
+          features={selectedProject?.features}
+          link={selectedProject?.link}
+        />
+      )}
     </div>
   );
 };

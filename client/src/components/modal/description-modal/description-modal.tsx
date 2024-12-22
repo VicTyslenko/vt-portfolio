@@ -36,7 +36,7 @@ export const DescriptionModal: React.FC<DescriptionModalProps> = ({ image, link,
   };
 
   return (
-    <Modal open={open} onClose={handleCloseModal} disableScrollLock={true} className="modal-wrapp">
+    <Modal open={open} onClose={handleCloseModal} disableScrollLock={false} className="modal-wrapp">
       <motion.div variants={fadeInOut} initial="hidden" animate="visible" exit="exit">
         <Fade in={open}>
           <Box

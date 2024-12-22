@@ -3,7 +3,7 @@
 
 .services-modal-wrapp {
   text-align: center;
-  min-height: 350px;
+  // min-height: 350px;
   border-radius: 20px;
   background-color: rgba(17, 31, 38, 0.9803921569);
   position: absolute;
@@ -13,6 +13,7 @@
   padding: 35px 45px;
   border-bottom: 3px solid #1f9cbe;
   border-top: 3px solid #1f9cbe;
+
   .main-title {
     @include subtitle-font-style();
     margin-bottom: 25px;
@@ -29,5 +30,14 @@
     @include text-font-style();
     line-height: 28px;
     text-align: justify;
+  }
+
+  .loader-wrapp {
+    min-width: 600px;
+    min-height: 200px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
 }

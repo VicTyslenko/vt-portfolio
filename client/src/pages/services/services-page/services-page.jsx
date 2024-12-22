@@ -1,9 +1,8 @@
-import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import ServicesItem from "../services-item/services-item";
 import ServicesModal from "../../../components/modal/services-modal/services-modal";
 import { globalAnimation } from "../../../animations/animations";
-import { dataFetch, fetchItemById } from "../../../reducers/dataReducer";
+import { fetchItemById } from "../../../reducers/dataReducer";
 import { openModal } from "../../../reducers/modalReducer";
 import PuffLoader from "react-spinners/PuffLoader";
 import Slider from "react-slick";
