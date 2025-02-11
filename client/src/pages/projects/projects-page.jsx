@@ -10,7 +10,6 @@ import ProjectItem from "../../components/main/components/projects-section/proje
 import { fetchItemById } from "../../reducers/dataReducer";
 import { globalAnimation } from "../../animations/animations";
 import { useLocation } from "react-router-dom";
-import { useMemo } from "react";
 import "./projects-page.scss";
 
 export const ProjectsPage = () => {

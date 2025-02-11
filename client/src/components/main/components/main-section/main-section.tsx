@@ -35,6 +35,11 @@ const MainSection = () => {
             >
               <h1 className="title">
                 I'm <span className="title-name">Victor Tyslenko</span>
+
+                <div className="">
+
+                  
+                </div>
               </h1>
               <motion.p
                 className="subtitle"

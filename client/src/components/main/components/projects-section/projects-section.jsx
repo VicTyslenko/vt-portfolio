@@ -1,17 +1,18 @@
 import { Link } from "react-router-dom";
 import Button from "components/button/Button";
 import ProjectItem from "./project-item/project-item";
-
-// import PuffLoader from "react-spinners/PuffLoader";
+import PuffLoader from "react-spinners/PuffLoader";
 import { useLocation } from "react-router-dom";
 import { useGetCollections } from "hooks/use-get-collections";
-
+import { useSelector } from "react-redux";
 import "styles/global.scss";
 import "./projectsSection.scss";
 
 const ProjectsSection = () => {
   const location = useLocation();
 
+  const loader = useSelector((state) => state.collections.isLoading);
+  console.log("loader", loader);
   const { collections: projectsData } = useGetCollections({ collectionName: "/projects", currentPages: 4 });
 
   return (
@@ -29,19 +30,24 @@ const ProjectsSection = () => {
             </Button>
           </Link>
         </div>
-
-        <div className="projects-wrapp">
-          {projectsData.map((project, index) => (
-            <ProjectItem
-              key={index}
-              link={project.link}
-              title={project.title}
-              subtitle={project.subtitle}
-              imageFileName={project.imageFileName}
-              pageLocation={location.pathname}
-            />
-          ))}
-        </div>
+        {loader ? (
+          <div className="loader-wrapp">
+            <PuffLoader size="100px" color="#fff" />
+          </div>
+        ) : (
+          <div className="projects-wrapp">
+            {projectsData.map((project, index) => (
+              <ProjectItem
+                key={index}
+                link={project.link}
+                title={project.title}
+                subtitle={project.subtitle}
+                imageFileName={project.imageFileName}
+                pageLocation={location.pathname}
+              />
+            ))}
+          </div>
+        )}
       </div>
     </section>
   );
