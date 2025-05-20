@@ -8,7 +8,7 @@ const MONGO_URL = process.env.MONGO_URL;
 const app = express();
 app.use(
   cors({
-    origin: ["https://vt-portfolio-client.vercel.app", "http://127.0.0.1:3001", "http://localhost:3001"],
+    origin: ["http://3.86.45.58:3000", "http://localhost:3001"],
   })
 );
 

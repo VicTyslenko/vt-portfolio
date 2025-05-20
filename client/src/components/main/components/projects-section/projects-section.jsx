@@ -12,7 +12,7 @@ const ProjectsSection = () => {
   const location = useLocation();
 
   const loader = useSelector((state) => state.collections.isLoading);
-  console.log("loader", loader);
+
   const { collections: projectsData } = useGetCollections({ collectionName: "/projects", currentPages: 4 });
 
   return (

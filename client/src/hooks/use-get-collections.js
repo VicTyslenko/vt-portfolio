@@ -1,6 +1,7 @@
 import { useSelector, useDispatch } from "react-redux";
 import { useState, useEffect } from "react";
 import { dataFetch } from "reducers/dataReducer";
+
 export const useGetCollections = (params) => {
   const dispatch = useDispatch();
 
@@ -10,7 +11,6 @@ export const useGetCollections = (params) => {
 
   const collections = useSelector((state) => state.collections.data);
 
-  // console.log("collections", collections);
   const handleLoadMore = (newValue) => {
     setPageSize((prev) => prev + newValue);
   };

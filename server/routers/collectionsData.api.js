@@ -33,7 +33,7 @@ router.get("/:collectionName", async (request, response) => {
   }
 });
 
-//getting collections' items by Id
+//getting collection items by Id
 
 router.get("/:collectionName/:_id", async (request, response) => {
   const { collectionName, _id } = request.params;
