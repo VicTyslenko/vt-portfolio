@@ -1,2 +1,2 @@
-// export const API_URL = import.meta.env.MODE === "development" ? import.meta.env.VITE_APP_API_URL : import.meta.env.VITE_APP_API_URL_PROD;
-export const API_URL = "http://3.86.45.58:4444";
+export const API_URL = import.meta.env.MODE === "development" ? import.meta.env.VITE_APP_API_URL : import.meta.env.VITE_APP_API_URL_PROD;
+// export const API_URL = "http://3.86.45.58:4444";
