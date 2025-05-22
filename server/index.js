@@ -8,7 +8,7 @@ const MONGO_URL = process.env.MONGO_URL;
 const app = express();
 app.use(
   cors({
-    origin: ["https://vic-tyslenko-portfolio.vercel.app", "http://localhost:3001"],
+    origin: ["https://vt-portfolio.info", "http://localhost:3001"],
   })
 );
 
