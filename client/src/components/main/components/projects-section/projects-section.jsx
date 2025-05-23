@@ -13,7 +13,7 @@ const ProjectsSection = () => {
 
   const loader = useSelector((state) => state.collections.isLoading);
 
-  const { collections: projectsData } = useGetCollections({ collectionName: "/projects", currentPages: 4 });
+  const { collections: projectsData } = useGetCollections({ currentPages: 4 });
 
   return (
     <section className="projects-section">
