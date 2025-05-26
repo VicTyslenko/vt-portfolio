@@ -47,13 +47,7 @@ const MainSection = () => {
               >
                 Software Developer
               </motion.p>
-              <button
-                onClick={() => {
-                  console.log("Hello!");
-                }}
-              >
-                Click me
-              </button>
+
               <p className="description">
                 Experienced developer focused on creating responsive websites and applications, including user management systems, admin dashboards,
                 commercial shops, utilizing modern technologies for optimized and engaging user experiences.
