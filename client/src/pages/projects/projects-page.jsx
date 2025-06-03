@@ -2,8 +2,7 @@ import Button from "../../components/button/Button";
 import { motion } from "framer-motion";
 import { useDispatch, useSelector } from "react-redux";
 import { openModal } from "reducers/modalReducer";
-
-import { useGetCollections } from "hooks/use-get-collections";
+import { useProjectsPage } from "./hooks";
 import PuffLoader from "react-spinners/PuffLoader";
 import { DescriptionModal } from "components/modal/description-modal";
 import ProjectItem from "../../components/main/components/projects-section/project-item/project-item";
@@ -15,14 +14,12 @@ import "./projects-page.scss";
 export const ProjectsPage = () => {
   const dispatch = useDispatch();
 
+  const { data, handleMore, modal, loader } = useProjectsPage();
   const location = useLocation();
 
-  const { collections, handleLoadMore } = useGetCollections({ collectionName: location.pathname, currentPages: 6 });
+  // const { collections, handleLoadMore } = useGetCollections({ collectionName: location.pathname, currentPages: 6 });
 
   const selectedProject = useSelector((state) => state.collections.selectedItem);
-
-  const loader = useSelector((state) => state.collections.isLoading);
-  const modal = useSelector((state) => state.modal);
 
   return (
     <div className="projects-page-container">
@@ -42,8 +39,8 @@ export const ProjectsPage = () => {
             ease: "easeOut",
           })}
         >
-          {collections.length > 0 &&
-            collections.map((project, index) => (
+          {data.length > 0 &&
+            data.map((project, index) => (
               <ProjectItem
                 key={index}
                 link={project.link}
@@ -59,9 +56,9 @@ export const ProjectsPage = () => {
               />
             ))}
 
-          {collections.length < 9 && (
+          {data.length < 9 && (
             <div className="button-wrapp">
-              <Button type="button" className="load-more-btn" onClick={() => handleLoadMore(3)}>
+              <Button type="button" className="load-more-btn" onClick={handleMore}>
                 Load more
               </Button>
             </div>
