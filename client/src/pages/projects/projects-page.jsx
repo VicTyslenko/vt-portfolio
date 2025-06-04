@@ -1,9 +1,9 @@
 import Button from "../../components/button/Button";
 import { motion } from "framer-motion";
+
 import { useDispatch, useSelector } from "react-redux";
 import { openModal } from "reducers/modalReducer";
 import { useProjectsPage } from "./hooks";
-import PuffLoader from "react-spinners/PuffLoader";
 import { DescriptionModal } from "components/modal/description-modal";
 import ProjectItem from "../../components/main/components/projects-section/project-item/project-item";
 import { fetchItemById } from "../../reducers/dataReducer";
@@ -14,7 +14,8 @@ import "./projects-page.scss";
 export const ProjectsPage = () => {
   const dispatch = useDispatch();
 
-  const { data, handleMore, modal, loader } = useProjectsPage();
+  const { data, handleMore, modal } = useProjectsPage();
+
   const location = useLocation();
 
   // const { collections, handleLoadMore } = useGetCollections({ collectionName: location.pathname, currentPages: 6 });
@@ -26,45 +27,40 @@ export const ProjectsPage = () => {
       <motion.h1 className="title" {...globalAnimation({ yInitial: -70, duration: 1, ease: "easeOut" })}>
         My <span>projects</span>
       </motion.h1>
-      {loader ? (
-        <div className="loader-wrapp">
-          <PuffLoader size="100px" color="#fff" />
-        </div>
-      ) : (
-        <motion.div
-          className="projects-page-wrapp"
-          {...globalAnimation({
-            yInitial: 70,
-            duration: 1,
-            ease: "easeOut",
-          })}
-        >
-          {data.length > 0 &&
-            data.map((project, index) => (
-              <ProjectItem
-                key={index}
-                link={project.link}
-                title={project.title}
-                subtitle={project.subtitle}
-                imageFileName={project.imageFileName}
-                description={project.description}
-                pageLocation={location.pathname}
-                onClick={() => {
-                  dispatch(openModal());
-                  dispatch(fetchItemById({ collectionName: location.pathname, _id: project._id }));
-                }}
-              />
-            ))}
 
-          {data.length < 9 && (
-            <div className="button-wrapp">
-              <Button type="button" className="load-more-btn" onClick={handleMore}>
-                Load more
-              </Button>
-            </div>
-          )}
-        </motion.div>
-      )}
+      <motion.div
+        className="projects-page-wrapp"
+        {...globalAnimation({
+          yInitial: 70,
+          duration: 1,
+          ease: "easeOut",
+        })}
+      >
+        {data.length > 0 &&
+          data.map((project, index) => (
+            <ProjectItem
+              key={index}
+              link={project.link}
+              title={project.title}
+              subtitle={project.subtitle}
+              imageFileName={project.imageFileName}
+              description={project.description}
+              pageLocation={location.pathname}
+              onClick={() => {
+                dispatch(openModal());
+                dispatch(fetchItemById({ collectionName: location.pathname, _id: project._id }));
+              }}
+            />
+          ))}
+
+        {data.length < 9 && (
+          <div className="button-wrapp">
+            <Button type="button" className="load-more-btn" onClick={handleMore}>
+              Load more
+            </Button>
+          </div>
+        )}
+      </motion.div>
 
       <motion.div
         {...globalAnimation({

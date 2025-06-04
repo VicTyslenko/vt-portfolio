@@ -1,14 +1,10 @@
-import { useDispatch, useSelector } from "react-redux";
 import ServicesItem from "../services-item/services-item";
 import ServicesModal from "../../../components/modal/services-modal/services-modal";
 import { globalAnimation } from "../../../animations/animations";
-import { fetchItemById } from "../../../reducers/dataReducer";
-import { openModal } from "../../../reducers/modalReducer";
-import PuffLoader from "react-spinners/PuffLoader";
+import { useServices } from "./hooks";
 import Slider from "react-slick";
+import { servicesData } from "../data";
 import { motion } from "framer-motion";
-import { useLocation } from "react-router-dom";
-import { useGetCollections } from "hooks/use-get-collections";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import "./servicesPage.scss";
@@ -21,17 +17,7 @@ const sliderSettings = {
 };
 
 export const ServicesPage = () => {
-  const location = useLocation();
-
-  const dispatch = useDispatch();
-
-  const { collections: servicesData } = useGetCollections({ collectionName: location.pathname });
-
-  const modal = useSelector((state) => state.modal.isModalOpen);
-
-  const selectedService = useSelector((state) => state.collections.selectedItem);
-
-  const loader = useSelector((state) => state.collections.isLoading);
+  const { modal, handleOpenModal, selectedItem } = useServices();
 
   return (
     <div className="services-page-container">
@@ -49,29 +35,20 @@ export const ServicesPage = () => {
           yInitial: 30,
         })}
       >
-        {!loader ? (
-          <Slider {...sliderSettings}>
-            {servicesData.map(({ title, shortDescription, description, icon, _id }, index) => (
-              <ServicesItem
-                key={index}
-                title={title}
-                shortDescription={shortDescription}
-                description={description}
-                icon={icon}
-                action={() => {
-                  dispatch(openModal());
-                  dispatch(fetchItemById({ collectionName: location.pathname, _id }));
-                }}
-              />
-            ))}
-          </Slider>
-        ) : (
-          <div className="loader-wrapp">
-            <PuffLoader size="100px" color="#fff" />
-          </div>
-        )}
+        <Slider {...sliderSettings}>
+          {servicesData.map((item, index) => (
+            <ServicesItem
+              key={index}
+              title={item.title}
+              shortDescription={item.shortDescription}
+              description={item.description}
+              icon={item.icon}
+              action={() => handleOpenModal(item)}
+            />
+          ))}
+        </Slider>
       </motion.div>
-      {modal && <ServicesModal key="services-modal" subtitle={selectedService?.title} description={selectedService?.description} />}
+      {modal && <ServicesModal description={selectedItem.description} subtitle={selectedItem.title} />}
     </div>
   );
 };

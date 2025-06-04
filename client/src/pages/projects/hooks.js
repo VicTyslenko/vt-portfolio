@@ -5,12 +5,11 @@ import { useSelector } from "react-redux";
 export const useProjectsPage = () => {
   const [data, setData] = useState(() => projectsData.filter((_, index) => index <= 5));
 
-  const loader = useSelector((state) => state.collections.isLoading);
   const modal = useSelector((state) => state.modal);
-  
+
   const handleMore = () => {
     setData(projectsData);
   };
 
-  return { data, handleMore, modal, loader };
+  return { data, handleMore, modal };
 };
