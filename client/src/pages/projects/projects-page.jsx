@@ -1,26 +1,18 @@
 import Button from "../../components/button/Button";
 import { motion } from "framer-motion";
 
-import { useDispatch, useSelector } from "react-redux";
-import { openModal } from "reducers/modalReducer";
 import { useProjectsPage } from "./hooks";
+
 import { DescriptionModal } from "components/modal/description-modal";
 import ProjectItem from "../../components/main/components/projects-section/project-item/project-item";
-import { fetchItemById } from "../../reducers/dataReducer";
 import { globalAnimation } from "../../animations/animations";
 import { useLocation } from "react-router-dom";
 import "./projects-page.scss";
 
 export const ProjectsPage = () => {
-  const dispatch = useDispatch();
-
-  const { data, handleMore, modal } = useProjectsPage();
+  const { data, handleMore, modal, handleOpenModal, selectedProject } = useProjectsPage();
 
   const location = useLocation();
-
-  // const { collections, handleLoadMore } = useGetCollections({ collectionName: location.pathname, currentPages: 6 });
-
-  const selectedProject = useSelector((state) => state.collections.selectedItem);
 
   return (
     <div className="projects-page-container">
@@ -46,10 +38,7 @@ export const ProjectsPage = () => {
               imageFileName={project.imageFileName}
               description={project.description}
               pageLocation={location.pathname}
-              onClick={() => {
-                dispatch(openModal());
-                dispatch(fetchItemById({ collectionName: location.pathname, _id: project._id }));
-              }}
+              onClick={() => handleOpenModal(project)}
             />
           ))}
 

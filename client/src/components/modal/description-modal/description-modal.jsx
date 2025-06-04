@@ -1,35 +1,23 @@
-/* eslint-disable jsx-a11y/anchor-has-content */
 import { closeModal } from "../../../reducers/modalReducer";
 import { motion } from "framer-motion";
 import Box from "@mui/material/Box";
 import { IoIosCloseCircleOutline } from "react-icons/io";
 import Modal from "@mui/material/Modal";
 import Fade from "@mui/material/Fade";
-import { RootState } from "../../../store";
 import { useSelector, useDispatch } from "react-redux";
 import PuffLoader from "react-spinners/PuffLoader";
 
 import "./description-modal.scss";
 
-interface DescriptionModalProps {
-  title: string;
-  description: React.ReactNode;
-  technologies: Array<string>;
-  features: Array<string>;
-  image: string;
-  link: string;
-}
-
-//modal animation styles
 const fadeInOut = {
   hidden: { opacity: 0, transition: { duration: 0.3 } },
   visible: { opacity: 1, transition: { duration: 0.9 } },
 };
 
-export const DescriptionModal: React.FC<DescriptionModalProps> = ({ image, link, technologies, features }) => {
+export const DescriptionModal = ({ image, link, technologies, features }) => {
   const dispatch = useDispatch();
-  const open = useSelector((state: RootState) => state.modal.isModalOpen);
-  const loader = useSelector((state: RootState) => state.collections.isLoading);
+  const open = useSelector((state) => state.modal.isModalOpen);
+  const loader = useSelector((state) => state.collections.isLoading);
 
   const handleCloseModal = () => {
     dispatch(closeModal());
@@ -42,7 +30,7 @@ export const DescriptionModal: React.FC<DescriptionModalProps> = ({ image, link,
           <Box
             sx={{
               border: "none",
-              position: "absolute" as "absolute",
+              position: "absolute",
               top: "50%",
               left: "50%",
               transform: "translate(-50%, -50%)",
