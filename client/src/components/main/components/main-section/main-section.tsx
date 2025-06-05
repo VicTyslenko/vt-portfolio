@@ -1,5 +1,4 @@
 import { useEffect } from "react";
-
 import { globalAnimation } from "animations";
 
 import { motion } from "framer-motion";

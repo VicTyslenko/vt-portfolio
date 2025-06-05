@@ -22,7 +22,7 @@ export const projectsData = [
     title: "Fashion store",
     subtitle: "React / Node / MUI",
     imageFileName: "originalite.png",
-    link: "https://originalite-xixs.onrender.com",
+    link: "https://github.com/VicTyslenko/Originalite-project",
     descriptionImageName: "description-originalite.png",
     technologies: [
       "NodeJS/ Express/ Passport/ MongoDB/ Mongoose/ jsonwebtoken",

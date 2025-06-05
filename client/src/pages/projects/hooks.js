@@ -2,6 +2,7 @@ import { useState } from "react";
 import { projectsData } from "shared/data/projects";
 import { useSelector, useDispatch } from "react-redux";
 import { openModal } from "reducers/modalReducer";
+
 export const useProjectsPage = () => {
   const dispatch = useDispatch();
   const [selectedProject, setSelectedProject] = useState(null);
