@@ -36,7 +36,7 @@ export const AboutPage = () => {
             </a>
           ))}
         </div>
-        <a href="/VictorTyslenko_CV/SoftwareDeveloper_CV.pdf" className="cv-link" download="SoftwareDeveloper_CV.pdf">
+        <a href="/VictorTyslenko_CV/VT_CV.pdf" className="cv-link" download="VT_CV.pdf">
           Download CV
         </a>
       </motion.div>
