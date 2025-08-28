@@ -24,7 +24,7 @@ const sendRequest = async (url: string, method: string = "GET", body: FormValues
   }
 
   const result = await response.json();
-  return result.data;
+  return result;
 };
 
 export default sendRequest;

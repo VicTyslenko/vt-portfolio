@@ -41,6 +41,8 @@ export const Header: React.FC = () => {
     return headerClass;
   };
 
+
+
   return (
     <div className="global-container">
       <div className={`header-wrapper ${getHeaderClass()}`}>

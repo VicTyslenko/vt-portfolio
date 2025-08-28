@@ -2,6 +2,7 @@ const Project = require("../modules/projects.mongoose");
 
 const Service = require("../modules/services.mongoose");
 const Contact = require("../modules/contacts.mongoose");
+
 const collectionsConfig = {
   projects: {
     model: Project,

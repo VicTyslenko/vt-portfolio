@@ -9,34 +9,22 @@ import { useState } from "react";
 export const useContactSection = () => {
   const [loader, setLoader] = useState(false);
 
-  const formInfoSubmit = async (collectionName: string, values: FormValues): Promise<FormSubmitResult> => {
+  const handleSubmit = async (values: FormValues, { resetForm }: FormikHelpers<FormValues>) => {
     setLoader(true);
     try {
-      const data = await sendRequest(`${API_URL}/${collectionName}`, "POST", values);
+      const data = await sendRequest(`https://mail-serverless-function.vercel.app/api/contacts`, "POST", values);
 
-      return {
-        success: true,
-        data,
-      };
+      if (data.success) {
+        setLoader(false);
+        resetForm();
+        toast.success("The message was sent successfully!");
+      } else {
+        toast.error("Something went wrong");
+      }
     } catch (error) {
-      return {
-        success: false,
-        error: error instanceof Error ? error : new Error("Unknown error"),
-      };
-    } finally {
       setLoader(false);
+      toast.error("Network error");
     }
-  };
-
-  const handleSubmit = async (values: FormValues, { resetForm }: FormikHelpers<FormValues>) => {
-    const saveResult = await formInfoSubmit("contacts", values);
-
-    if (!saveResult.success) {
-      return;
-    }
-
-    resetForm();
-    toast.success("The message was sent successfully!");
   };
 
   return { handleSubmit, loader };
